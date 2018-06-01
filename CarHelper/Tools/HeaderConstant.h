@@ -30,16 +30,16 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define BLOCK_SAFE(block)           if(block)block
 
 // third-platform's key and secret
-#define AMap_APPKEY                     @"80e0ef8cff4ad6abb51b86428ea74209"
-#define WeChat_APPKEY           @"wxfa36e03676b9fc53"
-#define WeChat_SECRET           @"ee6d40266fde0b5adc8170d2d4609ea2"
+#define AMap_APPKEY             @""
+#define WeChat_APPKEY           @""
+#define WeChat_SECRET           @""
 #define WeChat_REDIRECT         @""
-#define QQ_APPID                @"wxfa36e03676b9fc53"
+#define QQ_APPID                @""
 #define QQ_APPKEY               @""
 #define QQ_REDIRECT             @""
-#define UMeng_APPKEY            @"5aff8c62f29d987ac0000087"
+#define UMeng_APPKEY            @"123"
 
-#define APP_SCHEMES                     @"gaoyuanfengshop"
+#define APP_SCHEMES                     @"carhelper"
 
 // notifications
 #define AliPaySucessNotice              @"AliPaySucessNotice"

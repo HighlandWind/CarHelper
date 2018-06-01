@@ -28,16 +28,16 @@
 //    [AMapServices sharedServices].apiKey = AMap_APPKEY;
     
     /* UMSocial */
-    [[UMSocialManager defaultManager] openLog:YES];
-    [[UMSocialManager defaultManager] setUmSocialAppkey:UMeng_APPKEY];
-    [self configUSharePlatforms];
+//    [[UMSocialManager defaultManager] openLog:YES];
+//    [[UMSocialManager defaultManager] setUmSocialAppkey:UMeng_APPKEY];
+//    [self configUSharePlatforms];
     
     /* IQKeyboardManager */
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
-    [WXApi registerApp:WeChat_APPKEY];
+//    [WXApi registerApp:WeChat_APPKEY];
 }
 
 - (void)setupUnify {
