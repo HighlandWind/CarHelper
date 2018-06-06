@@ -36,19 +36,19 @@
     [self addChildViewController:_launchVC];
     [self.view addSubview:_launchVC.view];
     
-    if (APP_USER.isLoginStatus) {
+    if (YES) {
         _launchVC.finishBlock = ^{
             GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
             [weakSelf showController:tabbarVC dismiss:weakSelf.launchVC index:0];
         };
     }else {
-        _launchVC.finishBlock = ^{
-            [weakSelf showController:weakSelf.applyVC dismiss:weakSelf.launchVC index:0];
-        };
-        _applyVC.blockShowHome = ^(NSUInteger idx) {
-            GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
-            [weakSelf showController:tabbarVC dismiss:weakSelf.applyVC index:idx];
-        };
+//        _launchVC.finishBlock = ^{
+//            [weakSelf showController:weakSelf.applyVC dismiss:weakSelf.launchVC index:0];
+//        };
+//        _applyVC.blockShowHome = ^(NSUInteger idx) {
+//            GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
+//            [weakSelf showController:tabbarVC dismiss:weakSelf.applyVC index:idx];
+//        };
     }
 }
 

@@ -10,13 +10,11 @@
 #import "GJTabBar.h"
 #import "GJHomeViewController.h"
 #import "GJPartnerShipController.h"
-#import "GJMessageController.h"
 #import "GJMineCenterController.h"
 
 @interface GJTabBarController () <LGJTabBarDelegate, UITabBarControllerDelegate>
 @property (nonatomic, strong) GJHomeViewController *homePageVC;
 @property (nonatomic, strong) GJPartnerShipController *partnerVC;
-@property (nonatomic, strong) GJMessageController *messageVC;
 @property (nonatomic, strong) GJMineCenterController *mineVC;
 
 @end
@@ -35,15 +33,13 @@
     
     _homePageVC = [[GJHomeViewController alloc] init];
     _partnerVC = [[GJPartnerShipController alloc] init];
-    _messageVC = [[GJMessageController alloc] init];
     _mineVC = [[GJMineCenterController alloc] init];
     
     GJBaseNavigationController *firstTab = [self createTabItemVC:_homePageVC norImg:@"shopB" selectImg:@"shopA" Title:@"首页"];
     GJBaseNavigationController *secTab = [self createTabItemVC:_partnerVC norImg:@"partnerB" selectImg:@"partnerA" Title:@"合伙"];
-    GJBaseNavigationController *thirdTab = [self createTabItemVC:_messageVC norImg:@"messageB" selectImg:@"messageA" Title:@"消息"];
     GJBaseNavigationController *fourTab = [self createTabItemVC:_mineVC norImg:@"userB" selectImg:@"userA" Title:@"我的"];
     
-    self.viewControllers = @[firstTab, secTab, thirdTab, fourTab];
+    self.viewControllers = @[firstTab, secTab, fourTab];
     self.selectedIndex = 0;
     [self setBartitleColor];
 }

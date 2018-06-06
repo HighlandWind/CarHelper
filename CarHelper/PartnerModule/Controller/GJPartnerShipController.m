@@ -70,16 +70,7 @@
 
 #pragma mark - Request Handle
 - (void)requestPartnerHomeDataWithDate:(NSInteger)date {
-    [self.view.loadingView startAnimation];
-    [_partnerManager requestPartnerHomeWithDate:date success:^(GJPartnerHomeData *models) {
-        [self.view.loadingView stopAnimation];
-        _topView.identifierCounts = models.data.count;
-        [_top_Cell setLeft:models.total_yyr center:models.total right:models.total_sy];
-        _dataSource = models;
-        [_tableView reloadData];
-    } failure:^(NSURLResponse *urlResponse, NSError *error) {
-        [self.view.loadingView stopAnimation];
-    }];
+    
 }
 
 #pragma mark - Private methods

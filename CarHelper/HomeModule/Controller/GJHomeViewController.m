@@ -74,15 +74,7 @@
 
 #pragma mark - Request Handle
 - (void)requestDataWithDateIdx:(NSInteger)dateIdx {
-    [self.view.loadingView startAnimation];
-    [_homeManager requestShopIndexWithDate:dateIdx success:^(GJHomeShopData *model) {
-        [self.view.loadingView stopAnimation];
-        _shopData = model;
-        _naviItemBar.shopData = _shopData;
-        [_tableView reloadData];
-    } failure:^(NSURLResponse *urlResponse, NSError *error) {
-        [self.view.loadingView stopAnimation];
-    }];
+    
 }
 
 #pragma mark - Public methods
