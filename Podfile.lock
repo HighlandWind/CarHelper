@@ -36,6 +36,11 @@ PODS:
     - UMengUShare/Social/ReducedQQ
   - UMengUShare/Social/ReducedQQ (6.4.8.2):
     - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.8.2):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI (6.4.8.2):
     - UMengUShare/Core
   - YYModel (1.0.4)
@@ -51,6 +56,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - SDWebImage (~> 4.0.0)
   - UMengUShare/Social/QQ (~> 6.4)
+  - UMengUShare/Social/WeChat (~> 6.4)
   - UMengUShare/UI (~> 6.4)
   - YYModel (~> 1.0.4)
 
@@ -68,6 +74,6 @@ SPEC CHECKSUMS:
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ce387abce7308534796acb8f9f07bc0da7336ad9
+PODFILE CHECKSUM: 9dbd5535d2bc1682f1b70c167ba5f7c2089cd7b9
 
 COCOAPODS: 1.4.0

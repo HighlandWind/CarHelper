@@ -34,6 +34,7 @@
 
 - (void)initializationSubView {
     self.title = @"首页";
+    [self showShadorOnNaviBar:YES];
 }
 
 - (void)initializationNetWorking {

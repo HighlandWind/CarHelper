@@ -34,6 +34,7 @@
 
 - (void)initializationSubView {
     self.title = @"我的";
+    [self showShadorOnNaviBar:YES];
 }
 
 - (void)initializationNetWorking {

@@ -16,7 +16,7 @@ pod 'AMapLocation-NO-IDFA', '~> 2.4.0'
 pod 'AMap3DMap-NO-IDFA', '~> 5.2.0'
 
 pod 'UMengUShare/UI', '~> 6.4', :inhibit_warnings => true
-#pod 'UMengUShare/Social/WeChat', '~> 6.4', :inhibit_warnings => true
+pod 'UMengUShare/Social/WeChat', '~> 6.4', :inhibit_warnings => true
 pod 'UMengUShare/Social/QQ', '~> 6.4', :inhibit_warnings => true
 
 end
