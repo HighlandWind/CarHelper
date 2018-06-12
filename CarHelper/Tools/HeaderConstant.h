@@ -37,7 +37,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define QQ_APPID                @""
 #define QQ_APPKEY               @""
 #define QQ_REDIRECT             @""
-#define UMeng_APPKEY            @"123"
+#define UMeng_APPKEY            @""
 
 #define APP_SCHEMES                     @"carhelper"
 
