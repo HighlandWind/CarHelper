@@ -29,7 +29,7 @@
     
     /* UMSocial */
     [[UMSocialManager defaultManager] openLog:YES];
-    [[UMSocialManager defaultManager] setUmSocialAppkey:UMeng_APPKEY];
+//    [[UMSocialManager defaultManager] setUmSocialAppkey:UMeng_APPKEY];
     [self configUSharePlatforms];
     
     /* IQKeyboardManager */
