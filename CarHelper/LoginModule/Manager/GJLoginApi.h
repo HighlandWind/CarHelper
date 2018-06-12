@@ -10,8 +10,6 @@
 
 @interface GJLoginApi : NSObject
 
-
-
 /**
  验证码登录获取验证码
  

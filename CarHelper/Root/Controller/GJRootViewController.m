@@ -9,11 +9,9 @@
 #import "GJRootViewController.h"
 #import "GJLaunchViewController.h"
 #import "GJTabBarController.h"
-#import "GJApplyUserController.h"
 
 @interface GJRootViewController ()
 @property (nonatomic, strong) GJLaunchViewController *launchVC;
-@property (nonatomic, strong) GJApplyUserController *applyVC;
 @end
 
 @implementation GJRootViewController
@@ -31,25 +29,14 @@
 - (void)setLauncher {
     __weak typeof(self)weakSelf = self;
     _launchVC = [[GJLaunchViewController alloc] init];
-    _applyVC = [[GJApplyUserController alloc] init];
     
     [self addChildViewController:_launchVC];
     [self.view addSubview:_launchVC.view];
     
-    if (YES) {
-        _launchVC.finishBlock = ^{
-            GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
-            [weakSelf showController:tabbarVC dismiss:weakSelf.launchVC index:0];
-        };
-    }else {
-//        _launchVC.finishBlock = ^{
-//            [weakSelf showController:weakSelf.applyVC dismiss:weakSelf.launchVC index:0];
-//        };
-//        _applyVC.blockShowHome = ^(NSUInteger idx) {
-//            GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
-//            [weakSelf showController:tabbarVC dismiss:weakSelf.applyVC index:idx];
-//        };
-    }
+    _launchVC.finishBlock = ^{
+        GJTabBarController *tabbarVC = [[GJTabBarController alloc] init];
+        [weakSelf showController:tabbarVC dismiss:weakSelf.launchVC index:0];
+    };
 }
 
 - (void)showController:(UIViewController *)showVC dismiss:(UIViewController *)dismissVC index:(NSUInteger)idx {

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "GJUserInfoData.h"
-#import "GJRegionData.h"
 
 UIKIT_EXTERN NSString *const kUserLoginStatuNotice;
 #define APP_USER  [GJUserAccountManager sharedGJUserAccountManager]
@@ -20,22 +19,6 @@ DECLARE_SINGLETON_FOR_CLASS(GJUserAccountManager)
  *  当前登陆用户信息
  */
 @property (nonatomic, strong) GJUserInfoData *userInfo;
-
-
-/**
- 省市区数据
- */
-@property (nonatomic, strong) GJRegionData *regionData;
-- (NSArray *)getProvinces;
-- (NSArray *)getCityInProvince:(Province *)province;
-- (NSArray *)getDistrictInCity:(City *)city;
-
-
-/**
- 保存、清除省市区数据
- */
--(void)saveRegionData:(GJRegionData *)regionData;
-- (void)clearRegionData;
 
 /**
  *  保存登陆用户信息

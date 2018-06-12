@@ -10,6 +10,4 @@
 
 @interface GJRegisterController : GJBaseViewController
 
-@property (nonatomic, copy) void (^blockApplySuccessShowHome)(void);
-
 @end

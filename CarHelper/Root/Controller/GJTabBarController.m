@@ -8,14 +8,14 @@
 
 #import "GJTabBarController.h"
 #import "GJTabBar.h"
-#import "GJHomeViewController.h"
-#import "GJPartnerShipController.h"
-#import "GJMineCenterController.h"
+#import "GJHomeVC.h"
+#import "GJDiscoverVC.h"
+#import "GJMineVC.h"
 
 @interface GJTabBarController () <LGJTabBarDelegate, UITabBarControllerDelegate>
-@property (nonatomic, strong) GJHomeViewController *homePageVC;
-@property (nonatomic, strong) GJPartnerShipController *partnerVC;
-@property (nonatomic, strong) GJMineCenterController *mineVC;
+@property (nonatomic, strong) GJHomeVC *homeVC;
+@property (nonatomic, strong) GJDiscoverVC *discovceVC;
+@property (nonatomic, strong) GJMineVC *mineVC;
 
 @end
 
@@ -31,12 +31,12 @@
     tabbar.myDelegate = self;
 //    [self setValue:tabbar forKeyPath:@"tabBar"];
     
-    _homePageVC = [[GJHomeViewController alloc] init];
-    _partnerVC = [[GJPartnerShipController alloc] init];
-    _mineVC = [[GJMineCenterController alloc] init];
+    _homeVC = [[GJHomeVC alloc] init];
+    _discovceVC = [[GJDiscoverVC alloc] init];
+    _mineVC = [[GJMineVC alloc] init];
     
-    GJBaseNavigationController *firstTab = [self createTabItemVC:_homePageVC norImg:@"shopB" selectImg:@"shopA" Title:@"首页"];
-    GJBaseNavigationController *secTab = [self createTabItemVC:_partnerVC norImg:@"partnerB" selectImg:@"partnerA" Title:@"合伙"];
+    GJBaseNavigationController *firstTab = [self createTabItemVC:_homeVC norImg:@"shopB" selectImg:@"shopA" Title:@"首页"];
+    GJBaseNavigationController *secTab = [self createTabItemVC:_discovceVC norImg:@"partnerB" selectImg:@"partnerA" Title:@"发现"];
     GJBaseNavigationController *fourTab = [self createTabItemVC:_mineVC norImg:@"userB" selectImg:@"userA" Title:@"我的"];
     
     self.viewControllers = @[firstTab, secTab, fourTab];

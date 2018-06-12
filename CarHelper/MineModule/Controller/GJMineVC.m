@@ -1,18 +1,18 @@
 //
-//  GJRegisterController.m
-//  GaoYuanFengStore
+//  GJMineVC.m
+//  CarHelper
 //
-//  Created by hsrd on 2018/5/15.
-//  Copyright © 2018年 HSRD. All rights reserved.
+//  Created by Arlenly on 2018/6/12.
+//  Copyright © 2018年 CAR. All rights reserved.
 //
 
-#import "GJRegisterController.h"
+#import "GJMineVC.h"
 
-@interface GJRegisterController ()
+@interface GJMineVC ()
 
 @end
 
-@implementation GJRegisterController
+@implementation GJMineVC
 
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
@@ -33,7 +33,7 @@
 }
 
 - (void)initializationSubView {
-    
+    self.title = @"我的";
 }
 
 - (void)initializationNetWorking {

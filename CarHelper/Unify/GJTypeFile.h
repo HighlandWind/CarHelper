@@ -10,30 +10,13 @@
 
 typedef enum : NSUInteger {
     ScanCenterType1 = 200
-} ScanCenterType; // 扫码类型
-
-typedef enum : NSInteger {
-    kMineMoveDirectionNone,
-    kMineMoveDirectionUp,
-    kMineMoveDirectionDown,
-    kMineMoveDirectionRight,
-    kMineMoveDirectionLeft
-} MineMoveDirection;
+} ScanCenterType;
 
 typedef enum : NSInteger {
     WeChatPay,
     ZhiFuBaoPay,
     UnionPay
 } PayTypes;
-
-typedef enum : NSInteger {
-    RegionNone,
-    RegionProvince,
-    RegionCity,
-    RegionDistrict,
-    RegionApplyUser,
-    RegionSex
-} RegionTypes;
 
 @interface GJTypeFile : NSObject
 
