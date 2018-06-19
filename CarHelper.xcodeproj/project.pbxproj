@@ -73,6 +73,7 @@
 		80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CDE9C2205D1A8200B12382 /* UIViewController+Extension.m */; };
 		80D03481208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0347F208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D4951020A92E62004A280A /* GJCustomPresentController.m */; };
+		80D6625820D8A611006640E4 /* GJAppSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6625720D8A611006640E4 /* GJAppSettingVC.m */; };
 		80E9605A2080AA30003E6C99 /* GJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E960592080AA30003E6C99 /* GJLoadingView.m */; };
 		80EC5EF920649C5500276C4B /* bahnschrift-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80EC5EF820649BDA00276C4B /* bahnschrift-regular.ttf */; };
 		80EC5F092064A86600276C4B /* GJBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EC5F082064A86600276C4B /* GJBaseView.m */; };
@@ -223,6 +224,8 @@
 		80D03480208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		80D4950F20A92E61004A280A /* GJCustomPresentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCustomPresentController.h; sourceTree = "<group>"; };
 		80D4951020A92E62004A280A /* GJCustomPresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCustomPresentController.m; sourceTree = "<group>"; };
+		80D6625620D8A611006640E4 /* GJAppSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJAppSettingVC.h; sourceTree = "<group>"; };
+		80D6625720D8A611006640E4 /* GJAppSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJAppSettingVC.m; sourceTree = "<group>"; };
 		80E960582080AA30003E6C99 /* GJLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLoadingView.h; sourceTree = "<group>"; };
 		80E960592080AA30003E6C99 /* GJLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLoadingView.m; sourceTree = "<group>"; };
 		80EC5EF820649BDA00276C4B /* bahnschrift-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bahnschrift-regular.ttf"; sourceTree = "<group>"; };
@@ -773,6 +776,8 @@
 				80A4A89D2068F89B00BBD186 /* CustomPresent */,
 				CCF57B7120D016520037AD13 /* GJMineVC.h */,
 				CCF57B7220D016520037AD13 /* GJMineVC.m */,
+				80D6625620D8A611006640E4 /* GJAppSettingVC.h */,
+				80D6625720D8A611006640E4 /* GJAppSettingVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -977,6 +982,7 @@
 			files = (
 				80AD8AE4205BC304004E8724 /* GJConfigureManager.m in Sources */,
 				80C8DED52060A75A004837BB /* GJNormalCellModel.m in Sources */,
+				80D6625820D8A611006640E4 /* GJAppSettingVC.m in Sources */,
 				8097B0BB206259010004282F /* GJImageLibraryController.m in Sources */,
 				80AD8AEA205BC560004E8724 /* UIColor+Extension.m in Sources */,
 				803CBD262099968C00837259 /* CustomTouchView.m in Sources */,

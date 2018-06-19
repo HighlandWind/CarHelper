@@ -1,19 +1,18 @@
 //
-//  GJMineVC.m
+//  GJAppSettingVC.m
 //  CarHelper
 //
-//  Created by Arlenly on 2018/6/12.
+//  Created by hsrd on 2018/6/19.
 //  Copyright © 2018年 CAR. All rights reserved.
 //
 
-#import "GJMineVC.h"
 #import "GJAppSettingVC.h"
 
-@interface GJMineVC ()
+@interface GJAppSettingVC ()
 
 @end
 
-@implementation GJMineVC
+@implementation GJAppSettingVC
 
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
@@ -34,10 +33,8 @@
 }
 
 - (void)initializationSubView {
-    self.title = @"我的";
+    self.title = @"设置";
     [self showShadorOnNaviBar:YES];
-    UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"setup"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
-    self.navigationItem.rightBarButtonItem = back;
 }
 
 - (void)initializationNetWorking {
@@ -54,11 +51,7 @@
 
 
 #pragma mark - Event response
-- (void)rightAction {
-    GJAppSettingVC *vc = [[GJAppSettingVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
 
 #pragma mark - Custom delegate
 
