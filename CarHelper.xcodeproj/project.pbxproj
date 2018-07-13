@@ -74,6 +74,12 @@
 		80D03481208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0347F208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D4951020A92E62004A280A /* GJCustomPresentController.m */; };
 		80D6625820D8A611006640E4 /* GJAppSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6625720D8A611006640E4 /* GJAppSettingVC.m */; };
+		80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38CE20F856FC00171754 /* GJHomeManager.m */; };
+		80DB38D220F8570700171754 /* GJHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38D120F8570700171754 /* GJHomeModel.m */; };
+		80DF732820F8425D00AD9A3E /* GJHomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF732720F8425D00AD9A3E /* GJHomeTopView.m */; };
+		80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF732A20F84A4D00AD9A3E /* GJHomeTopCell.m */; };
+		80DF732E20F84C6E00AD9A3E /* GJHomeParkingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF732D20F84C6E00AD9A3E /* GJHomeParkingCell.m */; };
+		80DF733120F8516700AD9A3E /* FZHPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF732F20F8516700AD9A3E /* FZHPopView.m */; };
 		80E9605A2080AA30003E6C99 /* GJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E960592080AA30003E6C99 /* GJLoadingView.m */; };
 		80EC5EF920649C5500276C4B /* bahnschrift-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80EC5EF820649BDA00276C4B /* bahnschrift-regular.ttf */; };
 		80EC5F092064A86600276C4B /* GJBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EC5F082064A86600276C4B /* GJBaseView.m */; };
@@ -226,6 +232,18 @@
 		80D4951020A92E62004A280A /* GJCustomPresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCustomPresentController.m; sourceTree = "<group>"; };
 		80D6625620D8A611006640E4 /* GJAppSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJAppSettingVC.h; sourceTree = "<group>"; };
 		80D6625720D8A611006640E4 /* GJAppSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJAppSettingVC.m; sourceTree = "<group>"; };
+		80DB38CD20F856FC00171754 /* GJHomeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeManager.h; sourceTree = "<group>"; };
+		80DB38CE20F856FC00171754 /* GJHomeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeManager.m; sourceTree = "<group>"; };
+		80DB38D020F8570700171754 /* GJHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeModel.h; sourceTree = "<group>"; };
+		80DB38D120F8570700171754 /* GJHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeModel.m; sourceTree = "<group>"; };
+		80DF732620F8425D00AD9A3E /* GJHomeTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeTopView.h; sourceTree = "<group>"; };
+		80DF732720F8425D00AD9A3E /* GJHomeTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeTopView.m; sourceTree = "<group>"; };
+		80DF732920F84A4D00AD9A3E /* GJHomeTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeTopCell.h; sourceTree = "<group>"; };
+		80DF732A20F84A4D00AD9A3E /* GJHomeTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeTopCell.m; sourceTree = "<group>"; };
+		80DF732C20F84C6E00AD9A3E /* GJHomeParkingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeParkingCell.h; sourceTree = "<group>"; };
+		80DF732D20F84C6E00AD9A3E /* GJHomeParkingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeParkingCell.m; sourceTree = "<group>"; };
+		80DF732F20F8516700AD9A3E /* FZHPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZHPopView.m; sourceTree = "<group>"; };
+		80DF733020F8516700AD9A3E /* FZHPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZHPopView.h; sourceTree = "<group>"; };
 		80E960582080AA30003E6C99 /* GJLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLoadingView.h; sourceTree = "<group>"; };
 		80E960592080AA30003E6C99 /* GJLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLoadingView.m; sourceTree = "<group>"; };
 		80EC5EF820649BDA00276C4B /* bahnschrift-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bahnschrift-regular.ttf"; sourceTree = "<group>"; };
@@ -322,6 +340,14 @@
 		8006AB38205CB5C200881F85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				80DF732620F8425D00AD9A3E /* GJHomeTopView.h */,
+				80DF732720F8425D00AD9A3E /* GJHomeTopView.m */,
+				80DF733020F8516700AD9A3E /* FZHPopView.h */,
+				80DF732F20F8516700AD9A3E /* FZHPopView.m */,
+				80DF732920F84A4D00AD9A3E /* GJHomeTopCell.h */,
+				80DF732A20F84A4D00AD9A3E /* GJHomeTopCell.m */,
+				80DF732C20F84C6E00AD9A3E /* GJHomeParkingCell.h */,
+				80DF732D20F84C6E00AD9A3E /* GJHomeParkingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -552,6 +578,8 @@
 		8097DBDD205FBFA10025A554 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				80DB38CD20F856FC00171754 /* GJHomeManager.h */,
+				80DB38CE20F856FC00171754 /* GJHomeManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -794,6 +822,8 @@
 		80EEB7032069F36F0067E37C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80DB38D020F8570700171754 /* GJHomeModel.h */,
+				80DB38D120F8570700171754 /* GJHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -991,6 +1021,7 @@
 				8018C4C920AAA97A00FFC713 /* GJRegisterController.m in Sources */,
 				8011D24C209C422A00800F9E /* TKWebJSContent.m in Sources */,
 				8006AB53205CF8DB00881F85 /* GJLocationModel.m in Sources */,
+				80DB38D220F8570700171754 /* GJHomeModel.m in Sources */,
 				8011D247209C41E900800F9E /* TKWebViewController.m in Sources */,
 				803CBD252099968C00837259 /* CustomImageScrollView.m in Sources */,
 				803CBD272099968C00837259 /* UIImage+FixOrientation.m in Sources */,
@@ -999,6 +1030,7 @@
 				80C8DEDB2060ABAE004837BB /* GJNormalTBVCell.m in Sources */,
 				8097B0B4206257D80004282F /* GJTypeFile.m in Sources */,
 				80284860206CB02900DEE778 /* GJHttpConst.m in Sources */,
+				80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */,
 				8011D249209C41E900800F9E /* TKWKBaseWebController.m in Sources */,
 				80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */,
 				80AD8AF0205BC9D3004E8724 /* GJBaseModel.m in Sources */,
@@ -1008,7 +1040,9 @@
 				80AD8AED205BC78E004E8724 /* GJBaseNavigationController.m in Sources */,
 				80D03481208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				80AD8ADA205BBBF7004E8724 /* GJTabBarController.m in Sources */,
+				80DF733120F8516700AD9A3E /* FZHPopView.m in Sources */,
 				80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */,
+				80DF732820F8425D00AD9A3E /* GJHomeTopView.m in Sources */,
 				80AD8AC9205BA354004E8724 /* AppDelegate+Config.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
 				CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */,
@@ -1019,6 +1053,7 @@
 				8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */,
 				80AD8ACE205BA5C2004E8724 /* GJBaseViewController.m in Sources */,
 				803CBD242099968C00837259 /* CustomClipImageViewController.m in Sources */,
+				80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */,
 				80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */,
 				80AD8AC0205BA24D004E8724 /* GJRootViewController.m in Sources */,
 				8028484F206C952900DEE778 /* GJLoginController.m in Sources */,
@@ -1031,6 +1066,7 @@
 				8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */,
 				803CBD1820997D6D00837259 /* AlertManager.m in Sources */,
 				80EC5F0F2064AC0200276C4B /* GJBaseTableView.m in Sources */,
+				80DF732E20F84C6E00AD9A3E /* GJHomeParkingCell.m in Sources */,
 				80AD8ADD205BBC18004E8724 /* GJTabBar.m in Sources */,
 				8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */,
 				8011D240209C41A900800F9E /* NJKWebViewProgressView.m in Sources */,
