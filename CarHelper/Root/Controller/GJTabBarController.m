@@ -47,7 +47,7 @@
 - (void)setBartitleColor{
     [[UITabBar appearance] setTranslucent:NO];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexRGB:@"999999"]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:APP_CONFIG.appMainRedColor} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:APP_CONFIG.appMainColor} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -3)];
     [self.tabBar setBackgroundImage:CreatImageWithColor([UIColor whiteColor])];
     [self.tabBar setShadowImage:CreatImageWithColor([UIColor colorWithRGB:238 g:238 b:238])];
