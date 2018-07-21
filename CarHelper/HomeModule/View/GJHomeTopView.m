@@ -37,7 +37,7 @@
     self.searchBar = [[UISearchBar alloc]init];
     self.searchBar.frame = CGRectMake(0, NavBar_H, SCREEN_W, NavBar_H);
     self.searchBar.delegate = self;
-    self.searchBar.placeholder = @"搜索";
+    self.searchBar.placeholder = @"附近商家";
     
     self.popView = [[FZHPopView alloc]init];
     self.popView.frame = CGRectMake(0, SCREEN_H, SCREEN_W, SCREEN_H - NavBar_H);
@@ -74,7 +74,7 @@
     [cancelButton addTarget:self action:@selector(cancelButtonClickEvent) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)cancelButtonClickEvent{
+- (void)cancelButtonClickEvent {
     [self.popView dismissThePopView];
     [UIView animateWithDuration:0.5 animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -87,7 +87,7 @@
         //3.
     }];
     
-    self.searchBar.placeholder = @"搜索";
+    self.searchBar.placeholder = @"附近商家";
     [self.searchBar setImage:[UIImage imageNamed:@"search"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
 }
 

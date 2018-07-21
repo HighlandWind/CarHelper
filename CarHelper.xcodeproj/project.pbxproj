@@ -45,6 +45,8 @@
 		8073A62D20A6978300855792 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62C20A6978300855792 /* SystemConfiguration.framework */; };
 		8073A62F20A6981500855792 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62E20A6981500855792 /* libsqlite3.tbd */; };
 		8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */; };
+		808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C42102E6A700FB4F2C /* GJNearbyCell.m */; };
+		808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C72102E6DA00FB4F2C /* GJScheduleCell.m */; };
 		8097B0B1206257590004282F /* GJQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8097B0B0206257590004282F /* GJQRCodeController.m */; };
 		8097B0B4206257D80004282F /* GJTypeFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8097B0B3206257D80004282F /* GJTypeFile.m */; };
 		8097B0B72062588F0004282F /* GJSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8097B0B62062588F0004282F /* GJSystemHelper.m */; };
@@ -173,6 +175,10 @@
 		8073A63420A6985500855792 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		8083F953205F9390000AD5A5 /* GJBaseNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJBaseNaviBar.h; sourceTree = "<group>"; };
 		8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJBaseNaviBar.m; sourceTree = "<group>"; };
+		808540C32102E6A700FB4F2C /* GJNearbyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNearbyCell.h; sourceTree = "<group>"; };
+		808540C42102E6A700FB4F2C /* GJNearbyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJNearbyCell.m; sourceTree = "<group>"; };
+		808540C62102E6DA00FB4F2C /* GJScheduleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJScheduleCell.h; sourceTree = "<group>"; };
+		808540C72102E6DA00FB4F2C /* GJScheduleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJScheduleCell.m; sourceTree = "<group>"; };
 		8097B0AF206257590004282F /* GJQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJQRCodeController.h; sourceTree = "<group>"; };
 		8097B0B0206257590004282F /* GJQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJQRCodeController.m; sourceTree = "<group>"; };
 		8097B0B2206257D80004282F /* GJTypeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJTypeFile.h; sourceTree = "<group>"; };
@@ -348,6 +354,10 @@
 				80DF732A20F84A4D00AD9A3E /* GJHomeTopCell.m */,
 				80DF732C20F84C6E00AD9A3E /* GJHomeParkingCell.h */,
 				80DF732D20F84C6E00AD9A3E /* GJHomeParkingCell.m */,
+				808540C32102E6A700FB4F2C /* GJNearbyCell.h */,
+				808540C42102E6A700FB4F2C /* GJNearbyCell.m */,
+				808540C62102E6DA00FB4F2C /* GJScheduleCell.h */,
+				808540C72102E6DA00FB4F2C /* GJScheduleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1053,6 +1063,7 @@
 				8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */,
 				80AD8ACE205BA5C2004E8724 /* GJBaseViewController.m in Sources */,
 				803CBD242099968C00837259 /* CustomClipImageViewController.m in Sources */,
+				808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */,
 				80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */,
 				80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */,
 				80AD8AC0205BA24D004E8724 /* GJRootViewController.m in Sources */,
@@ -1077,6 +1088,7 @@
 				80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */,
 				8011D23F209C41A900800F9E /* NJKWebViewProgress.m in Sources */,
 				8006AB48205CD19D00881F85 /* UIView+GJToast.m in Sources */,
+				808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */,
 				80F43C3720A691C8004EE41B /* GJAlipayModel.m in Sources */,
 				800F4036205FAC1800B7A4D4 /* GJBaseTableViewCell.m in Sources */,
 				8097B0B72062588F0004282F /* GJSystemHelper.m in Sources */,

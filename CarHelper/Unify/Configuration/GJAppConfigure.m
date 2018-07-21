@@ -35,8 +35,8 @@
 
 - (void)setupAppMainColor
 {
-//    _appMainColor = [UIColor colorWithHexRGB:@"01B0BB"];
-    _appMainColor = [UIColor colorWithRGB:255 g:80 b:48];
+    _appMainColor = [UIColor colorWithHexRGB:@"00b7ee"];
+//    _appMainColor = [UIColor colorWithRGB:255 g:80 b:48];
 }
 
 - (void)customColors {

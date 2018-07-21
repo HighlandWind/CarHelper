@@ -8,14 +8,18 @@
 
 #import "GJHomeTopCell.h"
 
+@interface GJHomeTopCell ()
+
+@end
+
 @implementation GJHomeTopCell
 
 - (void)commonInit {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (CGFloat)height {
-    return AdaptatSize(200);
+    return AdaptatSize(190) + 15;
 }
 
 @end
