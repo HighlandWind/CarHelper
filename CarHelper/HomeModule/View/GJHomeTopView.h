@@ -9,5 +9,7 @@
 #import "GJBaseView.h"
 
 @interface GJHomeTopView : GJBaseView
+@property (nonatomic, copy) void (^blockSearch)(NSString *searchText);
 + (GJHomeTopView *)install;
+- (CGFloat)searchHeight;
 @end

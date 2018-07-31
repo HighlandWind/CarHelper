@@ -27,7 +27,7 @@
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    _topView.frame = CGRectMake(0, 0, self.view.width, AdaptatSize(100));
+    _topView.frame = CGRectMake(0, 0, self.view.width, NavBar_H+_topView.searchHeight);
     _topBgImg.frame = CGRectMake(0, 0, self.view.width, _topCell.height - 15);
     _backView.frame = CGRectMake(0, _topBgImg.height, self.view.width, self.view.height-_topBgImg.height);
     _tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height);
@@ -65,7 +65,7 @@
     [self.view addSubview:self.backView];
     [self.view addSubview:self.topBgImg];
     [self.view addSubview:self.tableView];
-//    [self.view addSubview:self.topView];
+    [self.view addSubview:self.topView];
 }
 
 - (void)initializationNetWorking {

@@ -7,13 +7,11 @@
 //
 
 #import "GJHomeTopView.h"
-#import "FZHPopView.h"
+#import "GJSearchBar.h"
 
-@interface GJHomeTopView () <UISearchBarDelegate, FZHPopViewDelegate>
+@interface GJHomeTopView () <UISearchBarDelegate>
 @property (nonatomic, strong) UIViewController *context;
-@property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) FZHPopView *popView;
-@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) GJSearchBar *searchBar;
 @end
 
 @implementation GJHomeTopView
@@ -27,68 +25,43 @@
 {
     self = [super init];
     if (self) {
-        self.titleArray = [NSMutableArray arrayWithObjects:@"friend",@"article",@"number", nil];
         [self setupSubviews];
     }
     return self;
 }
 
 - (void)setupSubviews {
-    self.searchBar = [[UISearchBar alloc]init];
-    self.searchBar.frame = CGRectMake(0, NavBar_H, SCREEN_W, NavBar_H);
-    self.searchBar.delegate = self;
-    self.searchBar.placeholder = @"附近商家";
+    self.backgroundColor = [UIColor clearColor];
     
-    self.popView = [[FZHPopView alloc]init];
-    self.popView.frame = CGRectMake(0, SCREEN_H, SCREEN_W, SCREEN_H - NavBar_H);
-    self.popView.fzhPopViewDelegate = self;
+    _searchBar = [[GJSearchBar alloc] init];
+    _searchBar.keyboardType = UIKeyboardTypeDefault;
+    _searchBar.delegate = self;
+    _searchBar.layer.cornerRadius = 5;
+    _searchBar.clipsToBounds = YES;
+    _searchBar.placeholder = @" 附近商家";
     
-    [self addSubview:self.searchBar];
-    [self addSubview:self.popView];
+    [self addSubview:_searchBar];
 }
 
 #pragma mark -UISearchBarDelegate
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    [self.popView showThePopViewWithArray:self.titleArray];
-    [UIView animateWithDuration:0.5 animations:^{
-        //1.
-//        _context.navigationController.navigationBar.transform = CGAffineTransformMakeTranslation(0, -NavBar_H);
-        self.searchBar.transform = CGAffineTransformMakeTranslation(0, -44);
-        
-        //2.
-        self.searchBar.showsCancelButton = YES;
-        [self setupCancelButton];
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    BLOCK_SAFE(_blockSearch)(searchBar.text);
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [_searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.bottom.equalTo(self);
+        make.left.equalTo(self).with.offset(15);
+        make.right.equalTo(self).with.offset(-AdaptatSize(50));
+        make.height.mas_equalTo(self.searchHeight);
     }];
 }
 
-#pragma mark -FZHPopViewDelegate
--(void)getTheButtonTitleWithButton:(UIButton *)button{
-    self.searchBar.placeholder = button.titleLabel.text;
-    [self.searchBar setImage:[UIImage imageNamed:@"common"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-    [self.popView dismissThePopView];
-}
-
-- (void)setupCancelButton{
-    UIButton *cancelButton = [self.searchBar valueForKey:@"_cancelButton"];
-    [cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [cancelButton addTarget:self action:@selector(cancelButtonClickEvent) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)cancelButtonClickEvent {
-    [self.popView dismissThePopView];
-    [UIView animateWithDuration:0.5 animations:^{
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-        //1.
-//        _context.navigationController.navigationBar.transform = CGAffineTransformIdentity;
-        self.searchBar.transform = CGAffineTransformIdentity;
-        //2.
-        self.searchBar.showsCancelButton = NO;
-        [self.searchBar endEditing:YES];
-        //3.
-    }];
-    
-    self.searchBar.placeholder = @"附近商家";
-    [self.searchBar setImage:[UIImage imageNamed:@"search"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+- (CGFloat)searchHeight {
+    return AdaptatSize(30);
 }
 
 @end
