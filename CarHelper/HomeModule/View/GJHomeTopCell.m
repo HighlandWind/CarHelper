@@ -10,12 +10,19 @@
 
 @interface GJHomeTopCell ()
 @property (nonatomic, strong) UIView *broadcastBG;
+@property (nonatomic, assign) CGFloat cellHeight;
 @end
 
 @implementation GJHomeTopCell
 
 - (void)commonInit {
     self.backgroundColor = [UIColor clearColor];
+    if (SCREEN_H >= kGJIphoneX) {
+        _cellHeight = AdaptatSize(230) + 15;
+    }else {
+        _cellHeight = AdaptatSize(190) + 15;
+    }
+    
     _broadcastBG = [[UIView alloc] initWithFrame:CGRectMake(10, self.height-32, SCREEN_W-20, 32)];
     _broadcastBG.backgroundColor = [UIColor whiteColor];
     _broadcastBG.layer.cornerRadius = 5;
@@ -33,7 +40,7 @@
 }
 
 - (CGFloat)height {
-    return AdaptatSize(190) + 15;
+    return _cellHeight;
 }
 
 @end
