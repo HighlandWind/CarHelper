@@ -19,6 +19,8 @@
     self.backgroundColor = [UIColor clearColor];
     if (SCREEN_H >= kGJIphoneX) {
         _cellHeight = AdaptatSize(230) + 15;
+    }else if (SCREEN_H <= kGJIphone5Height) {
+        _cellHeight = AdaptatSize(210) + 15;
     }else {
         _cellHeight = AdaptatSize(190) + 15;
     }

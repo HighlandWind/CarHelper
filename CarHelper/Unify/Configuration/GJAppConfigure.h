@@ -40,6 +40,7 @@
 - (UIFont *)appArtLightFontOfSize:(CGFloat)size;
 - (UIFont *)appLightFontOfSize:(CGFloat)size;
 - (UIFont *)appFontOfSize:(CGFloat)size;
+- (UIFont *)appAdaptFontOfSize:(CGFloat)size;
 - (UIFont *)appBoldFontOfSize:(CGFloat)size;
 - (UIFont *)appExtraLightFontOfSize:(CGFloat)size;
 - (UIFont *)appBahnschriftSemiBoldFontOfSize:(CGFloat)size;

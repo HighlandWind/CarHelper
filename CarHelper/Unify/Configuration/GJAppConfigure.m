@@ -63,6 +63,11 @@
     return [UIFont fontWithName:@"Avenir-Roman" size:size];
 }
 
+- (UIFont *)appAdaptFontOfSize:(CGFloat)size
+{
+    return AdapFont([self appFontOfSize:size]);
+}
+
 - (UIFont *)appBoldFontOfSize:(CGFloat)size
 {
     return [UIFont fontWithName:@"Avenir-Medium" size:size];

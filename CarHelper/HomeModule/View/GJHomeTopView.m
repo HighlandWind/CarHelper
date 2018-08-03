@@ -64,7 +64,7 @@
     _searchBar.placeholder = @" 附近商家";
     
     _addressBtn = [[UIButton alloc] init];
-    _addressBtn.titleLabel.font = [APP_CONFIG appFontOfSize:14];
+    _addressBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
     [_addressBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_addressBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
     [_addressBtn sizeToFit];
@@ -72,20 +72,20 @@
     [_addressBtn addTarget:self action:@selector(addressBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _weatherBtn = [[UIButton alloc] init];
-    _weatherBtn.titleLabel.font = [APP_CONFIG appFontOfSize:14];
+    _weatherBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
     [_weatherBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_weatherBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
     [_weatherBtn sizeToFit];
     [_weatherBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -15)];
     
     _dateLabel = [[UILabel alloc] init];
-    _dateLabel.font = [APP_CONFIG appFontOfSize:14];
+    _dateLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
     _dateLabel.textColor = [UIColor whiteColor];
     [_dateLabel sizeToFit];
     _dateLine = [[UIView alloc] init];
     _dateLine.backgroundColor = APP_CONFIG.lightTextColor;
     _topRightLabel = [[UILabel alloc] init];
-    _topRightLabel.font = [APP_CONFIG appFontOfSize:12];
+    _topRightLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
     _topRightLabel.textColor = [UIColor whiteColor];
     [_topRightLabel sizeToFit];
     _topRightLabel.backgroundColor = [UIColor colorWithRGB:0 g:159 b:236];
@@ -143,20 +143,21 @@
     }];
     [_weatherBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_addressBtn);
-        make.left.equalTo(_addressBtn.mas_right).with.offset(AdaptatSize(30));
+        make.left.equalTo(_addressBtn.mas_right).with.offset(AdaptatSize(20));
     }];
-    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_topRightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_addressBtn);
-        make.right.equalTo(_searchBar);
+        make.right.equalTo(self).with.offset(-10);
     }];
     [_dateLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.right.equalTo(_dateLabel);
+        make.centerY.equalTo(_topRightLabel);
+        make.right.equalTo(_topRightLabel.mas_left).with.offset(-5);
         make.width.mas_equalTo(1);
         make.height.mas_equalTo(AdaptatSize(12));
     }];
-    [_topRightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_dateLabel);
-        make.left.equalTo(_dateLine.mas_right).with.offset(5);
+    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_addressBtn);
+        make.right.equalTo(_dateLine.mas_left);
     }];
 }
 

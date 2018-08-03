@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = APP_CONFIG.appMainColor;
+        
         
     }
     return self;

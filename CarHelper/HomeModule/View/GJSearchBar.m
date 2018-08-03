@@ -37,7 +37,7 @@ static CGFloat const placeHolderFont = 14.0;
     field.layer.masksToBounds = YES;
     field.tintColor = APP_CONFIG.whiteGrayColor;
     [field setValue:APP_CONFIG.whiteGrayColor forKeyPath:@"_placeholderLabel.textColor"];
-    [field setValue:[UIFont systemFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
+    [field setValue:[APP_CONFIG appAdaptFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
     UIButton *clearButton = [field valueForKey:@"_clearButton"];
     [clearButton setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
     
@@ -78,7 +78,7 @@ static CGFloat const placeHolderFont = 14.0;
 // 计算placeholder、icon、icon和placeholder间距的总宽度
 - (CGFloat)placeholderWidth {
     if (!_placeholderWidth) {
-        CGSize size = [self.placeholder boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:placeHolderFont]} context:nil].size;
+        CGSize size = [self.placeholder boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[APP_CONFIG appAdaptFontOfSize:placeHolderFont]} context:nil].size;
         _placeholderWidth = size.width + iconSpacing + searchIconW + 5;
     }
     return _placeholderWidth;
