@@ -44,6 +44,7 @@
 		8073A62B20A6977A00855792 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62A20A6977A00855792 /* CoreTelephony.framework */; };
 		8073A62D20A6978300855792 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62C20A6978300855792 /* SystemConfiguration.framework */; };
 		8073A62F20A6981500855792 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62E20A6981500855792 /* libsqlite3.tbd */; };
+		8076672C2114051200C76237 /* GJHomeTopImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8076672B2114051200C76237 /* GJHomeTopImage.m */; };
 		8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */; };
 		808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C42102E6A700FB4F2C /* GJNearbyCell.m */; };
 		808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C72102E6DA00FB4F2C /* GJScheduleCell.m */; };
@@ -173,6 +174,8 @@
 		8073A63020A6982800855792 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		8073A63220A6983D00855792 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8073A63420A6985500855792 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		8076672A2114051200C76237 /* GJHomeTopImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeTopImage.h; sourceTree = "<group>"; };
+		8076672B2114051200C76237 /* GJHomeTopImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeTopImage.m; sourceTree = "<group>"; };
 		8083F953205F9390000AD5A5 /* GJBaseNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJBaseNaviBar.h; sourceTree = "<group>"; };
 		8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJBaseNaviBar.m; sourceTree = "<group>"; };
 		808540C32102E6A700FB4F2C /* GJNearbyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNearbyCell.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				808540C42102E6A700FB4F2C /* GJNearbyCell.m */,
 				808540C62102E6DA00FB4F2C /* GJScheduleCell.h */,
 				808540C72102E6DA00FB4F2C /* GJScheduleCell.m */,
+				8076672A2114051200C76237 /* GJHomeTopImage.h */,
+				8076672B2114051200C76237 /* GJHomeTopImage.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,6 +1098,7 @@
 				800F4036205FAC1800B7A4D4 /* GJBaseTableViewCell.m in Sources */,
 				8097B0B72062588F0004282F /* GJSystemHelper.m in Sources */,
 				80F43C3820A691C8004EE41B /* GJPayBaseModel.m in Sources */,
+				8076672C2114051200C76237 /* GJHomeTopImage.m in Sources */,
 				80C8DEE52060DD2E004837BB /* MAAnnotationView+GJAMapCustomLocationIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

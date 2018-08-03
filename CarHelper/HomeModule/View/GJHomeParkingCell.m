@@ -28,7 +28,7 @@
 }
 
 - (CGFloat)height {
-    return AdaptatSize(155);
+    return AdaptatSize(150);
 }
 
 @end

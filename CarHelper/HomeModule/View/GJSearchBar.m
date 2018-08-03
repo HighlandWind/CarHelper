@@ -29,7 +29,7 @@ static CGFloat const placeHolderFont = 14.0;
     [self setBackgroundImage:CreatImageWithColor([UIColor colorWithRGB:0 g:154 b:233])];
     // 重设field的frame
     UITextField *field = [self valueForKey:@"_searchField"];
-    field.frame = CGRectMake(15.0, 7.5, self.frame.size.width-30.0, self.frame.size.height-15.0);
+    field.frame = CGRectMake(0, 7.5, self.frame.size.width-30.0, self.frame.size.height-15.0);
     [field setBackgroundColor:self.backgroundColor];
     field.textColor = [UIColor blackColor];
     field.borderStyle = UITextBorderStyleNone;

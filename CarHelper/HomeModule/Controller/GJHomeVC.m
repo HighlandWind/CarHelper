@@ -12,10 +12,12 @@
 #import "GJHomeParkingCell.h"
 #import "GJNearbyCell.h"
 #import "GJScheduleCell.h"
+#import "GJHomeTopImage.h"
 
 @interface GJHomeVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJHomeTopView *topView;
-@property (nonatomic, strong) UIImageView *topBgImg;
+@property (nonatomic, strong) GJHomeTopImage *topBgImg;
+@property (nonatomic, assign) CGFloat topBgImgHeight;
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) GJBaseTableView *tableView;
 @property (nonatomic, strong) NSArray <GJBaseTableViewCell *> *cells;
@@ -28,7 +30,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     _topView.frame = CGRectMake(0, 0, self.view.width, NavBar_H+_topView.searchHeight);
-    _topBgImg.frame = CGRectMake(0, 0, self.view.width, _topCell.height - 15);
+    _topBgImg.frame = CGRectMake(0, 0, self.view.width, _topBgImgHeight);
     _backView.frame = CGRectMake(0, _topBgImg.height, self.view.width, self.view.height-_topBgImg.height);
     _tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height);
 }
@@ -49,11 +51,15 @@
 - (void)initializationData {
     _backView = [[UIView alloc] init];
     _backView.backgroundColor = APP_CONFIG.appBackgroundColor;
+    
     _topCell = [[GJHomeTopCell alloc] init];
     GJHomeParkingCell *parkingCell = [[GJHomeParkingCell alloc] init];
     GJNearbyCell *nearbyCell = [[GJNearbyCell alloc] init];
     GJScheduleCell *scheduleCell = [[GJScheduleCell alloc] init];
+    
     _cells = @[_topCell, parkingCell, nearbyCell, scheduleCell];
+    
+    _topBgImgHeight = _topCell.height - 15;
 }
 
 - (void)initializationSubView {
@@ -66,17 +72,28 @@
     [self.view addSubview:self.topBgImg];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.topView];
+    [self blockHanddle];
 }
 
 - (void)initializationNetWorking {
-    
+    [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533276582602&di=901f22d814993f8a66e18cb7027b094c&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fcf1b9d16fdfaaf51b3fef0a6805494eef01f7a8d.jpg"]];
 }
 
 #pragma mark - Request Handle
 
 
 #pragma mark - Private methods
-
+- (void)blockHanddle {
+    _topView.blockSearch = ^(NSString *searchText) {
+        
+    };
+    _topView.blockSpeech = ^{
+        
+    };
+    _topView.blockAdd = ^{
+        
+    };
+}
 
 #pragma mark - Public methods
 
@@ -100,6 +117,15 @@
     return _cells[indexPath.row].height;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat yyy = scrollView.contentOffset.y;
+    if (yyy < 0 && -yyy <= 60) {
+        [_topBgImg setHeight:_topBgImgHeight - yyy];
+        [_topBgImg setWidth:self.view.width - yyy];
+        [_topBgImg setCenterX:self.view.centerX];
+    }
+}
+
 #pragma mark - Getter/Setter
 - (GJHomeTopView *)topView {
     if (!_topView) {
@@ -118,10 +144,9 @@
     return _tableView;
 }
 
-- (UIImageView *)topBgImg {
+- (GJHomeTopImage *)topBgImg {
     if (!_topBgImg) {
-        _topBgImg = [[UIImageView alloc] init];
-        _topBgImg.backgroundColor = APP_CONFIG.appMainColor;
+        _topBgImg = [[GJHomeTopImage alloc] init];
     }
     return _topBgImg;
 }
