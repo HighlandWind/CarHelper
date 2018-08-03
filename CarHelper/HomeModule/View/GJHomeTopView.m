@@ -49,8 +49,12 @@
     BLOCK_SAFE(_blockAddress)();
 }
 
+- (void)setBgAlpha:(CGFloat)bgAlpha {
+    self.backgroundColor = [APP_CONFIG.appMainColor colorWithAlphaComponent:bgAlpha];
+}
+
 - (void)setupSubviews {
-    self.backgroundColor = [UIColor clearColor];
+    [self setBgAlpha:0];
     
     _searchBar = [[GJSearchBar alloc] init];
     _searchBar.keyboardType = UIKeyboardTypeDefault;
@@ -119,10 +123,10 @@
     [super layoutSubviews];
     [_searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.bottom.equalTo(self);
+        make.bottom.equalTo(self).with.offset(-10);
         make.left.equalTo(self).with.offset(15);
         make.right.equalTo(self).with.offset(-AdaptatSize(50));
-        make.height.mas_equalTo(self.searchHeight);
+        make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.equalTo(_searchBar);
@@ -157,7 +161,7 @@
 }
 
 - (CGFloat)searchHeight {
-    return AdaptatSize(30);
+    return NavBar_H + AdaptatSize(40);
 }
 
 #pragma mark -UISearchBarDelegate

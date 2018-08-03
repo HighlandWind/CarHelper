@@ -14,6 +14,7 @@
 @property (nonatomic, copy) void (^blockAddress)(void);
 @property (nonatomic, copy) void (^blockSpeech)(void);
 @property (nonatomic, copy) void (^blockAdd)(void);
+@property (nonatomic, assign) CGFloat bgAlpha;
 
 + (GJHomeTopView *)install;
 - (CGFloat)searchHeight;

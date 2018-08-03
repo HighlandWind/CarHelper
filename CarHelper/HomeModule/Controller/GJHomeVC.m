@@ -29,7 +29,7 @@
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    _topView.frame = CGRectMake(0, 0, self.view.width, NavBar_H+_topView.searchHeight);
+    _topView.frame = CGRectMake(0, 0, self.view.width, _topView.searchHeight);
     _topBgImg.frame = CGRectMake(0, 0, self.view.width, _topBgImgHeight);
     _backView.frame = CGRectMake(0, _topBgImg.height, self.view.width, self.view.height-_topBgImg.height);
     _tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height);
@@ -76,7 +76,7 @@
 }
 
 - (void)initializationNetWorking {
-    [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533276582602&di=901f22d814993f8a66e18cb7027b094c&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fcf1b9d16fdfaaf51b3fef0a6805494eef01f7a8d.jpg"]];
+    [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533284438509&di=21e32c93671a719447ecb2221b106b61&imgtype=0&src=http%3A%2F%2Fpic.5442.com%3A82%2F2014%2F0929%2F04%2F03.jpg%2521960.jpg"]];
 }
 
 #pragma mark - Request Handle
@@ -124,6 +124,7 @@
         [_topBgImg setWidth:self.view.width - yyy];
         [_topBgImg setCenterX:self.view.centerX];
     }
+    [_topView setBgAlpha:yyy / (_topView.height - _topBgImg.y)];
 }
 
 #pragma mark - Getter/Setter
