@@ -29,15 +29,16 @@ static CGFloat const placeHolderFont = 14.0;
     [self setBackgroundImage:CreatImageWithColor([UIColor colorWithRGB:0 g:154 b:233])];
     // 重设field的frame
     UITextField *field = [self valueForKey:@"_searchField"];
-    field.frame = CGRectMake(0, 7.5, self.frame.size.width-30.0, self.frame.size.height-15.0);
+    field.frame = CGRectMake(0, 0, self.frame.size.width-40.0, self.frame.size.height);
     [field setBackgroundColor:self.backgroundColor];
     field.textColor = [UIColor blackColor];
     field.borderStyle = UITextBorderStyleNone;
     field.layer.cornerRadius = 2.0f;
     field.layer.masksToBounds = YES;
     field.tintColor = APP_CONFIG.whiteGrayColor;
+    field.font = [APP_CONFIG appAdaptFontOfSize:placeHolderFont];
     [field setValue:APP_CONFIG.whiteGrayColor forKeyPath:@"_placeholderLabel.textColor"];
-    [field setValue:[APP_CONFIG appAdaptFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
+    [field setValue:field.font forKeyPath:@"_placeholderLabel.font"];
     UIButton *clearButton = [field valueForKey:@"_clearButton"];
     [clearButton setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
     
