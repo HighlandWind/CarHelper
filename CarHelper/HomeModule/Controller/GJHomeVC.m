@@ -45,6 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self setStatusBarLight:YES];
 }
 
 #pragma mark - Iniitalization methods
@@ -118,13 +119,15 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat yyy = scrollView.contentOffset.y;
-    if (yyy < 0 && -yyy <= 60) {
-        [_topBgImg setHeight:_topBgImgHeight - yyy];
-        [_topBgImg setWidth:self.view.width - yyy];
-        [_topBgImg setCenterX:self.view.centerX];
+    if (scrollView == _tableView) {
+        CGFloat yyy = scrollView.contentOffset.y;
+        [_topView setBgAlpha:yyy / (_topView.height - _topBgImg.y)];
+        if (yyy < 0) {
+            [_topBgImg setHeight:_topBgImgHeight - yyy];
+            [_topBgImg setWidth:self.view.width - yyy];
+            [_topBgImg setCenterX:self.view.centerX];
+        }
     }
-    [_topView setBgAlpha:yyy / (_topView.height - _topBgImg.y)];
 }
 
 #pragma mark - Getter/Setter

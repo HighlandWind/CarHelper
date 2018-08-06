@@ -349,6 +349,8 @@
 		8006AB38205CB5C200881F85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8076672A2114051200C76237 /* GJHomeTopImage.h */,
+				8076672B2114051200C76237 /* GJHomeTopImage.m */,
 				80C69D1921101008000952AE /* GJSearchBar.h */,
 				80C69D1821101008000952AE /* GJSearchBar.m */,
 				80C69D1B21101058000952AE /* GJHomeTopView.h */,
@@ -361,8 +363,6 @@
 				808540C42102E6A700FB4F2C /* GJNearbyCell.m */,
 				808540C62102E6DA00FB4F2C /* GJScheduleCell.h */,
 				808540C72102E6DA00FB4F2C /* GJScheduleCell.m */,
-				8076672A2114051200C76237 /* GJHomeTopImage.h */,
-				8076672B2114051200C76237 /* GJHomeTopImage.m */,
 			);
 			path = View;
 			sourceTree = "<group>";

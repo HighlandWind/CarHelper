@@ -27,6 +27,11 @@
     [self initializationNetWorking];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setStatusBarLight:NO];
+}
+
 #pragma mark - Iniitalization methods
 - (void)initializationData {
     

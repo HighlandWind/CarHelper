@@ -73,6 +73,11 @@
     return [UIFont fontWithName:@"Avenir-Medium" size:size];
 }
 
+- (UIFont *)appAdaptBoldFontOfSize:(CGFloat)size
+{
+    return AdapFont([self appBoldFontOfSize:size]);
+}
+
 - (UIFont *)appExtraLightFontOfSize:(CGFloat)size {
     return [UIFont fontWithName:@"Avenir-Light" size:size];
 }
