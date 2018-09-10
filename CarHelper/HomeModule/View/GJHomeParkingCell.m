@@ -119,10 +119,11 @@
 
 - (void)timerFunc {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateFormat:@"HH:mm:ss"];
     [formatter setDateFormat:@"HH:mm"];
     NSString *timestamp = [formatter stringFromDate:[NSDate date]];
-    [_timeLB setText:timestamp];
+    if (![_timeLB.text isEqualToString:timestamp]) {
+        [_timeLB setText:timestamp];
+    }
 }
 
 - (NSString *)currentMonthToEnString {
