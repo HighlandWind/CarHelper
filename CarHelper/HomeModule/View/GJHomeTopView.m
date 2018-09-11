@@ -122,7 +122,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
         make.bottom.equalTo(self).with.offset(-10);
         make.left.equalTo(self).with.offset(15);
         make.right.equalTo(self).with.offset(-AdaptatSize(50));

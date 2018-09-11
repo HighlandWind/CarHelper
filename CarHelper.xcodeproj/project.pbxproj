@@ -92,6 +92,7 @@
 		80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F43C3420A691C8004EE41B /* GJWeChatPayModel.m */; };
 		80F43C4020A692BA004EE41B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F43C3F20A692BA004EE41B /* CoreMotion.framework */; };
 		CCC9608C20C043BB00FCCEF3 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */; };
+		CCE62EA421480B91008F9AFA /* GJScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */; };
 		CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7220D016520037AD13 /* GJMineVC.m */; };
 		CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7620D017A80037AD13 /* GJHomeVC.m */; };
 		CCF57B7B20D018240037AD13 /* GJDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7A20D018240037AD13 /* GJDiscoverVC.m */; };
@@ -272,6 +273,8 @@
 		954A6A6D14546F8450CF9EA2 /* Pods-CarHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.release.xcconfig"; sourceTree = "<group>"; };
 		CCC9608A20C0439500FCCEF3 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJScheduleCellView.h; sourceTree = "<group>"; };
+		CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJScheduleCellView.m; sourceTree = "<group>"; };
 		CCF57B7120D016520037AD13 /* GJMineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineVC.h; sourceTree = "<group>"; };
 		CCF57B7220D016520037AD13 /* GJMineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineVC.m; sourceTree = "<group>"; };
 		CCF57B7520D017A80037AD13 /* GJHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeVC.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				808540C42102E6A700FB4F2C /* GJNearbyCell.m */,
 				808540C62102E6DA00FB4F2C /* GJScheduleCell.h */,
 				808540C72102E6DA00FB4F2C /* GJScheduleCell.m */,
+				CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */,
+				CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1041,6 +1046,7 @@
 				803CBD252099968C00837259 /* CustomImageScrollView.m in Sources */,
 				803CBD272099968C00837259 /* UIImage+FixOrientation.m in Sources */,
 				CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */,
+				CCE62EA421480B91008F9AFA /* GJScheduleCellView.m in Sources */,
 				8011D248209C41E900800F9E /* TKWebMedia.m in Sources */,
 				80C8DEDB2060ABAE004837BB /* GJNormalTBVCell.m in Sources */,
 				8097B0B4206257D80004282F /* GJTypeFile.m in Sources */,
