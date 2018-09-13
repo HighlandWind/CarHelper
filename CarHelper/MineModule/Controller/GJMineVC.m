@@ -40,7 +40,6 @@
 
 - (void)initializationSubView {
     self.title = @"我的";
-    [self showShadorOnNaviBar:YES];
     UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"setup"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
     self.navigationItem.rightBarButtonItem = back;
 }
