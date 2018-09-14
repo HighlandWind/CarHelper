@@ -34,7 +34,6 @@
 
 - (void)initializationSubView {
     self.title = @"设置";
-    [self showShadorOnNaviBar:YES];
 }
 
 - (void)initializationNetWorking {
