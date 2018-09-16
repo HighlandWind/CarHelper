@@ -92,6 +92,8 @@
 		80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F43C3420A691C8004EE41B /* GJWeChatPayModel.m */; };
 		80F43C4020A692BA004EE41B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F43C3F20A692BA004EE41B /* CoreMotion.framework */; };
 		CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */; };
+		CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */; };
+		CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */; };
 		CCC9608C20C043BB00FCCEF3 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */; };
 		CCE62EA421480B91008F9AFA /* GJScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */; };
 		CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7220D016520037AD13 /* GJMineVC.m */; };
@@ -274,6 +276,10 @@
 		954A6A6D14546F8450CF9EA2 /* Pods-CarHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.release.xcconfig"; sourceTree = "<group>"; };
 		CCB2C02D214BFA160001B0A0 /* GJMineTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineTopCell.h; sourceTree = "<group>"; };
 		CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineTopCell.m; sourceTree = "<group>"; };
+		CCB2C030214EB0B40001B0A0 /* GJMessageListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMessageListVC.h; sourceTree = "<group>"; };
+		CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMessageListVC.m; sourceTree = "<group>"; };
+		CCB2C033214EB5FB0001B0A0 /* GJMineMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineMsgCell.h; sourceTree = "<group>"; };
+		CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineMsgCell.m; sourceTree = "<group>"; };
 		CCC9608A20C0439500FCCEF3 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJScheduleCellView.h; sourceTree = "<group>"; };
@@ -541,6 +547,8 @@
 			children = (
 				CCB2C02D214BFA160001B0A0 /* GJMineTopCell.h */,
 				CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */,
+				CCB2C033214EB5FB0001B0A0 /* GJMineMsgCell.h */,
+				CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -793,6 +801,7 @@
 			children = (
 				8097B0B2206257D80004282F /* GJTypeFile.h */,
 				8097B0B3206257D80004282F /* GJTypeFile.m */,
+				80A4A89D2068F89B00BBD186 /* CustomPresent */,
 				8097B0B8206258E90004282F /* Controller */,
 				8083F952205F933D000AD5A5 /* CustomView */,
 				8006AB3F205CCE8600881F85 /* Convenience */,
@@ -826,11 +835,12 @@
 		80CDE9B7205D17C000B12382 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				80A4A89D2068F89B00BBD186 /* CustomPresent */,
 				CCF57B7120D016520037AD13 /* GJMineVC.h */,
 				CCF57B7220D016520037AD13 /* GJMineVC.m */,
 				80D6625620D8A611006640E4 /* GJAppSettingVC.h */,
 				80D6625720D8A611006640E4 /* GJAppSettingVC.m */,
+				CCB2C030214EB0B40001B0A0 /* GJMessageListVC.h */,
+				CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1048,6 +1058,7 @@
 				8006AB53205CF8DB00881F85 /* GJLocationModel.m in Sources */,
 				80DB38D220F8570700171754 /* GJHomeModel.m in Sources */,
 				8011D247209C41E900800F9E /* TKWebViewController.m in Sources */,
+				CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */,
 				803CBD252099968C00837259 /* CustomImageScrollView.m in Sources */,
 				803CBD272099968C00837259 /* UIImage+FixOrientation.m in Sources */,
 				CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */,
@@ -1069,6 +1080,7 @@
 				80AD8ADA205BBBF7004E8724 /* GJTabBarController.m in Sources */,
 				80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */,
 				80AD8AC9205BA354004E8724 /* AppDelegate+Config.m in Sources */,
+				CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
 				CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */,
 				80284866206CB13C00DEE778 /* GJHttpNetworkingManager.m in Sources */,

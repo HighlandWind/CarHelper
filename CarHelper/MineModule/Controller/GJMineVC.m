@@ -11,6 +11,7 @@
 #import "GJMineTopCell.h"
 #import "GJNormalTBVCell.h"
 #import "GJNormalCellModel.h"
+#import "GJMessageListVC.h"
 
 @interface GJMineVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
@@ -70,8 +71,19 @@
 
 - (void)initializationSubView {
     self.title = @"我的";
-    UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"setup"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
-    self.navigationItem.rightBarButtonItem = back;
+    
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(80), 44)];
+    UIButton *setupBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(40), 44)];
+    [setupBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+    [setupBtn addTarget:self action:@selector(setupAction) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *msgBtn = [[UIButton alloc] initWithFrame:CGRectMake(AdaptatSize(40), 0, AdaptatSize(40), 44)];
+    [msgBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+    [msgBtn addTarget:self action:@selector(msgAction) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:setupBtn];
+    [rightView addSubview:msgBtn];
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+    self.navigationItem.rightBarButtonItem = right;
+    
     [self.view addSubview:self.tableView];
 }
 
@@ -89,8 +101,14 @@
 
 
 #pragma mark - Event response
-- (void)rightAction {
+- (void)setupAction {
     GJAppSettingVC *vc = [[GJAppSettingVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)msgAction {
+    GJMessageListVC *vc = [[GJMessageListVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
