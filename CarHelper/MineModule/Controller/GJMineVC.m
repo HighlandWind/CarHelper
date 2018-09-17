@@ -12,6 +12,14 @@
 #import "GJNormalTBVCell.h"
 #import "GJNormalCellModel.h"
 #import "GJMessageListVC.h"
+#import "GJMineHistoryVC.h"
+#import "GJMineOrderVC.h"
+#import "GJMineCarListVC.h"
+#import "GJMinePayWayVC.h"
+#import "GJMineHelperVC.h"
+#import "GJMineInfoVC.h"
+#import "GJMineCouponVC.h"
+#import "GJMineScoreVC.h"
 
 @interface GJMineVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
@@ -53,19 +61,29 @@
     _models = @[model1, model2, model3, model4, model5];
     
     model1.didSelectBlock = ^(NSIndexPath *indexPath) {
-        
+        GJMineHistoryVC *vc = [[GJMineHistoryVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     model2.didSelectBlock = ^(NSIndexPath *indexPath) {
-        
+        GJMineOrderVC *vc = [[GJMineOrderVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     model3.didSelectBlock = ^(NSIndexPath *indexPath) {
-        
+        GJMineCarListVC *vc = [[GJMineCarListVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     model4.didSelectBlock = ^(NSIndexPath *indexPath) {
-        
+        GJMinePayWayVC *vc = [[GJMinePayWayVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     model5.didSelectBlock = ^(NSIndexPath *indexPath) {
-        
+        GJMineHelperVC *vc = [[GJMineHelperVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
 }
 
@@ -85,6 +103,7 @@
     self.navigationItem.rightBarButtonItem = right;
     
     [self.view addSubview:self.tableView];
+    [self blockHanddle];
 }
 
 - (void)initializationNetWorking {
@@ -95,7 +114,24 @@
 
 
 #pragma mark - Private methods
-
+- (void)blockHanddle {
+    __weak typeof(self)weakSelf = self;
+    _topCell.blockClickInfo = ^{
+        GJMineInfoVC *vc = [[GJMineInfoVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    _topCell.blockClickScore = ^{
+        GJMineScoreVC *vc = [[GJMineScoreVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    _topCell.blockClickCoupon = ^{
+        GJMineCouponVC *vc = [[GJMineCouponVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+}
 
 #pragma mark - Public methods
 

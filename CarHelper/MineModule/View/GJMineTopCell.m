@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIImageView *arrowImg;
 @property (nonatomic, strong) UIButton *scoreBtn;
 @property (nonatomic, strong) UIButton *couponBtn;
+@property (nonatomic, strong) UIButton *infoBtn;
 @property (nonatomic, strong) UILabel *score;
 @property (nonatomic, strong) UILabel *scoreLB;
 @property (nonatomic, strong) UILabel *coupon;
@@ -29,11 +30,15 @@
 }
 
 - (void)scoreBtnClick {
-    
+    BLOCK_SAFE(_blockClickScore)();
 }
 
 - (void)couponBtnClick {
-    
+    BLOCK_SAFE(_blockClickCoupon)();
+}
+
+- (void)infoBtnClick {
+    BLOCK_SAFE(_blockClickInfo)();
 }
 
 - (instancetype)init
@@ -95,6 +100,10 @@
     _couponLB.textColor = APP_CONFIG.blackTextColor;
     [_couponLB sizeToFit];
     
+    _infoBtn = [[UIButton alloc] init];
+    [_infoBtn addTarget:self action:@selector(infoBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.contentView addSubview:_infoBtn];
     [self.contentView addSubview:_portraitImgV];
     [self.contentView addSubview:_titleLB];
     [self.contentView addSubview:_detailLB];
@@ -125,6 +134,10 @@
     [_arrowImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_portraitImgV);
         make.right.equalTo(self).with.offset(-AdaptatSize(10));
+    }];
+    [_infoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self);
+        make.bottom.equalTo(_lineMid);
     }];
     [_scoreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self);

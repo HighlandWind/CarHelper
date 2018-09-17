@@ -10,4 +10,8 @@
 
 @interface GJMineTopCell : GJBaseTableViewCell
 
+@property (nonatomic, copy) void (^blockClickScore)(void);
+@property (nonatomic, copy) void (^blockClickCoupon)(void);
+@property (nonatomic, copy) void (^blockClickInfo)(void);
+
 @end

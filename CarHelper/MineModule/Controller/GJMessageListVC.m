@@ -9,6 +9,7 @@
 #import "GJMessageListVC.h"
 #import "GJMineMsgCell.h"
 #import "GJNotificationMsgVC.h"
+#import "GJMessageChatVC.h"
 
 @interface GJMessageListVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
@@ -97,6 +98,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         GJNotificationMsgVC *vc = [[GJNotificationMsgVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        GJMessageChatVC *vc = [[GJMessageChatVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
