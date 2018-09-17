@@ -75,6 +75,8 @@
 		80C8DED52060A75A004837BB /* GJNormalCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C8DED42060A75A004837BB /* GJNormalCellModel.m */; };
 		80C8DEDB2060ABAE004837BB /* GJNormalTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C8DEDA2060ABAE004837BB /* GJNormalTBVCell.m */; };
 		80C8DEE52060DD2E004837BB /* MAAnnotationView+GJAMapCustomLocationIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C8DEE42060DD2E004837BB /* MAAnnotationView+GJAMapCustomLocationIcon.m */; };
+		80CB4A6E214F64DA00544C89 /* GJNotificationMsgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CB4A6D214F64DA00544C89 /* GJNotificationMsgVC.m */; };
+		80CB4A71214F65CE00544C89 /* GJNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CB4A70214F65CE00544C89 /* GJNotificationCell.m */; };
 		80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CDE9C2205D1A8200B12382 /* UIViewController+Extension.m */; };
 		80D03481208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0347F208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D4951020A92E62004A280A /* GJCustomPresentController.m */; };
@@ -241,6 +243,10 @@
 		80C8DEDA2060ABAE004837BB /* GJNormalTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJNormalTBVCell.m; sourceTree = "<group>"; };
 		80C8DEE32060DD2E004837BB /* MAAnnotationView+GJAMapCustomLocationIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAAnnotationView+GJAMapCustomLocationIcon.h"; sourceTree = "<group>"; };
 		80C8DEE42060DD2E004837BB /* MAAnnotationView+GJAMapCustomLocationIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MAAnnotationView+GJAMapCustomLocationIcon.m"; sourceTree = "<group>"; };
+		80CB4A6C214F64DA00544C89 /* GJNotificationMsgVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNotificationMsgVC.h; sourceTree = "<group>"; };
+		80CB4A6D214F64DA00544C89 /* GJNotificationMsgVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJNotificationMsgVC.m; sourceTree = "<group>"; };
+		80CB4A6F214F65CE00544C89 /* GJNotificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNotificationCell.h; sourceTree = "<group>"; };
+		80CB4A70214F65CE00544C89 /* GJNotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJNotificationCell.m; sourceTree = "<group>"; };
 		80CDE9C1205D1A8200B12382 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		80CDE9C2205D1A8200B12382 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		80D0347F208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
@@ -549,6 +555,8 @@
 				CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */,
 				CCB2C033214EB5FB0001B0A0 /* GJMineMsgCell.h */,
 				CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */,
+				80CB4A6F214F65CE00544C89 /* GJNotificationCell.h */,
+				80CB4A70214F65CE00544C89 /* GJNotificationCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -841,6 +849,8 @@
 				80D6625720D8A611006640E4 /* GJAppSettingVC.m */,
 				CCB2C030214EB0B40001B0A0 /* GJMessageListVC.h */,
 				CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */,
+				80CB4A6C214F64DA00544C89 /* GJNotificationMsgVC.h */,
+				80CB4A6D214F64DA00544C89 /* GJNotificationMsgVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1088,6 +1098,7 @@
 				80AD8A93205B9AC2004E8724 /* main.m in Sources */,
 				80AD8AE7205BC31D004E8724 /* GJAppConfigure.m in Sources */,
 				8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */,
+				80CB4A71214F65CE00544C89 /* GJNotificationCell.m in Sources */,
 				80AD8ACE205BA5C2004E8724 /* GJBaseViewController.m in Sources */,
 				803CBD242099968C00837259 /* CustomClipImageViewController.m in Sources */,
 				808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */,
@@ -1101,6 +1112,7 @@
 				80284863206CB07500DEE778 /* GJHttpServerBase.m in Sources */,
 				80AD8AC5205BA2A5004E8724 /* GJLaunchViewController.m in Sources */,
 				80EC5F092064A86600276C4B /* GJBaseView.m in Sources */,
+				80CB4A6E214F64DA00544C89 /* GJNotificationMsgVC.m in Sources */,
 				8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */,
 				803CBD1820997D6D00837259 /* AlertManager.m in Sources */,
 				80EC5F0F2064AC0200276C4B /* GJBaseTableView.m in Sources */,

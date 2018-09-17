@@ -25,7 +25,7 @@
 @implementation GJMineTopCell
 
 - (CGFloat)height {
-    return AdaptatSize(130);
+    return AdaptatSize(140);
 }
 
 - (void)scoreBtnClick {
@@ -54,13 +54,13 @@
     _portraitImgV.backgroundColor = APP_CONFIG.appBackgroundColor;
     
     _titleLB = [[UILabel alloc] init];
-    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:14];
+    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:15];
     _titleLB.text = @"用户昵称";
     _titleLB.textColor = APP_CONFIG.blackTextColor;
     [_titleLB sizeToFit];
     
     _detailLB = [[UILabel alloc] init];
-    _detailLB.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _detailLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _detailLB.text = @"182****3245";
     _detailLB.textColor = APP_CONFIG.blackTextColor;
     [_detailLB sizeToFit];
@@ -72,12 +72,12 @@
     _scoreBtn = [[UIButton alloc] init];
     [_scoreBtn addTarget:self action:@selector(scoreBtnClick) forControlEvents:UIControlEventTouchUpInside];
     _score = [[UILabel alloc] init];
-    _score.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _score.font = [APP_CONFIG appAdaptFontOfSize:13];
     _score.text = @"100";
     _score.textColor = APP_CONFIG.blackTextColor;
     [_score sizeToFit];
     _scoreLB = [[UILabel alloc] init];
-    _scoreLB.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _scoreLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _scoreLB.text = @"积分";
     _scoreLB.textColor = APP_CONFIG.blackTextColor;
     [_scoreLB sizeToFit];
@@ -85,12 +85,12 @@
     _couponBtn = [[UIButton alloc] init];
     [_couponBtn addTarget:self action:@selector(couponBtnClick) forControlEvents:UIControlEventTouchUpInside];
     _coupon = [[UILabel alloc] init];
-    _coupon.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _coupon.font = [APP_CONFIG appAdaptFontOfSize:13];
     _coupon.text = @"3张";
     _coupon.textColor = APP_CONFIG.blackTextColor;
     [_coupon sizeToFit];
     _couponLB = [[UILabel alloc] init];
-    _couponLB.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _couponLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _couponLB.text = @"优惠券";
     _couponLB.textColor = APP_CONFIG.blackTextColor;
     [_couponLB sizeToFit];
@@ -110,7 +110,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_portraitImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self).with.offset(10);
+        make.left.equalTo(self).with.offset(10);
+        make.top.equalTo(self).with.offset(AdaptatSize(12));
         make.width.height.mas_equalTo(AdaptatSize(46));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
