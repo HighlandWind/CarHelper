@@ -105,6 +105,9 @@
 		CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */; };
 		CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */; };
 		CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */; };
+		CCB2C038214FE57C0001B0A0 /* GJMineHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C037214FE57C0001B0A0 /* GJMineHistoryCell.m */; };
+		CCB2C03B214FF3C80001B0A0 /* GJMineOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C03A214FF3C80001B0A0 /* GJMineOrderCell.m */; };
+		CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C040215006790001B0A0 /* GJMineEvaluateVC.m */; };
 		CCC9608C20C043BB00FCCEF3 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */; };
 		CCE62EA421480B91008F9AFA /* GJScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */; };
 		CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7220D016520037AD13 /* GJMineVC.m */; };
@@ -313,6 +316,12 @@
 		CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMessageListVC.m; sourceTree = "<group>"; };
 		CCB2C033214EB5FB0001B0A0 /* GJMineMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineMsgCell.h; sourceTree = "<group>"; };
 		CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineMsgCell.m; sourceTree = "<group>"; };
+		CCB2C036214FE57C0001B0A0 /* GJMineHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineHistoryCell.h; sourceTree = "<group>"; };
+		CCB2C037214FE57C0001B0A0 /* GJMineHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineHistoryCell.m; sourceTree = "<group>"; };
+		CCB2C039214FF3C80001B0A0 /* GJMineOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineOrderCell.h; sourceTree = "<group>"; };
+		CCB2C03A214FF3C80001B0A0 /* GJMineOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineOrderCell.m; sourceTree = "<group>"; };
+		CCB2C03F215006790001B0A0 /* GJMineEvaluateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineEvaluateVC.h; sourceTree = "<group>"; };
+		CCB2C040215006790001B0A0 /* GJMineEvaluateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineEvaluateVC.m; sourceTree = "<group>"; };
 		CCC9608A20C0439500FCCEF3 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJScheduleCellView.h; sourceTree = "<group>"; };
@@ -584,6 +593,10 @@
 				CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */,
 				80CB4A6F214F65CE00544C89 /* GJNotificationCell.h */,
 				80CB4A70214F65CE00544C89 /* GJNotificationCell.m */,
+				CCB2C036214FE57C0001B0A0 /* GJMineHistoryCell.h */,
+				CCB2C037214FE57C0001B0A0 /* GJMineHistoryCell.m */,
+				CCB2C039214FF3C80001B0A0 /* GJMineOrderCell.h */,
+				CCB2C03A214FF3C80001B0A0 /* GJMineOrderCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -884,6 +897,8 @@
 				80CB4A7C214FB38B00544C89 /* GJMineHistoryVC.m */,
 				80CB4A7E214FB39700544C89 /* GJMineOrderVC.h */,
 				80CB4A7F214FB39700544C89 /* GJMineOrderVC.m */,
+				CCB2C03F215006790001B0A0 /* GJMineEvaluateVC.h */,
+				CCB2C040215006790001B0A0 /* GJMineEvaluateVC.m */,
 				80CB4A81214FB3A300544C89 /* GJMineCarListVC.h */,
 				80CB4A82214FB3A300544C89 /* GJMineCarListVC.m */,
 				80CB4A84214FB3B300544C89 /* GJMinePayWayVC.h */,
@@ -1126,6 +1141,7 @@
 				80C69D1A21101008000952AE /* GJSearchBar.m in Sources */,
 				80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */,
 				8011D249209C41E900800F9E /* TKWKBaseWebController.m in Sources */,
+				CCB2C03B214FF3C80001B0A0 /* GJMineOrderCell.m in Sources */,
 				80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */,
 				80AD8AF0205BC9D3004E8724 /* GJBaseModel.m in Sources */,
 				80E9605A2080AA30003E6C99 /* GJLoadingView.m in Sources */,
@@ -1155,6 +1171,7 @@
 				80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */,
 				80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */,
 				80AD8AC0205BA24D004E8724 /* GJRootViewController.m in Sources */,
+				CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */,
 				8028484F206C952900DEE778 /* GJLoginController.m in Sources */,
 				80CB4A7A214FB30200544C89 /* GJMessageChatVC.m in Sources */,
 				8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */,
@@ -1175,6 +1192,7 @@
 				80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */,
 				CCF57B7E20D01BE00037AD13 /* GJOrderPaymentData.m in Sources */,
 				80A4A88D2068E9A100BBD186 /* GJPresentTransitionAnimated.m in Sources */,
+				CCB2C038214FE57C0001B0A0 /* GJMineHistoryCell.m in Sources */,
 				80CB4A8F214FB4D200544C89 /* GJMineCouponVC.m in Sources */,
 				80AD8A85205B9AC1004E8724 /* AppDelegate.m in Sources */,
 				CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */,

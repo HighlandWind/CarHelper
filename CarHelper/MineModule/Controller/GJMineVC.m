@@ -81,9 +81,10 @@
         [self.navigationController pushViewController:vc animated:YES];
     };
     model5.didSelectBlock = ^(NSIndexPath *indexPath) {
-        GJMineHelperVC *vc = [[GJMineHelperVC alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+//        GJMineHelperVC *vc = [[GJMineHelperVC alloc] init];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+        [TKWebMedia commonWebViewJumpUrl:@"https://www.baidu.com/" title:@"帮助中心" controller:self];
     };
 }
 

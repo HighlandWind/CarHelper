@@ -82,10 +82,10 @@
 }
 
 - (void)backAction {
-    if ([self.webView canGoBack]) {
-        [self.webView goBack];
-        return;
-    }
+//    if ([self.webView canGoBack]) {
+//        [self.webView goBack];
+//        return;
+//    }
     NSArray *viewcontrollers=self.navigationController.viewControllers;
     if (viewcontrollers.count>1) {
         if ([viewcontrollers objectAtIndex:viewcontrollers.count-1]==self) {
