@@ -10,4 +10,8 @@
 
 @interface GJMineCarListCell : GJBaseTableViewCell
 
+@property (nonatomic, copy) void (^blockClickClose)(void);
+@property (nonatomic, copy) void (^blockClickApply)(void);
+@property (nonatomic, copy) void (^blockClickEdit)(void);
+
 @end

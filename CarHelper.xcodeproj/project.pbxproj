@@ -103,6 +103,9 @@
 		80F43C3820A691C8004EE41B /* GJPayBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F43C3320A691C8004EE41B /* GJPayBaseModel.m */; };
 		80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F43C3420A691C8004EE41B /* GJWeChatPayModel.m */; };
 		80F43C4020A692BA004EE41B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F43C3F20A692BA004EE41B /* CoreMotion.framework */; };
+		CC13C152215140B100B755EF /* GJMineCarListTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C151215140B100B755EF /* GJMineCarListTopCell.m */; };
+		CC13C15821514E6F00B755EF /* GJMineEvaluateTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */; };
+		CC13C15B21514F7A00B755EF /* GJMineEvaluateMidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */; };
 		CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */; };
 		CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C031214EB0B40001B0A0 /* GJMessageListVC.m */; };
 		CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C034214EB5FB0001B0A0 /* GJMineMsgCell.m */; };
@@ -313,6 +316,12 @@
 		80F43C3F20A692BA004EE41B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		80FD6AAC20B0425D00D3A4AC /* CarHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarHelper.entitlements; sourceTree = "<group>"; };
 		954A6A6D14546F8450CF9EA2 /* Pods-CarHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.release.xcconfig"; sourceTree = "<group>"; };
+		CC13C150215140B100B755EF /* GJMineCarListTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineCarListTopCell.h; sourceTree = "<group>"; };
+		CC13C151215140B100B755EF /* GJMineCarListTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineCarListTopCell.m; sourceTree = "<group>"; };
+		CC13C15621514E6F00B755EF /* GJMineEvaluateTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineEvaluateTopCell.h; sourceTree = "<group>"; };
+		CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineEvaluateTopCell.m; sourceTree = "<group>"; };
+		CC13C15921514F7A00B755EF /* GJMineEvaluateMidCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineEvaluateMidCell.h; sourceTree = "<group>"; };
+		CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineEvaluateMidCell.m; sourceTree = "<group>"; };
 		CCB2C02D214BFA160001B0A0 /* GJMineTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineTopCell.h; sourceTree = "<group>"; };
 		CCB2C02E214BFA160001B0A0 /* GJMineTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineTopCell.m; sourceTree = "<group>"; };
 		CCB2C030214EB0B40001B0A0 /* GJMessageListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMessageListVC.h; sourceTree = "<group>"; };
@@ -602,6 +611,12 @@
 				CCB2C03A214FF3C80001B0A0 /* GJMineOrderCell.m */,
 				8076DB2F2150A6C900ED32E2 /* GJMineCarListCell.h */,
 				8076DB302150A6C900ED32E2 /* GJMineCarListCell.m */,
+				CC13C150215140B100B755EF /* GJMineCarListTopCell.h */,
+				CC13C151215140B100B755EF /* GJMineCarListTopCell.m */,
+				CC13C15621514E6F00B755EF /* GJMineEvaluateTopCell.h */,
+				CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */,
+				CC13C15921514F7A00B755EF /* GJMineEvaluateMidCell.h */,
+				CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1125,6 +1140,7 @@
 				80D6625820D8A611006640E4 /* GJAppSettingVC.m in Sources */,
 				8097B0BB206259010004282F /* GJImageLibraryController.m in Sources */,
 				80AD8AEA205BC560004E8724 /* UIColor+Extension.m in Sources */,
+				CC13C152215140B100B755EF /* GJMineCarListTopCell.m in Sources */,
 				803CBD262099968C00837259 /* CustomTouchView.m in Sources */,
 				80AD8AE1205BC10D004E8724 /* UIView+Extension.m in Sources */,
 				8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */,
@@ -1169,6 +1185,7 @@
 				8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */,
 				80CB4A71214F65CE00544C89 /* GJNotificationCell.m in Sources */,
 				80AD8ACE205BA5C2004E8724 /* GJBaseViewController.m in Sources */,
+				CC13C15821514E6F00B755EF /* GJMineEvaluateTopCell.m in Sources */,
 				80CB4A80214FB39700544C89 /* GJMineOrderVC.m in Sources */,
 				80CB4A83214FB3A300544C89 /* GJMineCarListVC.m in Sources */,
 				803CBD242099968C00837259 /* CustomClipImageViewController.m in Sources */,
@@ -1208,6 +1225,7 @@
 				8006AB48205CD19D00881F85 /* UIView+GJToast.m in Sources */,
 				808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */,
 				80F43C3720A691C8004EE41B /* GJAlipayModel.m in Sources */,
+				CC13C15B21514F7A00B755EF /* GJMineEvaluateMidCell.m in Sources */,
 				800F4036205FAC1800B7A4D4 /* GJBaseTableViewCell.m in Sources */,
 				80CB4A7D214FB38B00544C89 /* GJMineHistoryVC.m in Sources */,
 				8097B0B72062588F0004282F /* GJSystemHelper.m in Sources */,

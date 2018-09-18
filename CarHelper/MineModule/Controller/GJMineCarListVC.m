@@ -8,9 +8,11 @@
 
 #import "GJMineCarListVC.h"
 #import "GJMineCarListCell.h"
+#import "GJMineCarListTopCell.h"
 
 @interface GJMineCarListVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
+@property (nonatomic, assign) BOOL hasCar;
 @end
 
 @implementation GJMineCarListVC
@@ -61,19 +63,33 @@
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_hasCar) {
+        return 1;
+    }
     return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_hasCar) {
+        GJMineCarListTopCell *topCell = [[GJMineCarListTopCell alloc] init];
+        return topCell;
+    }
     GJMineCarListCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJMineCarListCell reuseIndentifier]];
     if (!cell) {
         cell = [[GJMineCarListCell alloc] initWithStyle:[GJMineCarListCell expectingStyle] reuseIdentifier:[GJMineCarListCell reuseIndentifier]];
     }
-    
+    cell.blockClickEdit = ^{
+        GJMineCarListVC *vc = [[GJMineCarListVC alloc] init];
+        vc.hasCar = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_hasCar) {
+        return self.view.height / 2;
+    }
     return AdaptatSize(180);
 }
 
