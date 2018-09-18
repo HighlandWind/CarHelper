@@ -23,7 +23,7 @@
         make.edges.equalTo(self.view);
     }];
     [_leftBtmLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).with.offset(AdaptatSize(80));
+        make.left.equalTo(self.view).with.offset(AdaptatSize(70));
         make.top.bottom.equalTo(self.view);
         make.width.mas_equalTo(AdaptatSize(6));
     }];
@@ -82,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return AdaptatSize(130);
+    return AdaptatSize(120);
 }
 
 #pragma mark - Getter/Setter

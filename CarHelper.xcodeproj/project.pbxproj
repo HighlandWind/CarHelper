@@ -45,6 +45,7 @@
 		8073A62D20A6978300855792 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62C20A6978300855792 /* SystemConfiguration.framework */; };
 		8073A62F20A6981500855792 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073A62E20A6981500855792 /* libsqlite3.tbd */; };
 		8076672C2114051200C76237 /* GJHomeTopImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8076672B2114051200C76237 /* GJHomeTopImage.m */; };
+		8076DB312150A6C900ED32E2 /* GJMineCarListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8076DB302150A6C900ED32E2 /* GJMineCarListCell.m */; };
 		8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */; };
 		808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C42102E6A700FB4F2C /* GJNearbyCell.m */; };
 		808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 808540C72102E6DA00FB4F2C /* GJScheduleCell.m */; };
@@ -194,6 +195,8 @@
 		8073A63420A6985500855792 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		8076672A2114051200C76237 /* GJHomeTopImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeTopImage.h; sourceTree = "<group>"; };
 		8076672B2114051200C76237 /* GJHomeTopImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeTopImage.m; sourceTree = "<group>"; };
+		8076DB2F2150A6C900ED32E2 /* GJMineCarListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineCarListCell.h; sourceTree = "<group>"; };
+		8076DB302150A6C900ED32E2 /* GJMineCarListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineCarListCell.m; sourceTree = "<group>"; };
 		8083F953205F9390000AD5A5 /* GJBaseNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJBaseNaviBar.h; sourceTree = "<group>"; };
 		8083F954205F9390000AD5A5 /* GJBaseNaviBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJBaseNaviBar.m; sourceTree = "<group>"; };
 		808540C32102E6A700FB4F2C /* GJNearbyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNearbyCell.h; sourceTree = "<group>"; };
@@ -597,6 +600,8 @@
 				CCB2C037214FE57C0001B0A0 /* GJMineHistoryCell.m */,
 				CCB2C039214FF3C80001B0A0 /* GJMineOrderCell.h */,
 				CCB2C03A214FF3C80001B0A0 /* GJMineOrderCell.m */,
+				8076DB2F2150A6C900ED32E2 /* GJMineCarListCell.h */,
+				8076DB302150A6C900ED32E2 /* GJMineCarListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1189,6 +1194,7 @@
 				80AD8ADD205BBC18004E8724 /* GJTabBar.m in Sources */,
 				8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */,
 				8011D240209C41A900800F9E /* NJKWebViewProgressView.m in Sources */,
+				8076DB312150A6C900ED32E2 /* GJMineCarListCell.m in Sources */,
 				80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */,
 				CCF57B7E20D01BE00037AD13 /* GJOrderPaymentData.m in Sources */,
 				80A4A88D2068E9A100BBD186 /* GJPresentTransitionAnimated.m in Sources */,

@@ -30,6 +30,7 @@
     
     _logoImgV = [[UIImageView alloc] init];
     _logoImgV.contentMode = UIViewContentModeScaleAspectFit;
+    _logoImgV.backgroundColor = APP_CONFIG.appBackgroundColor;
     [_logoImgV sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:CreatImageWithColor(APP_CONFIG.appBackgroundColor)];
     
     _titleLB = [self createLabelFont:15 color:APP_CONFIG.blackTextColor];
@@ -63,7 +64,7 @@
         make.left.equalTo(self).with.offset(12);
         make.top.equalTo(self).with.offset(AdaptatSize(15));
         make.bottom.equalTo(self).with.offset(AdaptatSize(-15));
-        make.width.mas_equalTo(AdaptatSize(80));
+        make.width.mas_equalTo(AdaptatSize(90));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_logoImgV);
@@ -88,7 +89,7 @@
     [_statusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_logoImgV);
         make.right.equalTo(_statusLB);
-        make.size.mas_equalTo((CGSize){AdaptatSize(60), 25});
+        make.size.mas_equalTo((CGSize){AdaptatSize(50), 25});
     }];
 }
 

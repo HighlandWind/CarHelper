@@ -27,9 +27,13 @@
 - (void)setIndexPath:(NSIndexPath *)indexPath {
     _indexPath = indexPath;
     if (indexPath.row == 0) {
+        _arrowLB.text = @"^";
         _leftTopLine.backgroundColor = [UIColor whiteColor];
+        _arrowLB.backgroundColor = [UIColor colorWithRGB:93 g:95 b:208];
     }else {
+        _arrowLB.text = @">";
         _leftTopLine.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
+        _arrowLB.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
     }
 }
 
@@ -38,87 +42,64 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     _leftTopLine = [[UIView alloc] init];
-    
     _leftBtmLine = [[UIView alloc] init];
     _leftBtmLine.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
     
+    _backView = [[UIView alloc] init];
+    _backView.backgroundColor = [UIColor whiteColor];
+    _backView.layer.cornerRadius = 10;
+    _backView.layer.shadowColor = [UIColor grayColor].CGColor;
+    _backView.layer.shadowOpacity = 0.2;
+    _backView.layer.shadowRadius = 4.f;
+    _backView.layer.shadowOffset = CGSizeMake(0,0);
+    [self.contentView addSubview:_backView];
+    
     _arrowLB = [[UILabel alloc] init];
-    _arrowLB.font = [APP_CONFIG appAdaptFontOfSize:14];
-    _arrowLB.text = @"^";
+    _arrowLB.font = [APP_CONFIG appAdaptFontOfSize:16];
     _arrowLB.textColor = [UIColor whiteColor];
-    _arrowLB.backgroundColor = [UIColor colorWithRGB:93 g:95 b:208];
     _arrowLB.textAlignment = NSTextAlignmentCenter;
     _arrowLB.layer.cornerRadius = AdaptatSize(22) / 2;
     _arrowLB.clipsToBounds = YES;
     
-    _backView = [[UIView alloc] init];
-    _backView.backgroundColor = [UIColor whiteColor];
-    _backView.clipsToBounds = YES;
-    _backView.layer.cornerRadius = 10;
-    
     _dateLB = [[UILabel alloc] init];
     _dateLB.font = [APP_CONFIG appAdaptFontOfSize:8];
-    _dateLB.text = @"2018年9月";
     _dateLB.textColor = [UIColor whiteColor];
     _dateLB.backgroundColor = [UIColor colorWithRGB:93 g:95 b:208];
     _dateLB.textAlignment = NSTextAlignmentCenter;
     
     _dayLB = [[UILabel alloc] init];
-    _dayLB.font = [APP_CONFIG appAdaptFontOfSize:12];
-    _dayLB.text = @"21";
+    _dayLB.font = [APP_CONFIG appAdaptBoldFontOfSize:14];
     _dayLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
     _dayLB.backgroundColor = [UIColor whiteColor];
     _dayLB.textAlignment = NSTextAlignmentCenter;
     _dayLB.layer.cornerRadius = 5;
     _dayLB.clipsToBounds = YES;
     
-    _titleLB = [[UILabel alloc] init];
-    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:15];
+    _titleLB = [self createLabelFont:16 color:[UIColor colorWithRGB:93 g:95 b:208]];
+    _detailLB = [self createLabelFont:14 color:[UIColor colorWithRGB:93 g:95 b:208]];
+    _addressLB = [self createLabelFont:14 color:[UIColor colorWithRGB:93 g:95 b:208]];
+    _rightTimeLB = [self createLabelFont:13 color:[UIColor colorWithRGB:93 g:95 b:208]];
+    _rightBtmLB = [self createLabelFont:14 color:[UIColor colorWithRGB:93 g:95 b:208]];
+    
+    _dateLB.text = @"2018年9月";
+    _dayLB.text = @"21";
     _titleLB.text = @"洗车";
-    _titleLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
-    [_titleLB sizeToFit];
-    
-    _detailLB = [[UILabel alloc] init];
-    _detailLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _detailLB.text = @"贵阳XX洗车行";
-    _detailLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
-    [_detailLB sizeToFit];
-    
-    _addressLB = [[UILabel alloc] init];
-    _addressLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _addressLB.text = @"XX大厦停车场";
-    _addressLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
-    [_addressLB sizeToFit];
-    
-    _rightTimeLB = [[UILabel alloc] init];
-    _rightTimeLB.font = [APP_CONFIG appAdaptFontOfSize:12];
     _rightTimeLB.text = @"17:50";
-    _rightTimeLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
-    [_rightTimeLB sizeToFit];
-    
-    _rightBtmLB = [[UILabel alloc] init];
-    _rightBtmLB.font = [APP_CONFIG appAdaptFontOfSize:13];
     _rightBtmLB.text = @"花费：¥30：00";
-    _rightBtmLB.textColor = [UIColor colorWithRGB:93 g:95 b:208];
-    [_rightBtmLB sizeToFit];
     
     [self.contentView addSubview:_leftTopLine];
     [self.contentView addSubview:_leftBtmLine];
     [self.contentView addSubview:_arrowLB];
-    [self.contentView addSubview:_backView];
     [self.contentView addSubview:_dayLB];
     [self.contentView addSubview:_dateLB];
-    [self.contentView addSubview:_titleLB];
-    [self.contentView addSubview:_detailLB];
-    [self.contentView addSubview:_addressLB];
-    [self.contentView addSubview:_rightTimeLB];
-    [self.contentView addSubview:_rightBtmLB];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_leftTopLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(AdaptatSize(80));
+        make.left.equalTo(self).with.offset(AdaptatSize(70));
         make.top.equalTo(self);
         make.bottom.equalTo(_arrowLB.mas_top);
         make.width.mas_equalTo(AdaptatSize(6));
@@ -142,13 +123,13 @@
     }];
     [_dateLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_arrowLB.mas_left).with.offset(-AdaptatSize(10));
-        make.height.mas_equalTo(15);
-        make.width.mas_equalTo(AdaptatSize(45));
+        make.height.mas_equalTo(18);
+        make.width.mas_equalTo(AdaptatSize(40));
         make.bottom.equalTo(_arrowLB.mas_centerY).with.offset(-AdaptatSize(5));
     }];
     [_dayLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.width.equalTo(_dateLB);
-        make.height.mas_equalTo(35);
+        make.height.mas_equalTo(30);
         make.top.equalTo(_dateLB.mas_bottom).with.offset(-3);
     }];
     [_addressLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -171,6 +152,15 @@
         make.centerY.equalTo(_detailLB);
         make.right.equalTo(_rightTimeLB);
     }];
+}
+
+- (UILabel *)createLabelFont:(CGFloat)font color:(UIColor *)color {
+    UILabel *label = [[UILabel alloc] init];
+    label.font = [APP_CONFIG appAdaptBoldFontOfSize:font];
+    label.textColor = color;
+    [label sizeToFit];
+    [self.contentView addSubview:label];
+    return label;
 }
 
 @end
