@@ -44,21 +44,6 @@
     [self initializationNetWorking];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [IQKeyboardManager sharedManager].enable = NO;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.view endEditing:YES];
-    [IQKeyboardManager sharedManager].enable = YES;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-}
-
 #pragma mark - Iniitalization methods
 - (void)initializationData {
     GJMineEvaluateTopCell *topCell = [[GJMineEvaluateTopCell alloc] init];
