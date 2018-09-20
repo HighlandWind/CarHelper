@@ -55,7 +55,7 @@
 }
 
 - (void)starRateView:(XHStarRateView *)starRateView currentScore:(CGFloat)currentScore {
-    NSLog(@"%f", currentScore);
+    
 }
 
 - (void)addFiveBtns {

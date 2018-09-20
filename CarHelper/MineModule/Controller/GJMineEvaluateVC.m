@@ -111,7 +111,7 @@
 - (UIButton *)sendBtn {
     if (!_sendBtn) {
         _sendBtn = [[UIButton alloc] init];
-        _sendBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
+        _sendBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:16];
         [_sendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _sendBtn.backgroundColor = APP_CONFIG.appMainColor;
         _sendBtn.layer.cornerRadius = 5;

@@ -10,4 +10,6 @@
 
 @interface GJMineEvaluateTopCell : GJBaseTableViewCell
 
+
+
 @end
