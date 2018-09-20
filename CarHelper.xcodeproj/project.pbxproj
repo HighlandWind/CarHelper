@@ -104,6 +104,9 @@
 		80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F43C3420A691C8004EE41B /* GJWeChatPayModel.m */; };
 		80F43C4020A692BA004EE41B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F43C3F20A692BA004EE41B /* CoreMotion.framework */; };
 		80FFFB7721537AA1005C915B /* XHStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FFFB7621537AA1005C915B /* XHStarRateView.m */; };
+		80FFFB7A2153A5C7005C915B /* GJPayWayZFBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FFFB792153A5C7005C915B /* GJPayWayZFBCell.m */; };
+		80FFFB7D2153A604005C915B /* GJPayWayWeChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */; };
+		80FFFB802153A616005C915B /* GJPayWayUnionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FFFB7F2153A616005C915B /* GJPayWayUnionCell.m */; };
 		CC13C152215140B100B755EF /* GJMineCarListTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C151215140B100B755EF /* GJMineCarListTopCell.m */; };
 		CC13C15821514E6F00B755EF /* GJMineEvaluateTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */; };
 		CC13C15B21514F7A00B755EF /* GJMineEvaluateMidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */; };
@@ -318,6 +321,12 @@
 		80FD6AAC20B0425D00D3A4AC /* CarHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarHelper.entitlements; sourceTree = "<group>"; };
 		80FFFB7521537AA1005C915B /* XHStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHStarRateView.h; sourceTree = "<group>"; };
 		80FFFB7621537AA1005C915B /* XHStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHStarRateView.m; sourceTree = "<group>"; };
+		80FFFB782153A5C7005C915B /* GJPayWayZFBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPayWayZFBCell.h; sourceTree = "<group>"; };
+		80FFFB792153A5C7005C915B /* GJPayWayZFBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPayWayZFBCell.m; sourceTree = "<group>"; };
+		80FFFB7B2153A604005C915B /* GJPayWayWeChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPayWayWeChatCell.h; sourceTree = "<group>"; };
+		80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPayWayWeChatCell.m; sourceTree = "<group>"; };
+		80FFFB7E2153A616005C915B /* GJPayWayUnionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPayWayUnionCell.h; sourceTree = "<group>"; };
+		80FFFB7F2153A616005C915B /* GJPayWayUnionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPayWayUnionCell.m; sourceTree = "<group>"; };
 		954A6A6D14546F8450CF9EA2 /* Pods-CarHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.release.xcconfig"; sourceTree = "<group>"; };
 		CC13C150215140B100B755EF /* GJMineCarListTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineCarListTopCell.h; sourceTree = "<group>"; };
 		CC13C151215140B100B755EF /* GJMineCarListTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineCarListTopCell.m; sourceTree = "<group>"; };
@@ -621,6 +630,12 @@
 				CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */,
 				CC13C15921514F7A00B755EF /* GJMineEvaluateMidCell.h */,
 				CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */,
+				80FFFB782153A5C7005C915B /* GJPayWayZFBCell.h */,
+				80FFFB792153A5C7005C915B /* GJPayWayZFBCell.m */,
+				80FFFB7B2153A604005C915B /* GJPayWayWeChatCell.h */,
+				80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */,
+				80FFFB7E2153A616005C915B /* GJPayWayUnionCell.h */,
+				80FFFB7F2153A616005C915B /* GJPayWayUnionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1171,6 +1186,7 @@
 				8011D248209C41E900800F9E /* TKWebMedia.m in Sources */,
 				80C8DEDB2060ABAE004837BB /* GJNormalTBVCell.m in Sources */,
 				8097B0B4206257D80004282F /* GJTypeFile.m in Sources */,
+				80FFFB7D2153A604005C915B /* GJPayWayWeChatCell.m in Sources */,
 				80284860206CB02900DEE778 /* GJHttpConst.m in Sources */,
 				80C69D1A21101008000952AE /* GJSearchBar.m in Sources */,
 				80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */,
@@ -1205,6 +1221,7 @@
 				803CBD242099968C00837259 /* CustomClipImageViewController.m in Sources */,
 				808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */,
 				80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */,
+				80FFFB802153A616005C915B /* GJPayWayUnionCell.m in Sources */,
 				80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */,
 				80AD8AC0205BA24D004E8724 /* GJRootViewController.m in Sources */,
 				CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */,
@@ -1223,6 +1240,7 @@
 				80EC5F0F2064AC0200276C4B /* GJBaseTableView.m in Sources */,
 				80DF732E20F84C6E00AD9A3E /* GJHomeParkingCell.m in Sources */,
 				80AD8ADD205BBC18004E8724 /* GJTabBar.m in Sources */,
+				80FFFB7A2153A5C7005C915B /* GJPayWayZFBCell.m in Sources */,
 				8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */,
 				8011D240209C41A900800F9E /* NJKWebViewProgressView.m in Sources */,
 				8076DB312150A6C900ED32E2 /* GJMineCarListCell.m in Sources */,
