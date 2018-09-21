@@ -119,8 +119,9 @@
     __weak typeof(self)weakSelf = self;
     _topCell.blockClickInfo = ^{
         GJMineInfoVC *vc = [[GJMineInfoVC alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [weakSelf presentViewController:vc animated:YES completion:nil];
     };
     _topCell.blockClickScore = ^{
         GJMineScoreVC *vc = [[GJMineScoreVC alloc] init];

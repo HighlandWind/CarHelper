@@ -10,4 +10,6 @@
 
 @interface GJPayWayUnionCell : GJBaseTableViewCell
 
+@property (nonatomic, copy) void (^blockSureClose)(void);
+
 @end

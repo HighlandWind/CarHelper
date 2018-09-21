@@ -10,10 +10,12 @@
 #import "GJPayWayZFBCell.h"
 #import "GJPayWayUnionCell.h"
 #import "GJPayWayWeChatCell.h"
+#import "GJMinePayWayFooter.h"
 
 @interface GJMinePayWayVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
 @property (nonatomic, strong) NSArray <GJBaseTableViewCell *> *cells;
+@property (nonatomic, strong) GJMinePayWayFooter *footerView;
 @end
 
 @implementation GJMinePayWayVC
@@ -78,14 +80,29 @@
     return _cells[indexPath.row].height;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return self.footerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return self.footerView.height;
+}
+
 #pragma mark - Getter/Setter
 - (GJBaseTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain controller:self];
+        _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped controller:self];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = APP_CONFIG.appBackgroundColor;
     }
     return _tableView;
+}
+
+- (GJMinePayWayFooter *)footerView {
+    if (!_footerView) {
+        _footerView = [[GJMinePayWayFooter alloc] init];
+    }
+    return _footerView;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -91,6 +91,8 @@
 		80D03481208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0347F208D6FB200F7F14D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D4951020A92E62004A280A /* GJCustomPresentController.m */; };
 		80D6625820D8A611006640E4 /* GJAppSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6625720D8A611006640E4 /* GJAppSettingVC.m */; };
+		80D8FE0221548FD200F0EA1B /* GJMinePayWayFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8FE0121548FD200F0EA1B /* GJMinePayWayFooter.m */; };
+		80D8FE082154A50400F0EA1B /* GJMineUpdateSexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8FE072154A50400F0EA1B /* GJMineUpdateSexView.m */; };
 		80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38CE20F856FC00171754 /* GJHomeManager.m */; };
 		80DB38D220F8570700171754 /* GJHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38D120F8570700171754 /* GJHomeModel.m */; };
 		80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF732A20F84A4D00AD9A3E /* GJHomeTopCell.m */; };
@@ -295,6 +297,10 @@
 		80D4951020A92E62004A280A /* GJCustomPresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCustomPresentController.m; sourceTree = "<group>"; };
 		80D6625620D8A611006640E4 /* GJAppSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJAppSettingVC.h; sourceTree = "<group>"; };
 		80D6625720D8A611006640E4 /* GJAppSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJAppSettingVC.m; sourceTree = "<group>"; };
+		80D8FE0021548FD200F0EA1B /* GJMinePayWayFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMinePayWayFooter.h; sourceTree = "<group>"; };
+		80D8FE0121548FD200F0EA1B /* GJMinePayWayFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMinePayWayFooter.m; sourceTree = "<group>"; };
+		80D8FE062154A50400F0EA1B /* GJMineUpdateSexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineUpdateSexView.h; sourceTree = "<group>"; };
+		80D8FE072154A50400F0EA1B /* GJMineUpdateSexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineUpdateSexView.m; sourceTree = "<group>"; };
 		80DB38CD20F856FC00171754 /* GJHomeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeManager.h; sourceTree = "<group>"; };
 		80DB38CE20F856FC00171754 /* GJHomeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeManager.m; sourceTree = "<group>"; };
 		80DB38D020F8570700171754 /* GJHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeModel.h; sourceTree = "<group>"; };
@@ -636,6 +642,10 @@
 				80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */,
 				80FFFB7E2153A616005C915B /* GJPayWayUnionCell.h */,
 				80FFFB7F2153A616005C915B /* GJPayWayUnionCell.m */,
+				80D8FE0021548FD200F0EA1B /* GJMinePayWayFooter.h */,
+				80D8FE0121548FD200F0EA1B /* GJMinePayWayFooter.m */,
+				80D8FE062154A50400F0EA1B /* GJMineUpdateSexView.h */,
+				80D8FE072154A50400F0EA1B /* GJMineUpdateSexView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1169,6 +1179,7 @@
 				8097B0BB206259010004282F /* GJImageLibraryController.m in Sources */,
 				80AD8AEA205BC560004E8724 /* UIColor+Extension.m in Sources */,
 				CC13C152215140B100B755EF /* GJMineCarListTopCell.m in Sources */,
+				80D8FE082154A50400F0EA1B /* GJMineUpdateSexView.m in Sources */,
 				803CBD262099968C00837259 /* CustomTouchView.m in Sources */,
 				80AD8AE1205BC10D004E8724 /* UIView+Extension.m in Sources */,
 				8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */,
@@ -1178,6 +1189,7 @@
 				80DB38D220F8570700171754 /* GJHomeModel.m in Sources */,
 				8011D247209C41E900800F9E /* TKWebViewController.m in Sources */,
 				CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */,
+				80D8FE0221548FD200F0EA1B /* GJMinePayWayFooter.m in Sources */,
 				803CBD252099968C00837259 /* CustomImageScrollView.m in Sources */,
 				803CBD272099968C00837259 /* UIImage+FixOrientation.m in Sources */,
 				CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */,

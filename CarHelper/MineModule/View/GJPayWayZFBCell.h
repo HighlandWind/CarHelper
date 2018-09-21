@@ -10,4 +10,6 @@
 
 @interface GJPayWayZFBCell : GJBaseTableViewCell
 
+@property (nonatomic, copy) void (^blockSureClose)(void);
+
 @end

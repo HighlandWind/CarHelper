@@ -7,19 +7,33 @@
 //
 
 #import "GJPayWayWeChatCell.h"
+#import "AlertManager.h"
 
 @interface GJPayWayWeChatCell ()
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIButton *passBtn;
+@property (nonatomic, strong) UILabel *titleLB;
 @end
 
 @implementation GJPayWayWeChatCell
 
 - (void)passButtonClick {
-    
+    [AlertManager showAlertTitle:@"温馨提示" content:@"确定解除微信支付的绑定吗？\n小额免密支付更方便哟。" viecontroller:nil cancel:@"解绑" sure:@"取消" cancelHandle:^{
+        BLOCK_SAFE(_blockSureClose)();
+    } sureHandle:^{
+    }];
 }
 
-- (void)commonInit {
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setupSubviews];
+    }
+    return self;
+}
+
+- (void)setupSubviews {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = APP_CONFIG.appBackgroundColor;
     
@@ -37,8 +51,15 @@
     _passBtn.layer.borderWidth = 1;
     [_passBtn addTarget:self action:@selector(passButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
+    _titleLB = [[UILabel alloc] init];
+    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:24];
+    _titleLB.textColor = APP_CONFIG.blackTextColor;
+    _titleLB.text = @"微信";
+    [_titleLB sizeToFit];
+    
     [self.contentView addSubview:_backView];
     [self.contentView addSubview:_passBtn];
+    [self.contentView addSubview:_titleLB];
 }
 
 - (void)layoutSubviews {
@@ -54,6 +75,9 @@
         make.right.equalTo(_backView).with.offset(-5);
         make.width.mas_equalTo(AdaptatSize(40));
         make.height.mas_equalTo(AdaptatSize(18));
+    }];
+    [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
     }];
 }
 
