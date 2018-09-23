@@ -13,6 +13,8 @@
 #import "GJNearbyCell.h"
 #import "GJScheduleCell.h"
 #import "GJHomeTopImage.h"
+#import "GJHomeSpeechButton.h"
+#import "GJSpeechScreenView.h"
 
 @interface GJHomeVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJHomeTopView *topView;
@@ -22,6 +24,7 @@
 @property (nonatomic, strong) GJBaseTableView *tableView;
 @property (nonatomic, strong) NSArray <GJBaseTableViewCell *> *cells;
 @property (nonatomic, strong) GJHomeTopCell *topCell;
+@property (nonatomic, strong) GJHomeSpeechButton *speechBtn;
 @end
 
 @implementation GJHomeVC
@@ -33,6 +36,11 @@
     _topBgImg.frame = CGRectMake(0, 0, self.view.width, _topBgImgHeight);
     _backView.frame = CGRectMake(0, _topBgImg.height, self.view.width, self.view.height-_topBgImg.height);
     _tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height);
+    [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view).with.offset(-AdaptatSize(20));
+        make.width.height.mas_equalTo(AdaptatSize(60));
+    }];
 }
 
 - (void)viewDidLoad {
@@ -73,6 +81,7 @@
     [self.view addSubview:self.topBgImg];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.topView];
+    [self.view addSubview:self.speechBtn];
     [self blockHanddle];
 }
 
@@ -85,6 +94,7 @@
 
 #pragma mark - Private methods
 - (void)blockHanddle {
+    __weak typeof(self)weakself = self;
     _topView.blockSearch = ^(NSString *searchText) {
         
     };
@@ -93,6 +103,13 @@
     };
     _topView.blockAdd = ^{
         
+    };
+    _speechBtn.speechClickBlock = ^{
+        weakself.speechBtn.hidden = YES;
+        GJSpeechScreenView *v = [GJSpeechScreenView installView];
+        v.blockBack = ^{
+            weakself.speechBtn.hidden = NO;
+        };
     };
 }
 
@@ -153,6 +170,13 @@
         _topBgImg = [[GJHomeTopImage alloc] init];
     }
     return _topBgImg;
+}
+
+- (GJHomeSpeechButton *)speechBtn {
+    if (!_speechBtn) {
+        _speechBtn = [GJHomeSpeechButton install];
+    }
+    return _speechBtn;
 }
 
 - (void)didReceiveMemoryWarning {

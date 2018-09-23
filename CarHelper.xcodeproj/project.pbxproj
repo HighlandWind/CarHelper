@@ -120,6 +120,8 @@
 		CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C040215006790001B0A0 /* GJMineEvaluateVC.m */; };
 		CCC9608C20C043BB00FCCEF3 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */; };
 		CCE62EA421480B91008F9AFA /* GJScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */; };
+		CCEA4F4C2157D26600210840 /* GJHomeSpeechButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEA4F4B2157D26600210840 /* GJHomeSpeechButton.m */; };
+		CCEA4F4F2157E14B00210840 /* GJSpeechScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEA4F4E2157E14B00210840 /* GJSpeechScreenView.m */; };
 		CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7220D016520037AD13 /* GJMineVC.m */; };
 		CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7620D017A80037AD13 /* GJHomeVC.m */; };
 		CCF57B7B20D018240037AD13 /* GJDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF57B7A20D018240037AD13 /* GJDiscoverVC.m */; };
@@ -356,6 +358,10 @@
 		CCC9608B20C0439500FCCEF3 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJScheduleCellView.h; sourceTree = "<group>"; };
 		CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJScheduleCellView.m; sourceTree = "<group>"; };
+		CCEA4F4A2157D26600210840 /* GJHomeSpeechButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeSpeechButton.h; sourceTree = "<group>"; };
+		CCEA4F4B2157D26600210840 /* GJHomeSpeechButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeSpeechButton.m; sourceTree = "<group>"; };
+		CCEA4F4D2157E14B00210840 /* GJSpeechScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJSpeechScreenView.h; sourceTree = "<group>"; };
+		CCEA4F4E2157E14B00210840 /* GJSpeechScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJSpeechScreenView.m; sourceTree = "<group>"; };
 		CCF57B7120D016520037AD13 /* GJMineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineVC.h; sourceTree = "<group>"; };
 		CCF57B7220D016520037AD13 /* GJMineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineVC.m; sourceTree = "<group>"; };
 		CCF57B7520D017A80037AD13 /* GJHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeVC.h; sourceTree = "<group>"; };
@@ -449,6 +455,10 @@
 				808540C72102E6DA00FB4F2C /* GJScheduleCell.m */,
 				CCE62EA221480B91008F9AFA /* GJScheduleCellView.h */,
 				CCE62EA321480B91008F9AFA /* GJScheduleCellView.m */,
+				CCEA4F4A2157D26600210840 /* GJHomeSpeechButton.h */,
+				CCEA4F4B2157D26600210840 /* GJHomeSpeechButton.m */,
+				CCEA4F4D2157E14B00210840 /* GJSpeechScreenView.h */,
+				CCEA4F4E2157E14B00210840 /* GJSpeechScreenView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1185,6 +1195,7 @@
 				8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */,
 				8018C4C920AAA97A00FFC713 /* GJRegisterController.m in Sources */,
 				8011D24C209C422A00800F9E /* TKWebJSContent.m in Sources */,
+				CCEA4F4F2157E14B00210840 /* GJSpeechScreenView.m in Sources */,
 				8006AB53205CF8DB00881F85 /* GJLocationModel.m in Sources */,
 				80DB38D220F8570700171754 /* GJHomeModel.m in Sources */,
 				8011D247209C41E900800F9E /* TKWebViewController.m in Sources */,
@@ -1234,6 +1245,7 @@
 				808540C82102E6DA00FB4F2C /* GJScheduleCell.m in Sources */,
 				80DB38CF20F856FC00171754 /* GJHomeManager.m in Sources */,
 				80FFFB802153A616005C915B /* GJPayWayUnionCell.m in Sources */,
+				CCEA4F4C2157D26600210840 /* GJHomeSpeechButton.m in Sources */,
 				80CDE9C3205D1A8200B12382 /* UIViewController+Extension.m in Sources */,
 				80AD8AC0205BA24D004E8724 /* GJRootViewController.m in Sources */,
 				CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */,
