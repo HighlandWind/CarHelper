@@ -21,6 +21,7 @@
 		8011D249209C41E900800F9E /* TKWKBaseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8011D246209C41E800800F9E /* TKWKBaseWebController.m */; };
 		8011D24C209C422A00800F9E /* TKWebJSContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8011D24A209C422A00800F9E /* TKWebJSContent.m */; };
 		8018C4C920AAA97A00FFC713 /* GJRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8018C4C820AAA97A00FFC713 /* GJRegisterController.m */; };
+		801C05542159D72200A95EC5 /* GJSpecchTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 801C05532159D72200A95EC5 /* GJSpecchTBVCell.m */; };
 		8028484F206C952900DEE778 /* GJLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8028484E206C952900DEE778 /* GJLoginController.m */; };
 		80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284858206CADAB00DEE778 /* GJVerifyButton.m */; };
 		8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 8028485B206CAE7400DEE778 /* GJLoginApi.m */; };
@@ -159,6 +160,8 @@
 		8011D24B209C422A00800F9E /* TKWebJSContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebJSContent.h; sourceTree = "<group>"; };
 		8018C4C720AAA97A00FFC713 /* GJRegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJRegisterController.h; sourceTree = "<group>"; };
 		8018C4C820AAA97A00FFC713 /* GJRegisterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJRegisterController.m; sourceTree = "<group>"; };
+		801C05522159D72200A95EC5 /* GJSpecchTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJSpecchTBVCell.h; sourceTree = "<group>"; };
+		801C05532159D72200A95EC5 /* GJSpecchTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJSpecchTBVCell.m; sourceTree = "<group>"; };
 		8028484D206C952900DEE778 /* GJLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJLoginController.h; sourceTree = "<group>"; };
 		8028484E206C952900DEE778 /* GJLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLoginController.m; sourceTree = "<group>"; };
 		80284857206CADAB00DEE778 /* GJVerifyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJVerifyButton.h; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 				CCEA4F4B2157D26600210840 /* GJHomeSpeechButton.m */,
 				CCEA4F4D2157E14B00210840 /* GJSpeechScreenView.h */,
 				CCEA4F4E2157E14B00210840 /* GJSpeechScreenView.m */,
+				801C05522159D72200A95EC5 /* GJSpecchTBVCell.h */,
+				801C05532159D72200A95EC5 /* GJSpecchTBVCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1274,6 +1279,7 @@
 				CCB2C038214FE57C0001B0A0 /* GJMineHistoryCell.m in Sources */,
 				80CB4A8F214FB4D200544C89 /* GJMineCouponVC.m in Sources */,
 				80AD8A85205B9AC1004E8724 /* AppDelegate.m in Sources */,
+				801C05542159D72200A95EC5 /* GJSpecchTBVCell.m in Sources */,
 				CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */,
 				803CBD1B20997FD500837259 /* UIImage+GJExtension.m in Sources */,
 				80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */,
