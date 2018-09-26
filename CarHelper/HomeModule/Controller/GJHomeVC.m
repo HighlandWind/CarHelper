@@ -24,6 +24,7 @@
 @property (nonatomic, strong) GJBaseTableView *tableView;
 @property (nonatomic, strong) NSArray <GJBaseTableViewCell *> *cells;
 @property (nonatomic, strong) GJHomeTopCell *topCell;
+@property (nonatomic, strong) GJNearbyCell *nearbyCell;
 @property (nonatomic, strong) GJHomeSpeechButton *speechBtn;
 @end
 
@@ -63,10 +64,10 @@
     
     _topCell = [[GJHomeTopCell alloc] init];
     GJHomeParkingCell *parkingCell = [[GJHomeParkingCell alloc] init];
-    GJNearbyCell *nearbyCell = [[GJNearbyCell alloc] init];
+    _nearbyCell = [[GJNearbyCell alloc] init];
     GJScheduleCell *scheduleCell = [[GJScheduleCell alloc] init];
     
-    _cells = @[_topCell, parkingCell, nearbyCell, scheduleCell];
+    _cells = @[_topCell, parkingCell, _nearbyCell, scheduleCell];
     
     _topBgImgHeight = _topCell.height - 15;
 }
@@ -87,6 +88,7 @@
 
 - (void)initializationNetWorking {
     [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533284438509&di=21e32c93671a719447ecb2221b106b61&imgtype=0&src=http%3A%2F%2Fpic.5442.com%3A82%2F2014%2F0929%2F04%2F03.jpg%2521960.jpg"]];
+    _nearbyCell.leftTBVDatas =@[@"花果园金融街停车场", @"亚太中心停车场", @"好卡博尔其背后去不去而", @"偶尔去日本和空气哦", @"惹不起不确认确认白求恩", @"而不去日本"];
 }
 
 #pragma mark - Request Handle

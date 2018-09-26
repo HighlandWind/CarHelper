@@ -10,4 +10,7 @@
 
 @interface GJNearbyCell : GJBaseTableViewCell
 
+@property (nonatomic, strong) NSArray *leftTBVDatas;
+
 @end
+

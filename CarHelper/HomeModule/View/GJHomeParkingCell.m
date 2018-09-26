@@ -98,7 +98,7 @@
         make.right.equalTo(_backView.mas_centerX);
     }];
     [_statusLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView.mas_centerX).with.offset(AdaptatSize(70));
+        make.left.equalTo(self.mas_centerX).with.offset(AdaptatSize(60));
         make.bottom.equalTo(_backView).with.offset(-15);
         make.height.mas_equalTo(AdaptatSize(22));
         make.width.mas_equalTo(AdaptatSize(60));
