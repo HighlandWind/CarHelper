@@ -24,6 +24,10 @@
 
 @implementation GJHomeTopCell
 
+- (void)buttonClick:(UIButton *)btn {
+    BLOCK_SAFE(_blockClickFiveBtns)(btn.tag);
+}
+
 - (void)commonInit {
     self.backgroundColor = [UIColor clearColor];
     if (SCREEN_H >= kGJIphoneX) {
@@ -52,11 +56,11 @@
     _broadLB.text = @"您的车辆驶入了限行路段？请及时进行标注！";
     _broadImg.image = [UIImage imageNamed:@"setup"];
     
-    _topCenterBtn = [self createButtonTitle:@"拼车" titleColor:[UIColor whiteColor] image:@"scan"];
-    _topLeft1Btn = [self createButtonTitle:@"洗车" titleColor:[UIColor whiteColor] image:@"scan"];
-    _topLeft2Btn = [self createButtonTitle:@"停车" titleColor:[UIColor whiteColor] image:@"scan"];
-    _topRight1Btn = [self createButtonTitle:@"汽车用品" titleColor:[UIColor whiteColor] image:@"scan"];
-    _topRight2Btn = [self createButtonTitle:@"更多" titleColor:[UIColor whiteColor] image:@"scan"];
+    _topLeft2Btn = [self createButtonTitle:@"停车" titleColor:[UIColor whiteColor] image:@"scan" tag:1];
+    _topLeft1Btn = [self createButtonTitle:@"洗车" titleColor:[UIColor whiteColor] image:@"scan" tag:2];
+    _topCenterBtn = [self createButtonTitle:@"拼车" titleColor:[UIColor whiteColor] image:@"scan" tag:3];
+    _topRight1Btn = [self createButtonTitle:@"汽车用品" titleColor:[UIColor whiteColor] image:@"scan" tag:4];
+    _topRight2Btn = [self createButtonTitle:@"更多" titleColor:[UIColor whiteColor] image:@"scan" tag:5];
     
     [self.contentView addSubview:_broadcastBG];
     [self.contentView addSubview:_broadImg];
@@ -111,8 +115,9 @@
     return _cellHeight;
 }
 
-- (UIButton *)createButtonTitle:(NSString *)title titleColor:(UIColor *)titleColor image:(NSString *)image {
+- (UIButton *)createButtonTitle:(NSString *)title titleColor:(UIColor *)titleColor image:(NSString *)image tag:(NSInteger)tag {
     UIButton *btn = [[UIButton alloc] init];
+    btn.tag = tag;
     btn.hidden = YES;
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateHighlighted];
@@ -123,6 +128,7 @@
     titleLB.textColor = [UIColor whiteColor];
     [titleLB sizeToFit];
     [btn addSubview:titleLB];
+    [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(btn).with.offset(-5);
         make.centerX.equalTo(btn);

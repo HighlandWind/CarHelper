@@ -20,17 +20,10 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
-    UINavigationBar *bar = self.navigationController.navigationBar;
-    [bar setBackgroundImage:CreatImageWithColor([UIColor whiteColor])
-             forBarPosition:UIBarPositionAny
-                 barMetrics:UIBarMetricsDefault];
-//    [bar setShadowImage:CreatImageWithColor([UIColor colorWithRGB:250 g:250 b:250])];
-    [bar setShadowImage:CreatImageWithColor(APP_CONFIG.appBackgroundColor)];
+    [self showNaviSingleLine];
 }
 
 - (void)allowBack {
-//    [self allowBackWithImage:@"arrow_left_back"];
     [self allowBackWithImage:@"back1"];
 }
 
@@ -48,6 +41,14 @@
     }else{
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (void)showNaviSingleLine {
+    UINavigationBar *bar = self.navigationController.navigationBar;
+    [bar setBackgroundImage:CreatImageWithColor([UIColor whiteColor])
+             forBarPosition:UIBarPositionAny
+                 barMetrics:UIBarMetricsDefault];
+    [bar setShadowImage:CreatImageWithColor(APP_CONFIG.appBackgroundColor)];
 }
 
 - (void)showShadorOnNaviBar:(BOOL)show {

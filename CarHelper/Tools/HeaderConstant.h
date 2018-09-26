@@ -30,7 +30,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define BLOCK_SAFE(block)           if(block)block
 
 // third-platform's key and secret
-#define AMap_APPKEY                 @""
+#define AMap_APPKEY                 @"9db5f32dc592d88ac671db190653c457"
 #define WeChat_APPKEY               @""
 #define WeChat_SECRET               @""
 #define WeChat_REDIRECT             @""

@@ -15,6 +15,9 @@
 #import "GJHomeTopImage.h"
 #import "GJHomeSpeechButton.h"
 #import "GJSpeechScreenView.h"
+#import "GJCarPoolVC.h"
+#import "GJStopACarVC.h"
+#import "GJWashACarVC.h"
 
 @interface GJHomeVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJHomeTopView *topView;
@@ -54,6 +57,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self setStatusBarLight:YES];
 }
 
@@ -105,6 +112,22 @@
     };
     _topView.blockAdd = ^{
         
+    };
+    _topCell.blockClickFiveBtns = ^(NSInteger tag) {
+        GJBaseViewController *vc;
+        if (tag == 1) {
+            GJStopACarVC *stop = [[GJStopACarVC alloc] init];
+            [stop pushPageWith:weakself];
+        }else if (tag == 2) {
+            vc = [[GJWashACarVC alloc] init];
+        }else if (tag == 3) {
+            vc = [[GJCarPoolVC alloc] init];
+        }
+        if (vc) {
+            vc.hidesBottomBarWhenPushed = YES;
+            [weakself.view endEditing:YES];
+            [weakself.navigationController pushViewController:vc animated:YES];
+        }
     };
     _speechBtn.speechClickBlock = ^{
         weakself.speechBtn.hidden = YES;

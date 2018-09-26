@@ -9,8 +9,9 @@
 
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate (Config)
+@interface AppDelegate (Config) <CLLocationManagerDelegate>
 
 - (void)setupMainInterface;
 - (void)setupThirdApy;

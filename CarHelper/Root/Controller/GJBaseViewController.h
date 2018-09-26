@@ -13,6 +13,7 @@
 - (void)allowBack;
 - (void)allowBackWithImage:(NSString *)image;
 - (void)showShadorOnNaviBar:(BOOL)show;
+- (void)showNaviSingleLine;
 - (void)backAction;
 - (void)setStatusBarLight:(BOOL)is;
 

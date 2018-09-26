@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showShadorOnNaviBar:YES];
     if (_interactivePopDisabled) return ;
     [self addScreenLeftEdgePanGestureRecognizer:self.view];
 }

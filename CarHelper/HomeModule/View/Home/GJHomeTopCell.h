@@ -10,4 +10,6 @@
 
 @interface GJHomeTopCell : GJBaseTableViewCell
 
+@property (nonatomic, copy) void (^blockClickFiveBtns)(NSInteger tag);
+
 @end

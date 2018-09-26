@@ -348,8 +348,8 @@
     }];
     [_yuyueBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(AdaptatSize(30));
-        make.left.equalTo(self).with.offset(AdaptatSize(40));
-        make.right.equalTo(self).with.offset(-AdaptatSize(40));
+        make.width.mas_equalTo(self.width - AdaptatSize(80));
+        make.centerX.equalTo(self);
         make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
     }];
     [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {

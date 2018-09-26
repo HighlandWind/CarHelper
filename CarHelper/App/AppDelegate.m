@@ -10,7 +10,7 @@
 #import "AppDelegate+Config.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) CLLocationManager *locationmanager;
 @end
 
 @implementation AppDelegate
@@ -21,6 +21,12 @@
     [self setupMainInterface];
     [self setupThirdApy];
     [self setupUnify];
+    
+    [UIApplication sharedApplication].idleTimerDisabled = TRUE;
+    _locationmanager = [[CLLocationManager alloc] init];
+    [_locationmanager requestAlwaysAuthorization];       //NSLocationAlwaysUsageDescription
+    [_locationmanager requestWhenInUseAuthorization];    //NSLocationWhenInUseDescription
+    _locationmanager.delegate = self;
     
     return YES;
 }
