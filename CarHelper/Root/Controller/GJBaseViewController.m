@@ -24,7 +24,7 @@
 }
 
 - (void)allowBack {
-    [self allowBackWithImage:@"back1"];
+    [self allowBackWithImage:@"arrow_left_back"];
 }
 
 - (void)allowBackWithImage:(NSString *)image {

@@ -8,7 +8,7 @@
 
 #import "GJDiscoverVC.h"
 
-@interface GJDiscoverVC ()
+@interface GJDiscoverVC () <UIWebViewDelegate>
 
 @end
 
@@ -39,6 +39,13 @@
 
 - (void)initializationSubView {
     self.title = @"发现";
+    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-49)];
+    web.backgroundColor = [UIColor whiteColor];
+    web.delegate = self;
+    NSURLRequest *request =  [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
+    [web loadRequest:request];
+    [self.view addSubview:web];
+    [self.view.loadingView startAnimation];
 }
 
 - (void)initializationNetWorking {
@@ -58,7 +65,13 @@
 
 
 #pragma mark - Custom delegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.view.loadingView stopAnimation];
+}
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [self.view.loadingView stopAnimation];
+}
 
 #pragma mark - Getter/Setter
 

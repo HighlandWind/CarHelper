@@ -7,6 +7,7 @@
 //
 
 #import "GJCarPoolVC.h"
+#import "GJGetPinCarSelectVC.h"
 
 @interface GJCarPoolVC ()
 @property (nonatomic, strong) UIButton *startAPinCar;
@@ -66,7 +67,10 @@
 
 
 #pragma mark - Event response
-
+- (void)startAPinCarClick {
+    GJGetPinCarSelectVC *vc = [[GJGetPinCarSelectVC alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 #pragma mark - Custom delegate
 
@@ -81,6 +85,7 @@
         _startAPinCar.backgroundColor = APP_CONFIG.appMainColor;
         _startAPinCar.layer.cornerRadius = 5;
         _startAPinCar.clipsToBounds = YES;
+        [_startAPinCar addTarget:self action:@selector(startAPinCarClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _startAPinCar;
 }

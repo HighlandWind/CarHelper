@@ -186,6 +186,7 @@
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView setContentInset:UIEdgeInsetsMake(0, 0, AdaptatSize(90), 0)];
     }
     return _tableView;
 }

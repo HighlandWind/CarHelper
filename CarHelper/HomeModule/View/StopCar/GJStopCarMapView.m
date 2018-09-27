@@ -9,7 +9,6 @@
 #import "GJStopCarMapView.h"
 #import <MAMapKit/MAMapKit.h>
 #import "MAAnnotationView+GJAMapCustomLocationIcon.h"
-#import "GJMapStatusView.h"
 
 static NSInteger const defaultMapZoomLevel = 14;
 static NSString * const locateIdentifier = @"userView";
@@ -17,7 +16,6 @@ static NSString * const locateIdentifier = @"userView";
 @interface GJStopCarMapView () <MAMapViewDelegate>
 @property (nonatomic, strong) UIViewController *context;
 @property (nonatomic, strong) MAMapView *mapView;
-@property (nonatomic, strong) GJMapStatusView *statusView;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @end
 
@@ -49,7 +47,6 @@ static NSString * const locateIdentifier = @"userView";
             self.mapView.userTrackingMode = MAUserTrackingModeFollow;
         }
         [self addSubview:self.mapView];
-        [self addSubview:self.statusView];
         self.mapView.centerCoordinate = _currentLocation;
     }
     return self;
@@ -59,12 +56,6 @@ static NSString * const locateIdentifier = @"userView";
     [super layoutSubviews];
     [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
-    }];
-    [_statusView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(AdaptatSize(35));
-        make.height.mas_equalTo(AdaptatSize(80));
-        make.right.equalTo(self).with.offset(-AdaptatSize(10));
-        make.top.equalTo(self).with.offset(NavBar_H + AdaptatSize(20));
     }];
 }
 
@@ -111,13 +102,6 @@ static NSString * const locateIdentifier = @"userView";
         [_mapView addGestureRecognizer:tap];
     }
     return _mapView;
-}
-
-- (GJMapStatusView *)statusView {
-    if (!_statusView) {
-        _statusView = [[GJMapStatusView alloc] init];
-    }
-    return _statusView;
 }
 
 @end

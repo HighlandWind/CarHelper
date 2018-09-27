@@ -34,6 +34,11 @@
 		802AD332215C8C1300E08EDE /* GJMapStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD331215C8C1300E08EDE /* GJMapStatusView.m */; };
 		802AD335215C8F0000E08EDE /* GJStopCarMapPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD334215C8F0000E08EDE /* GJStopCarMapPopView.m */; };
 		802AD338215C922000E08EDE /* GJStopCarMapTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD337215C922000E08EDE /* GJStopCarMapTBVCell.m */; };
+		802AD33C215CB19B00E08EDE /* GJGetPinCarSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD33B215CB19B00E08EDE /* GJGetPinCarSelectVC.m */; };
+		802AD340215CBE5F00E08EDE /* GJGetCarSelectStep1.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD33F215CBE5F00E08EDE /* GJGetCarSelectStep1.m */; };
+		802AD343215CD09600E08EDE /* GJGetCarSelectStep2.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD342215CD09600E08EDE /* GJGetCarSelectStep2.m */; };
+		802AD346215CD2A600E08EDE /* GJGetMarkOnMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD345215CD2A600E08EDE /* GJGetMarkOnMapVC.m */; };
+		802AD34C215CD99F00E08EDE /* GJGetCarMapTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD34B215CD99F00E08EDE /* GJGetCarMapTopView.m */; };
 		80355C5220A6C49D00148AF0 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80355C5120A6C49D00148AF0 /* libWeChatSDK.a */; };
 		803CBD1820997D6D00837259 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1620997D6C00837259 /* AlertManager.m */; };
 		803CBD1B20997FD500837259 /* UIImage+GJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1A20997FD500837259 /* UIImage+GJExtension.m */; };
@@ -194,6 +199,16 @@
 		802AD334215C8F0000E08EDE /* GJStopCarMapPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJStopCarMapPopView.m; sourceTree = "<group>"; };
 		802AD336215C922000E08EDE /* GJStopCarMapTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJStopCarMapTBVCell.h; sourceTree = "<group>"; };
 		802AD337215C922000E08EDE /* GJStopCarMapTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJStopCarMapTBVCell.m; sourceTree = "<group>"; };
+		802AD33A215CB19B00E08EDE /* GJGetPinCarSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJGetPinCarSelectVC.h; sourceTree = "<group>"; };
+		802AD33B215CB19B00E08EDE /* GJGetPinCarSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJGetPinCarSelectVC.m; sourceTree = "<group>"; };
+		802AD33E215CBE5F00E08EDE /* GJGetCarSelectStep1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJGetCarSelectStep1.h; sourceTree = "<group>"; };
+		802AD33F215CBE5F00E08EDE /* GJGetCarSelectStep1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJGetCarSelectStep1.m; sourceTree = "<group>"; };
+		802AD341215CD09600E08EDE /* GJGetCarSelectStep2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJGetCarSelectStep2.h; sourceTree = "<group>"; };
+		802AD342215CD09600E08EDE /* GJGetCarSelectStep2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJGetCarSelectStep2.m; sourceTree = "<group>"; };
+		802AD344215CD2A600E08EDE /* GJGetMarkOnMapVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJGetMarkOnMapVC.h; sourceTree = "<group>"; };
+		802AD345215CD2A600E08EDE /* GJGetMarkOnMapVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJGetMarkOnMapVC.m; sourceTree = "<group>"; };
+		802AD34A215CD99F00E08EDE /* GJGetCarMapTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJGetCarMapTopView.h; sourceTree = "<group>"; };
+		802AD34B215CD99F00E08EDE /* GJGetCarMapTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJGetCarMapTopView.m; sourceTree = "<group>"; };
 		80355C4920A6B97F00148AF0 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		80355C4A20A6B97F00148AF0 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		80355C4B20A6B97F00148AF0 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -457,10 +472,9 @@
 		8006AB37205CB5AA00881F85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				802AD339215CB12F00E08EDE /* PinChe */,
 				CCF57B7520D017A80037AD13 /* GJHomeVC.h */,
 				CCF57B7620D017A80037AD13 /* GJHomeVC.m */,
-				CC03F663215BCEE800EF3DA3 /* GJCarPoolVC.h */,
-				CC03F664215BCEE800EF3DA3 /* GJCarPoolVC.m */,
 				CC03F666215BCFA700EF3DA3 /* GJStopACarVC.h */,
 				CC03F667215BCFA700EF3DA3 /* GJStopACarVC.m */,
 				CC03F669215BCFB700EF3DA3 /* GJWashACarVC.h */,
@@ -472,6 +486,7 @@
 		8006AB38205CB5C200881F85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				802AD33D215CBE1A00E08EDE /* PinChe */,
 				CC03F66E215BD56A00EF3DA3 /* StopCar */,
 				CC03F66C215BD4F200EF3DA3 /* Home */,
 				CCEA4F4D2157E14B00210840 /* GJSpeechScreenView.h */,
@@ -623,6 +638,32 @@
 				80284865206CB13C00DEE778 /* GJHttpNetworkingManager.m */,
 			);
 			path = HttpTool;
+			sourceTree = "<group>";
+		};
+		802AD339215CB12F00E08EDE /* PinChe */ = {
+			isa = PBXGroup;
+			children = (
+				CC03F663215BCEE800EF3DA3 /* GJCarPoolVC.h */,
+				CC03F664215BCEE800EF3DA3 /* GJCarPoolVC.m */,
+				802AD33A215CB19B00E08EDE /* GJGetPinCarSelectVC.h */,
+				802AD33B215CB19B00E08EDE /* GJGetPinCarSelectVC.m */,
+				802AD344215CD2A600E08EDE /* GJGetMarkOnMapVC.h */,
+				802AD345215CD2A600E08EDE /* GJGetMarkOnMapVC.m */,
+			);
+			path = PinChe;
+			sourceTree = "<group>";
+		};
+		802AD33D215CBE1A00E08EDE /* PinChe */ = {
+			isa = PBXGroup;
+			children = (
+				802AD33E215CBE5F00E08EDE /* GJGetCarSelectStep1.h */,
+				802AD33F215CBE5F00E08EDE /* GJGetCarSelectStep1.m */,
+				802AD341215CD09600E08EDE /* GJGetCarSelectStep2.h */,
+				802AD342215CD09600E08EDE /* GJGetCarSelectStep2.m */,
+				802AD34A215CD99F00E08EDE /* GJGetCarMapTopView.h */,
+				802AD34B215CD99F00E08EDE /* GJGetCarMapTopView.m */,
+			);
+			path = PinChe;
 			sourceTree = "<group>";
 		};
 		80355C4820A6B97F00148AF0 /* WeChatPaySDK */ = {
@@ -1277,6 +1318,7 @@
 				80C69D1A21101008000952AE /* GJSearchBar.m in Sources */,
 				80DF732B20F84A4D00AD9A3E /* GJHomeTopCell.m in Sources */,
 				8011D249209C41E900800F9E /* TKWKBaseWebController.m in Sources */,
+				802AD346215CD2A600E08EDE /* GJGetMarkOnMapVC.m in Sources */,
 				CCB2C03B214FF3C80001B0A0 /* GJMineOrderCell.m in Sources */,
 				80D4951120A92E62004A280A /* GJCustomPresentController.m in Sources */,
 				80AD8AF0205BC9D3004E8724 /* GJBaseModel.m in Sources */,
@@ -1288,8 +1330,10 @@
 				80CB4A89214FB3BD00544C89 /* GJMineHelperVC.m in Sources */,
 				80CB4A8C214FB4C800544C89 /* GJMineScoreVC.m in Sources */,
 				80AD8ADA205BBBF7004E8724 /* GJTabBarController.m in Sources */,
+				802AD340215CBE5F00E08EDE /* GJGetCarSelectStep1.m in Sources */,
 				80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */,
 				802AD338215C922000E08EDE /* GJStopCarMapTBVCell.m in Sources */,
+				802AD34C215CD99F00E08EDE /* GJGetCarMapTopView.m in Sources */,
 				80AD8AC9205BA354004E8724 /* AppDelegate+Config.m in Sources */,
 				CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
@@ -1332,6 +1376,7 @@
 				80AD8ADD205BBC18004E8724 /* GJTabBar.m in Sources */,
 				80FFFB7A2153A5C7005C915B /* GJPayWayZFBCell.m in Sources */,
 				8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */,
+				802AD33C215CB19B00E08EDE /* GJGetPinCarSelectVC.m in Sources */,
 				8011D240209C41A900800F9E /* NJKWebViewProgressView.m in Sources */,
 				8076DB312150A6C900ED32E2 /* GJMineCarListCell.m in Sources */,
 				80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */,
@@ -1344,6 +1389,7 @@
 				801C05542159D72200A95EC5 /* GJSpecchTBVCell.m in Sources */,
 				CCB2C02F214BFA160001B0A0 /* GJMineTopCell.m in Sources */,
 				803CBD1B20997FD500837259 /* UIImage+GJExtension.m in Sources */,
+				802AD343215CD09600E08EDE /* GJGetCarSelectStep2.m in Sources */,
 				80F43C3920A691C8004EE41B /* GJWeChatPayModel.m in Sources */,
 				CC03F668215BCFA700EF3DA3 /* GJStopACarVC.m in Sources */,
 				8011D23F209C41A900800F9E /* NJKWebViewProgress.m in Sources */,

@@ -52,14 +52,18 @@
     return _webView;
 }
 
+- (void)setWebUrl:(NSString *)webUrl {
+    _webUrl = webUrl;
+    NSURLRequest *request =  [NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]];
+    [self.webView loadRequest:request];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.scrollView.bounces = NO;
    [self.view addSubview:self.webView];
-   NSURLRequest *request =  [NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]];
     
     _webView.delegate = self;
-    [_webView loadRequest:request];
     
     _progressProxy = [[NJKWebViewProgress alloc] init];
     _webView.delegate = _progressProxy;
