@@ -10,4 +10,6 @@
 
 @interface GJStopCarMapView : GJBaseView
 
++ (GJStopCarMapView *)installContext:(UIViewController *)context;
+
 @end

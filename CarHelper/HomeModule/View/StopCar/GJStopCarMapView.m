@@ -8,14 +8,27 @@
 
 #import "GJStopCarMapView.h"
 #import <MAMapKit/MAMapKit.h>
+#import "MAAnnotationView+GJAMapCustomLocationIcon.h"
 
 static const NSInteger defaultMapZoomLevel = 14;
 
 @interface GJStopCarMapView () <MAMapViewDelegate>
+@property (nonatomic, strong) UIViewController *context;
 @property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @end
 
 @implementation GJStopCarMapView
+
++ (GJStopCarMapView *)installContext:(UIViewController *)context {
+    GJStopCarMapView *v = [[GJStopCarMapView alloc] init];
+    v.context = context;
+    return v;
+}
+
+- (void)tapClick {
+    [_context.view endEditing:YES];
+}
 
 - (instancetype)init
 {
@@ -24,7 +37,16 @@ static const NSInteger defaultMapZoomLevel = 14;
         self.backgroundColor = APP_CONFIG.appBackgroundColor;
         
         [AMapServices sharedServices].enableHTTPS = YES;
+        // simulator test code
+        if (TARGET_IPHONE_SIMULATOR) {
+            _currentLocation.latitude = 26.569151;
+            _currentLocation.longitude = 106.691741;
+        }else {
+            self.mapView.showsUserLocation = YES;
+            self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+        }
         [self addSubview:self.mapView];
+        self.mapView.centerCoordinate = _currentLocation;
     }
     return self;
 }
@@ -35,6 +57,28 @@ static const NSInteger defaultMapZoomLevel = 14;
         make.edges.equalTo(self);
     }];
 }
+
+- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation {
+    CLHeading *heading = userLocation.heading;
+    MAAnnotationView *userView = [mapView viewForAnnotation:userLocation];
+    // rotate location icon
+    [userView rotateWithHeading:heading];
+    if (updatingLocation) {
+        _currentLocation = userLocation.location.coordinate;
+        self.mapView.centerCoordinate = _currentLocation;
+    }
+}
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
+    MAAnnotationView *userView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"userView"];
+    if (!userView) userView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"userView"];
+    // 定位 icon
+    if ([annotation isKindOfClass:[MAUserLocation class]]) {
+        userView.image = [UIImage imageNamed:@"common_map_my_location"];
+    }
+    return userView;
+}
+
 #pragma mark - Getter/Setter
 - (MAMapView *)mapView {
     if (!_mapView) {
@@ -52,6 +96,9 @@ static const NSInteger defaultMapZoomLevel = 14;
         _mapView.rotateEnabled = NO;
         _mapView.rotateCameraEnabled = NO;
         _mapView.zoomLevel = defaultMapZoomLevel;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
+        tap.numberOfTapsRequired = 1;
+        [_mapView addGestureRecognizer:tap];
     }
     return _mapView;
 }

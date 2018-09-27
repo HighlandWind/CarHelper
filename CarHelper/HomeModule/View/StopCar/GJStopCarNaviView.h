@@ -10,4 +10,6 @@
 
 @interface GJStopCarNaviView : GJBaseView
 
+@property (nonatomic, copy) void (^blockBackClick)(void);
+
 @end

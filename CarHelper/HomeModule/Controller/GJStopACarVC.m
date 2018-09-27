@@ -51,6 +51,7 @@
     self.title = @"停车";
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.naviView];
+    [self blockHanddle];
 }
 
 - (void)initializationNetWorking {
@@ -61,7 +62,12 @@
 
 
 #pragma mark - Private methods
-
+- (void)blockHanddle {
+    __weak typeof(self)weakself = self;
+    _naviView.blockBackClick = ^{
+        [weakself dismissViewControllerAnimated:YES completion:nil];
+    };
+}
 
 #pragma mark - Public methods
 
@@ -82,7 +88,7 @@
 
 - (GJStopCarMapView *)mapView {
     if (!_mapView) {
-        _mapView = [[GJStopCarMapView alloc] init];
+        _mapView = [GJStopCarMapView installContext:self];
     }
     return _mapView;
 }
