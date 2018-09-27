@@ -9,12 +9,14 @@
 #import "GJStopACarVC.h"
 #import "GJStopCarNaviView.h"
 #import "GJStopCarMapView.h"
+#import "GJStopCarMapPopView.h"
 #import <CoreLocation/CLLocationManager.h>
 #import "AlertManager.h"
 
 @interface GJStopACarVC ()
 @property (nonatomic, strong) GJStopCarNaviView *naviView;
 @property (nonatomic, strong) GJStopCarMapView *mapView;
+@property (nonatomic, strong) GJStopCarMapPopView *mapPopView;
 @end
 
 @implementation GJStopACarVC
@@ -22,12 +24,17 @@
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
     [_naviView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.height.mas_equalTo(NavBar_H);
+    }];
+    [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self.view);
+        make.height.mas_equalTo(self.view.height / 2);
+    }];
+    [_mapPopView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.mas_equalTo(self.view.height / 2);
     }];
 }
 
@@ -62,6 +69,7 @@
     self.title = @"停车";
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.naviView];
+    [self.view addSubview:self.mapPopView];
     [self blockHanddle];
 }
 
@@ -102,6 +110,13 @@
         _mapView = [GJStopCarMapView installContext:self];
     }
     return _mapView;
+}
+
+- (GJStopCarMapPopView *)mapPopView {
+    if (!_mapPopView) {
+        _mapPopView = [[GJStopCarMapPopView alloc] init];
+    }
+    return _mapPopView;
 }
 
 - (void)didReceiveMemoryWarning {

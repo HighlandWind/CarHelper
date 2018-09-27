@@ -31,6 +31,9 @@
 		80284869206CB3E300DEE778 /* NSString+GJCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284868206CB3E300DEE778 /* NSString+GJCategory.m */; };
 		8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8029C0B5206CEDA300C4A6F8 /* GJUserInfoData.m */; };
 		8029C0B9206CEFD300C4A6F8 /* GJUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8029C0B8206CEFD300C4A6F8 /* GJUserDefaults.m */; };
+		802AD332215C8C1300E08EDE /* GJMapStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD331215C8C1300E08EDE /* GJMapStatusView.m */; };
+		802AD335215C8F0000E08EDE /* GJStopCarMapPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD334215C8F0000E08EDE /* GJStopCarMapPopView.m */; };
+		802AD338215C922000E08EDE /* GJStopCarMapTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AD337215C922000E08EDE /* GJStopCarMapTBVCell.m */; };
 		80355C5220A6C49D00148AF0 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80355C5120A6C49D00148AF0 /* libWeChatSDK.a */; };
 		803CBD1820997D6D00837259 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1620997D6C00837259 /* AlertManager.m */; };
 		803CBD1B20997FD500837259 /* UIImage+GJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1A20997FD500837259 /* UIImage+GJExtension.m */; };
@@ -185,6 +188,12 @@
 		8029C0B5206CEDA300C4A6F8 /* GJUserInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJUserInfoData.m; sourceTree = "<group>"; };
 		8029C0B7206CEFD300C4A6F8 /* GJUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJUserDefaults.h; sourceTree = "<group>"; };
 		8029C0B8206CEFD300C4A6F8 /* GJUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJUserDefaults.m; sourceTree = "<group>"; };
+		802AD330215C8C1300E08EDE /* GJMapStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMapStatusView.h; sourceTree = "<group>"; };
+		802AD331215C8C1300E08EDE /* GJMapStatusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMapStatusView.m; sourceTree = "<group>"; };
+		802AD333215C8F0000E08EDE /* GJStopCarMapPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJStopCarMapPopView.h; sourceTree = "<group>"; };
+		802AD334215C8F0000E08EDE /* GJStopCarMapPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJStopCarMapPopView.m; sourceTree = "<group>"; };
+		802AD336215C922000E08EDE /* GJStopCarMapTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJStopCarMapTBVCell.h; sourceTree = "<group>"; };
+		802AD337215C922000E08EDE /* GJStopCarMapTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJStopCarMapTBVCell.m; sourceTree = "<group>"; };
 		80355C4920A6B97F00148AF0 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		80355C4A20A6B97F00148AF0 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		80355C4B20A6B97F00148AF0 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -1068,6 +1077,12 @@
 				CC03F670215BD58E00EF3DA3 /* GJStopCarNaviView.m */,
 				CC03F672215BD7BC00EF3DA3 /* GJStopCarMapView.h */,
 				CC03F673215BD7BC00EF3DA3 /* GJStopCarMapView.m */,
+				802AD330215C8C1300E08EDE /* GJMapStatusView.h */,
+				802AD331215C8C1300E08EDE /* GJMapStatusView.m */,
+				802AD333215C8F0000E08EDE /* GJStopCarMapPopView.h */,
+				802AD334215C8F0000E08EDE /* GJStopCarMapPopView.m */,
+				802AD336215C922000E08EDE /* GJStopCarMapTBVCell.h */,
+				802AD337215C922000E08EDE /* GJStopCarMapTBVCell.m */,
 			);
 			path = StopCar;
 			sourceTree = "<group>";
@@ -1274,6 +1289,7 @@
 				80CB4A8C214FB4C800544C89 /* GJMineScoreVC.m in Sources */,
 				80AD8ADA205BBBF7004E8724 /* GJTabBarController.m in Sources */,
 				80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */,
+				802AD338215C922000E08EDE /* GJStopCarMapTBVCell.m in Sources */,
 				80AD8AC9205BA354004E8724 /* AppDelegate+Config.m in Sources */,
 				CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
@@ -1303,6 +1319,7 @@
 				8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */,
 				80284869206CB3E300DEE778 /* NSString+GJCategory.m in Sources */,
 				8006AB4E205CF7DD00881F85 /* GJUserAccountManager.m in Sources */,
+				802AD332215C8C1300E08EDE /* GJMapStatusView.m in Sources */,
 				80284863206CB07500DEE778 /* GJHttpServerBase.m in Sources */,
 				80AD8AC5205BA2A5004E8724 /* GJLaunchViewController.m in Sources */,
 				80EC5F092064A86600276C4B /* GJBaseView.m in Sources */,
@@ -1320,6 +1337,7 @@
 				80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */,
 				CCF57B7E20D01BE00037AD13 /* GJOrderPaymentData.m in Sources */,
 				80A4A88D2068E9A100BBD186 /* GJPresentTransitionAnimated.m in Sources */,
+				802AD335215C8F0000E08EDE /* GJStopCarMapPopView.m in Sources */,
 				CCB2C038214FE57C0001B0A0 /* GJMineHistoryCell.m in Sources */,
 				80CB4A8F214FB4D200544C89 /* GJMineCouponVC.m in Sources */,
 				80AD8A85205B9AC1004E8724 /* AppDelegate.m in Sources */,
