@@ -30,18 +30,18 @@
     }];
     [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.height.mas_equalTo(self.view.height / 2);
+        make.bottom.equalTo(self.view.mas_centerY);
     }];
     [_mapPopView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);
-        make.height.mas_equalTo(self.view.height / 2);
+        make.top.equalTo(self.view.mas_centerY);
     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    //[super viewWillAppear:animated];  // Annotate to fix bug
     [self setStatusBarLight:NO];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)viewDidLoad {
