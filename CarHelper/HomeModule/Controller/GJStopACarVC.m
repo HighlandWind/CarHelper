@@ -9,6 +9,8 @@
 #import "GJStopACarVC.h"
 #import "GJStopCarNaviView.h"
 #import "GJStopCarMapView.h"
+#import <CoreLocation/CLLocationManager.h>
+#import "AlertManager.h"
 
 @interface GJStopACarVC ()
 @property (nonatomic, strong) GJStopCarNaviView *naviView;
@@ -44,7 +46,16 @@
 
 #pragma mark - Iniitalization methods
 - (void)initializationData {
-    
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+        NSString *title = [NSString stringWithFormat:@"打开“定位服务”来允许%@确定您的位置", appName];
+        [AlertManager showAlertTitle:title content:@"以便获取附近的车辆服务" viecontroller:self cancel:@"设置" sure:@"取消" cancelHandle:^{
+            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        } sureHandle:nil];
+    }
 }
 
 - (void)initializationSubView {

@@ -17,5 +17,6 @@
 - (void)setupThirdApy;
 - (void)setupUnify;
 - (BOOL)handelThirePayOpenURL:(NSURL *)url;
+- (void)checkNetwork;
 
 @end

@@ -10,7 +10,6 @@
 
 @implementation AlertManager
 
-
 +(void)showAlertTitle:(NSString *)title content:(NSString *)content viecontroller:(UIViewController *)vc cancel:(NSString *)cancelTitle cancelHandle:(void (^)(void))cancelBlock {
     
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleAlert];
@@ -23,6 +22,7 @@
         }];
         [alertVc addAction:cancleAction];
     }
+    
     vc = vc ? vc : [GJFunctionManager CurrentTopViewcontroller];
     dispatch_async(dispatch_get_main_queue(), ^{
         [vc presentViewController:alertVc animated:YES completion:nil];
@@ -41,6 +41,7 @@
         }];
         [alertVc addAction:cancleAction];
     }
+    
     if (sureTitle) {
         UIAlertAction *sureAction = [UIAlertAction actionWithTitle:sureTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (sureBlock) {
@@ -50,19 +51,18 @@
         [alertVc addAction:sureAction];
 
     }
+    
     if (!cancelTitle && !sureTitle) {
         UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         }];
         [alertVc addAction:sureAction];
     }
+    
     vc = vc ? vc : [GJFunctionManager CurrentTopViewcontroller];
     dispatch_async(dispatch_get_main_queue(), ^{
         [vc presentViewController:alertVc animated:YES completion:nil];
     });
-    
-    
 }
-
 
 + (void)showAcctionSheetMessage:(NSString *)message chooseTakePhoto:(void(^)(void))takePhototBlock album:(void(^)(void))albumBlock {
      UIAlertController *sheet = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -72,7 +72,6 @@
         }
     }];
     [sheet addAction:photo];
-    
     
     UIAlertAction *album = [UIAlertAction actionWithTitle:@"用户相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (albumBlock) {
@@ -85,13 +84,12 @@
         
     }];
     [sheet addAction:cancel];
+    
     UIViewController *vc = [GJFunctionManager CurrentTopViewcontroller];
     dispatch_async(dispatch_get_main_queue(), ^{
         [vc presentViewController:sheet animated:YES completion:nil];
     });
-
 }
-
 
 + (void)showActionSheetMessage:(NSString *)message firstTitle:(NSString *)firstTitle secondTitle:(NSString *)secondTitle chooseFirst:(void(^)(void))chooseFirstBlock chooseSecond:(void(^)(void))chooseSecondBlock {
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -102,22 +100,22 @@
     }];
     [sheet addAction:fist];
     
-    
     UIAlertAction *second = [UIAlertAction actionWithTitle:secondTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (chooseSecondBlock) {
             chooseSecondBlock();
         }
     }];
     [sheet addAction:second];
+    
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
     [sheet addAction:cancel];
+    
     UIViewController *vc = [GJFunctionManager CurrentTopViewcontroller];
     dispatch_async(dispatch_get_main_queue(), ^{
         [vc presentViewController:sheet animated:YES completion:nil];
     });
-
 }
 
 @end

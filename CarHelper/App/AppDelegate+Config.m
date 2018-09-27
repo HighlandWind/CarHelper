@@ -12,6 +12,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "GJWeChatPayModel.h"
 #import "GJAlipayModel.h"
+#import "AlertManager.h"
 
 @implementation AppDelegate (Config)
 
@@ -42,6 +43,34 @@
 
 - (void)setupUnify {
     APP_CONFIG = [[GJAppConfigure alloc] init];
+}
+
+- (void)checkNetwork {
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusUnknown || status == AFNetworkReachabilityStatusNotReachable) {
+            UIViewController *vc = [GJFunctionManager CurrentTopViewcontroller];
+            if (vc.presentingViewController) {
+                [vc.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                    [self showNetworkFailureAlert];
+                }];
+            }else {
+                [self showNetworkFailureAlert];
+            }
+        }
+    }];
+    [manager startMonitoring];
+}
+
+- (void)showNetworkFailureAlert {
+    NSString *name = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    [AlertManager showAlertTitle:[NSString stringWithFormat:@"已为“%@”关闭蜂窝移动数据", name] content:@"您可以在“设置”中为此应用打开蜂窝移动数据" viecontroller:nil cancel:@"设置" sure:@"好" cancelHandle:^{
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } sureHandle:^{
+    }];
 }
 
 #pragma mark - UMSocial paltform settings.

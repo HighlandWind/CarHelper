@@ -10,7 +10,8 @@
 #import <MAMapKit/MAMapKit.h>
 #import "MAAnnotationView+GJAMapCustomLocationIcon.h"
 
-static const NSInteger defaultMapZoomLevel = 14;
+static NSInteger const defaultMapZoomLevel = 14;
+static NSString * const locateIdentifier = @"userView";
 
 @interface GJStopCarMapView () <MAMapViewDelegate>
 @property (nonatomic, strong) UIViewController *context;
@@ -70,8 +71,8 @@ static const NSInteger defaultMapZoomLevel = 14;
 }
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
-    MAAnnotationView *userView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"userView"];
-    if (!userView) userView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"userView"];
+    MAAnnotationView *userView = [mapView dequeueReusableAnnotationViewWithIdentifier:locateIdentifier];
+    if (!userView) userView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locateIdentifier];
     // 定位 icon
     if ([annotation isKindOfClass:[MAUserLocation class]]) {
         userView.image = [UIImage imageNamed:@"common_map_my_location"];
