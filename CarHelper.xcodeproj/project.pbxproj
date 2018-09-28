@@ -47,6 +47,7 @@
 		802ECE17215DF089006BFAEB /* GJNormalNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802ECE16215DF089006BFAEB /* GJNormalNaviView.m */; };
 		802ECE1A215DF807006BFAEB /* GJWashCarSearchTBVHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 802ECE19215DF807006BFAEB /* GJWashCarSearchTBVHeader.m */; };
 		802ECE1D215E100C006BFAEB /* GJWashCarAllListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802ECE1C215E100C006BFAEB /* GJWashCarAllListVC.m */; };
+		802ECE20215E26F2006BFAEB /* GJWashCarListFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 802ECE1F215E26F2006BFAEB /* GJWashCarListFilterView.m */; };
 		80355C5220A6C49D00148AF0 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80355C5120A6C49D00148AF0 /* libWeChatSDK.a */; };
 		803CBD1820997D6D00837259 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1620997D6C00837259 /* AlertManager.m */; };
 		803CBD1B20997FD500837259 /* UIImage+GJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CBD1A20997FD500837259 /* UIImage+GJExtension.m */; };
@@ -233,6 +234,8 @@
 		802ECE19215DF807006BFAEB /* GJWashCarSearchTBVHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJWashCarSearchTBVHeader.m; sourceTree = "<group>"; };
 		802ECE1B215E100C006BFAEB /* GJWashCarAllListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJWashCarAllListVC.h; sourceTree = "<group>"; };
 		802ECE1C215E100C006BFAEB /* GJWashCarAllListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJWashCarAllListVC.m; sourceTree = "<group>"; };
+		802ECE1E215E26F2006BFAEB /* GJWashCarListFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJWashCarListFilterView.h; sourceTree = "<group>"; };
+		802ECE1F215E26F2006BFAEB /* GJWashCarListFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJWashCarListFilterView.m; sourceTree = "<group>"; };
 		80355C4920A6B97F00148AF0 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		80355C4A20A6B97F00148AF0 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		80355C4B20A6B97F00148AF0 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -705,6 +708,8 @@
 				802ECE13215DEF7E006BFAEB /* GJWashCarSearchTBVCell.m */,
 				802ECE18215DF807006BFAEB /* GJWashCarSearchTBVHeader.h */,
 				802ECE19215DF807006BFAEB /* GJWashCarSearchTBVHeader.m */,
+				802ECE1E215E26F2006BFAEB /* GJWashCarListFilterView.h */,
+				802ECE1F215E26F2006BFAEB /* GJWashCarListFilterView.m */,
 			);
 			path = WashCar;
 			sourceTree = "<group>";
@@ -1352,6 +1357,7 @@
 				80D8FE082154A50400F0EA1B /* GJMineUpdateSexView.m in Sources */,
 				803CBD262099968C00837259 /* CustomTouchView.m in Sources */,
 				CC03F665215BCEE800EF3DA3 /* GJCarPoolVC.m in Sources */,
+				802ECE20215E26F2006BFAEB /* GJWashCarListFilterView.m in Sources */,
 				80AD8AE1205BC10D004E8724 /* UIView+Extension.m in Sources */,
 				8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */,
 				8018C4C920AAA97A00FFC713 /* GJRegisterController.m in Sources */,
