@@ -15,7 +15,7 @@
 @implementation GJBaseTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:[[self class] expectingStyle] reuseIdentifier:reuseIdentifier]) {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self commonInit];
     }
     return self;

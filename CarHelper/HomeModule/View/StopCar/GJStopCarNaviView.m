@@ -19,6 +19,7 @@
 @implementation GJStopCarNaviView
 
 - (void)backBtnClick {
+    [_fieldView resignFirstResponder];
     BLOCK_SAFE(_blockBackClick)();
 }
 
