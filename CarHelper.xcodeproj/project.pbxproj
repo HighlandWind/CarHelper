@@ -88,6 +88,7 @@
 		80AD8AEA205BC560004E8724 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AD8AE9205BC560004E8724 /* UIColor+Extension.m */; };
 		80AD8AED205BC78E004E8724 /* GJBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AD8AEC205BC78E004E8724 /* GJBaseNavigationController.m */; };
 		80AD8AF0205BC9D3004E8724 /* GJBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AD8AEF205BC9D3004E8724 /* GJBaseModel.m */; };
+		80B6F8C4215F7E1300A5993D /* GJWashCarAllListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B6F8C3215F7E1300A5993D /* GJWashCarAllListTBVCell.m */; };
 		80C2CC15206B6C75000F14BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C2CC14206B6C75000F14BD /* Assets.xcassets */; };
 		80C69D1A21101008000952AE /* GJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C69D1821101008000952AE /* GJSearchBar.m */; };
 		80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C69D1C21101058000952AE /* GJHomeTopView.m */; };
@@ -317,6 +318,8 @@
 		80AD8AEC205BC78E004E8724 /* GJBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJBaseNavigationController.m; sourceTree = "<group>"; };
 		80AD8AEE205BC9D3004E8724 /* GJBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJBaseModel.h; sourceTree = "<group>"; };
 		80AD8AEF205BC9D3004E8724 /* GJBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJBaseModel.m; sourceTree = "<group>"; };
+		80B6F8C2215F7E1300A5993D /* GJWashCarAllListTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJWashCarAllListTBVCell.h; sourceTree = "<group>"; };
+		80B6F8C3215F7E1300A5993D /* GJWashCarAllListTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJWashCarAllListTBVCell.m; sourceTree = "<group>"; };
 		80C2CC14206B6C75000F14BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C69D1821101008000952AE /* GJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJSearchBar.m; sourceTree = "<group>"; };
 		80C69D1921101008000952AE /* GJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJSearchBar.h; sourceTree = "<group>"; };
@@ -710,6 +713,8 @@
 				802ECE19215DF807006BFAEB /* GJWashCarSearchTBVHeader.m */,
 				802ECE1E215E26F2006BFAEB /* GJWashCarListFilterView.h */,
 				802ECE1F215E26F2006BFAEB /* GJWashCarListFilterView.m */,
+				80B6F8C2215F7E1300A5993D /* GJWashCarAllListTBVCell.h */,
+				80B6F8C3215F7E1300A5993D /* GJWashCarAllListTBVCell.m */,
 			);
 			path = WashCar;
 			sourceTree = "<group>";
@@ -1432,6 +1437,7 @@
 				80284863206CB07500DEE778 /* GJHttpServerBase.m in Sources */,
 				80AD8AC5205BA2A5004E8724 /* GJLaunchViewController.m in Sources */,
 				80EC5F092064A86600276C4B /* GJBaseView.m in Sources */,
+				80B6F8C4215F7E1300A5993D /* GJWashCarAllListTBVCell.m in Sources */,
 				802ECE1A215DF807006BFAEB /* GJWashCarSearchTBVHeader.m in Sources */,
 				80CB4A6E214F64DA00544C89 /* GJNotificationMsgVC.m in Sources */,
 				80CB4A86214FB3B300544C89 /* GJMinePayWayVC.m in Sources */,

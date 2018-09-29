@@ -8,13 +8,26 @@
 
 #import "GJWashCarListFilterView.h"
 
+@interface GJWashCarListFilterView ()
+
+@end
+
 @implementation GJWashCarListFilterView
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor greenColor];
+        UIView *btmLine = [[UIView alloc] init];
+        btmLine.backgroundColor = APP_CONFIG.appBackgroundColor;
+        [self addSubview:btmLine];
+        [btmLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.right.left.equalTo(self);
+            make.height.mas_equalTo(1);
+        }];
+        
+        
+        
     }
     return self;
 }
