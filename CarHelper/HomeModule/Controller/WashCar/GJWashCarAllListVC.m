@@ -24,6 +24,10 @@
         make.left.top.right.equalTo(self.view);
         make.height.mas_equalTo(AdaptatSize(40));
     }];
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(_filterView.mas_bottom);
+    }];
 }
 
 - (void)viewDidLoad {
@@ -41,6 +45,7 @@
 - (void)initializationSubView {
     self.title = @"洗车";
     [self.view addSubview:self.filterView];
+    [self.view addSubview:self.tableView];
 }
 
 - (void)initializationNetWorking {
@@ -63,7 +68,7 @@
 
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
-- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 4;
 }
 
@@ -77,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return AdaptatSize(100);
+    return AdaptatSize(90);
 }
 
 #pragma mark - Getter/Setter
