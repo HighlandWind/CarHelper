@@ -51,6 +51,10 @@
     
 }
 
+- (void)scanMapBtnClick {
+    BLOCK_SAFE(_blockClickScanMap)();
+}
+
 - (void)pageAction:(UIPageControl *)page {
     [_scrollView setContentOffset:CGPointMake(page.currentPage * (SCREEN_W - 20), 0) animated:YES];
 }
@@ -81,7 +85,7 @@
     _scanMapBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
     [_scanMapBtn setTitleColor:APP_CONFIG.appMainColor forState:UIControlStateNormal];
     [_scanMapBtn setTitle:@"查看地图" forState:UIControlStateNormal];
-    [_scanMapBtn addTarget:self action:@selector(addrRefreshBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [_scanMapBtn addTarget:self action:@selector(scanMapBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _midLine = [[UIView alloc] init];
     _midLine.backgroundColor = APP_CONFIG.appBackgroundColor;

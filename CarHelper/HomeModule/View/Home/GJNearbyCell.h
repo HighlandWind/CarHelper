@@ -11,6 +11,7 @@
 @interface GJNearbyCell : GJBaseTableViewCell
 
 @property (nonatomic, strong) NSArray *leftTBVDatas;
+@property (nonatomic, copy) void (^blockClickScanMap)(void);
 
 @end
 

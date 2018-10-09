@@ -24,6 +24,8 @@
 {
     self = [super init];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        
         _backView = [[UIView alloc] init];
         _backView.layer.cornerRadius = AdaptatSize(30) / 2;
         _backView.clipsToBounds = YES;

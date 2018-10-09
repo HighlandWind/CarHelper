@@ -129,6 +129,10 @@
             [weakself.navigationController pushViewController:vc animated:YES];
         }
     };
+    _nearbyCell.blockClickScanMap = ^{
+        GJStopACarVC *stop = [[GJStopACarVC alloc] init];
+        [stop pushPageWith:weakself];
+    };
     _speechBtn.speechClickBlock = ^{
         weakself.speechBtn.hidden = YES;
         GJSpeechScreenView *v = [GJSpeechScreenView installView];

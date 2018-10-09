@@ -121,7 +121,7 @@
 #pragma mark - Getter/Setter
 - (GJBaseTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain controller:self];
+        _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped controller:self];
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     }
     return _tableView;
