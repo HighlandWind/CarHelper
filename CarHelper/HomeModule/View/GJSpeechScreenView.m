@@ -11,6 +11,7 @@
 #import "GJSpecchTBVCell.h"
 
 @interface GJSpeechScreenView () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic,strong) UIView *bgView;
 @property (nonatomic,strong) UIButton *closeBtn;
 @property (nonatomic,strong) UIImageView *closeBtnImgV;
 @property (nonatomic, strong) GJHomeSpeechButton *speechBtn;
@@ -42,20 +43,19 @@
     effectView.frame = [UIScreen mainScreen].bounds;
     [self addSubview:effectView];
     
-    CGFloat closeW = AdaptatSize(80);
-    _closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W-closeW, SCREEN_H-closeW, closeW, closeW)];
+    _closeBtn = [[UIButton alloc] init];
     _closeBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     _closeBtnImgV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1"]];
     [_closeBtn addTarget:self action:@selector(closePage) forControlEvents:UIControlEventTouchUpInside];
     
     _speechBtn = [GJHomeSpeechButton install];
-    UIView *bgV = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_H-AdaptatSize(90), self.width, AdaptatSize(100))];
-    bgV.backgroundColor = [UIColor whiteColor];
-    bgV.layer.cornerRadius = 10;
-    bgV.clipsToBounds = YES;
+    _bgView = [[UIView alloc] init];
+    _bgView.backgroundColor = [UIColor whiteColor];
+    _bgView.layer.cornerRadius = 10;
+    _bgView.clipsToBounds = YES;
     
     [self addSubview:self.tableView];
-    [self addSubview:bgV];
+    [self addSubview:_bgView];
     [self addSubview:_speechBtn];
     [self addSubview:_closeBtn];
     [self addSubview:_closeBtnImgV];
@@ -72,10 +72,24 @@
     [_closeBtnImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(_closeBtn);
     }];
+    [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.bottom.equalTo(self).with.offset(10);
+        if (SCREEN_H >= kGJIphoneX) {
+            make.height.mas_equalTo(AdaptatSize(120));
+        }else {
+            make.height.mas_equalTo(AdaptatSize(100));
+        }
+    }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.bottom.equalTo(self).with.offset(-AdaptatSize(15));
+        make.top.equalTo(_bgView).with.offset(AdaptatSize(15));
         make.width.height.mas_equalTo(AdaptatSize(60));
+    }];
+    [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_speechBtn);
+        make.right.equalTo(_bgView);
+        make.width.height.mas_equalTo(AdaptatSize(70));
     }];
 }
 

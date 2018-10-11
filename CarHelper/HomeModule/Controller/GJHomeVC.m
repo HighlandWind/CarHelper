@@ -43,7 +43,8 @@
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view).with.offset(-AdaptatSize(20));
-        make.width.height.mas_equalTo(AdaptatSize(60));
+        make.width.mas_equalTo(AdaptatSize(60));
+        make.height.mas_equalTo(AdaptatSize(60));
     }];
 }
 

@@ -33,7 +33,11 @@
     }];
     [_btmButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(AdaptatSize(60));
+        if (SCREEN_H >= kGJIphoneX) {
+            make.height.mas_equalTo(AdaptatSize(80));
+        }else {
+            make.height.mas_equalTo(AdaptatSize(60));
+        }
     }];
 }
 
