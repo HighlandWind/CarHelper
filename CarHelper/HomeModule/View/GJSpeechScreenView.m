@@ -107,10 +107,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GJSpecchTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJSpecchTBVCell reuseIndentifier]];
+    NSInteger cellType = indexPath.row % 2;
     if (!cell) {
-        cell = [[GJSpecchTBVCell alloc] initWithStyle:[GJSpecchTBVCell expectingStyle] reuseIdentifier:[GJSpecchTBVCell reuseIndentifier]];
+        NSString *reuseIndentifier = @"";
+        if (cellType) reuseIndentifier = @"speech.cell.nor";
+        else reuseIndentifier = @"speech.cell";
+        cell = [[GJSpecchTBVCell alloc] initWithStyle:[GJSpecchTBVCell expectingStyle] reuseIdentifier:reuseIndentifier];
     }
-    cell.cellType = indexPath.row % 2;
+    cell.cellType = cellType;
     return cell;
 }
 
