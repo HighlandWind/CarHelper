@@ -199,6 +199,7 @@
 - (GJHomeTopImage *)topBgImg {
     if (!_topBgImg) {
         _topBgImg = [[GJHomeTopImage alloc] init];
+        _topBgImg.backgroundColor = APP_CONFIG.appMainColor;
     }
     return _topBgImg;
 }
