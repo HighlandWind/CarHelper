@@ -64,9 +64,10 @@
     _searchBar.placeholder = @" 附近商家";
     
     _addressBtn = [[UIButton alloc] init];
+    _addressBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _addressBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
     [_addressBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_addressBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
+    [_addressBtn setImage:[UIImage imageNamed:@"home_location_white"] forState:UIControlStateNormal];
     [_addressBtn sizeToFit];
     [_addressBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -15)];
     [_addressBtn addTarget:self action:@selector(addressBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -74,7 +75,7 @@
     _weatherBtn = [[UIButton alloc] init];
     _weatherBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
     [_weatherBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_weatherBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
+    [_weatherBtn setImage:[UIImage imageNamed:@"home_whether_yellow"] forState:UIControlStateNormal];
     [_weatherBtn sizeToFit];
     [_weatherBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -15)];
     
@@ -139,10 +140,12 @@
     [_addressBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_searchBar);
         make.bottom.equalTo(_searchBar.mas_top).with.offset(-AdaptatSize(8));
+        make.width.mas_equalTo(AdaptatSize(80));
+        make.height.mas_equalTo(AdaptatSize(18));
     }];
     [_weatherBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_addressBtn);
-        make.left.equalTo(_addressBtn.mas_right).with.offset(AdaptatSize(20));
+        make.left.equalTo(_addressBtn.mas_right);
     }];
     [_topRightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_addressBtn);

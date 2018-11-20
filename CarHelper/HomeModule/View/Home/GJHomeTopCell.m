@@ -56,11 +56,11 @@
     _broadLB.text = @"您的车辆驶入了限行路段？请及时进行标注！";
     _broadImg.image = [UIImage imageNamed:@"setup"];
     
-    _topLeft2Btn = [self createButtonTitle:@"停车" titleColor:[UIColor whiteColor] image:@"scan" tag:1];
-    _topLeft1Btn = [self createButtonTitle:@"洗车" titleColor:[UIColor whiteColor] image:@"scan" tag:2];
-    _topCenterBtn = [self createButtonTitle:@"拼车" titleColor:[UIColor whiteColor] image:@"scan" tag:3];
-    _topRight1Btn = [self createButtonTitle:@"汽车用品" titleColor:[UIColor whiteColor] image:@"scan" tag:4];
-    _topRight2Btn = [self createButtonTitle:@"更多" titleColor:[UIColor whiteColor] image:@"scan" tag:5];
+    _topLeft2Btn = [self createButtonTitle:@"停车" titleColor:[UIColor whiteColor] image:@"home_park_white" tag:1];
+    _topLeft1Btn = [self createButtonTitle:@"洗车" titleColor:[UIColor whiteColor] image:@"home_washcar_white" tag:2];
+    _topCenterBtn = [self createButtonTitle:@"拼车" titleColor:[UIColor whiteColor] image:@"home_pin_white" tag:3];
+    _topRight1Btn = [self createButtonTitle:@"汽车用品" titleColor:[UIColor whiteColor] image:@"home_chepin_white" tag:4];
+    _topRight2Btn = [self createButtonTitle:@"更多" titleColor:[UIColor whiteColor] image:@"home_more_white" tag:5];
     
     [self.contentView addSubview:_broadcastBG];
     [self.contentView addSubview:_broadImg];
