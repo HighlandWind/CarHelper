@@ -91,7 +91,7 @@
     [_topCenterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.bottom.equalTo(_broadcastBG.mas_top).with.offset(-10);
-        make.width.height.mas_equalTo(AdaptatSize(60));
+        make.width.height.mas_equalTo(AdaptatSize(65));
     }];
     [_topLeft1Btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.centerY.equalTo(_topCenterBtn);
@@ -121,9 +121,9 @@
     btn.hidden = YES;
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateHighlighted];
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, AdaptatSize(25), 0)];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, AdaptatSize(28), 0)];
     UILabel *titleLB = [[UILabel alloc] init];
-    titleLB.font = [APP_CONFIG appAdaptBoldFontOfSize:15];
+    titleLB.font = [APP_CONFIG appAdaptBoldFontOfSize:14];
     titleLB.text = title;
     titleLB.textColor = [UIColor whiteColor];
     [titleLB sizeToFit];

@@ -65,7 +65,7 @@
     
     _addressBtn = [[UIButton alloc] init];
     _addressBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    _addressBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
+    _addressBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:13];
     [_addressBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_addressBtn setImage:[UIImage imageNamed:@"home_location_white"] forState:UIControlStateNormal];
     [_addressBtn sizeToFit];
@@ -73,20 +73,20 @@
     [_addressBtn addTarget:self action:@selector(addressBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _weatherBtn = [[UIButton alloc] init];
-    _weatherBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
+    _weatherBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:13];
     [_weatherBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_weatherBtn setImage:[UIImage imageNamed:@"home_whether_yellow"] forState:UIControlStateNormal];
     [_weatherBtn sizeToFit];
     [_weatherBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -15)];
     
     _dateLabel = [[UILabel alloc] init];
-    _dateLabel.font = [APP_CONFIG appAdaptFontOfSize:14];
+    _dateLabel.font = [APP_CONFIG appAdaptFontOfSize:13];
     _dateLabel.textColor = [UIColor whiteColor];
     [_dateLabel sizeToFit];
     _dateLine = [[UIView alloc] init];
     _dateLine.backgroundColor = APP_CONFIG.lightTextColor;
     _topRightLabel = [[UILabel alloc] init];
-    _topRightLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _topRightLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
     _topRightLabel.textColor = [UIColor whiteColor];
     [_topRightLabel sizeToFit];
     _topRightLabel.backgroundColor = [UIColor colorWithRGB:0 g:159 b:236];
@@ -94,11 +94,11 @@
     _topRightLabel.clipsToBounds = YES;
     
     _speechBtn = [[UIButton alloc] init];
-    _speechBtn.backgroundColor = [UIColor greenColor];
+    [_speechBtn setImage:[UIImage imageNamed:@"home_speech_white"] forState:UIControlStateNormal];
     [_speechBtn addTarget:self action:@selector(speechBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _addBtn = [[UIButton alloc] init];
-    _addBtn.backgroundColor = [UIColor yellowColor];
+    [_addBtn setImage:[UIImage imageNamed:@"home_add_white"] forState:UIControlStateNormal];
     [_addBtn addTarget:self action:@selector(addBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:_searchBar];
@@ -114,7 +114,7 @@
 }
 
 - (void)setContents {
-    [_addressBtn setTitle:@"贵阳市" forState:UIControlStateNormal];
+    [_addressBtn setTitle:@"  贵阳市" forState:UIControlStateNormal];
     [_weatherBtn setTitle:@"晴 25 ˚C" forState:UIControlStateNormal];
     _dateLabel.text = [self stringFromDate];
     _topRightLabel.text = @"  限行  ";
@@ -126,7 +126,7 @@
         make.bottom.equalTo(self).with.offset(-10);
         make.left.equalTo(self).with.offset(15);
         make.right.equalTo(self).with.offset(-AdaptatSize(50));
-        make.height.mas_equalTo(AdaptatSize(30));
+        make.height.mas_equalTo(AdaptatSize(28));
     }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.equalTo(_searchBar);
@@ -164,7 +164,7 @@
 }
 
 - (CGFloat)searchHeight {
-    return NavBar_H + AdaptatSize(40);
+    return NavBar_H + AdaptatSize(35);
 }
 
 #pragma mark -UISearchBarDelegate

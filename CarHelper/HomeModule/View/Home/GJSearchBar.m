@@ -19,7 +19,7 @@ static CGFloat const searchIconW = 20.0;
 // icon与placeholder间距
 static CGFloat const iconSpacing = 10.0;
 // 占位文字的字体大小
-static CGFloat const placeHolderFont = 14.0;
+static CGFloat const placeHolderFont = 13.0;
 
 @implementation GJSearchBar
 
@@ -31,16 +31,16 @@ static CGFloat const placeHolderFont = 14.0;
     UITextField *field = [self valueForKey:@"_searchField"];
     field.frame = CGRectMake(0, 0, self.frame.size.width-40.0, self.frame.size.height);
     [field setBackgroundColor:self.backgroundColor];
-    field.textColor = [UIColor blackColor];
+    field.textColor = [UIColor whiteColor];
     field.borderStyle = UITextBorderStyleNone;
     field.layer.cornerRadius = 2.0f;
     field.layer.masksToBounds = YES;
     field.tintColor = APP_CONFIG.whiteGrayColor;
-    field.font = [APP_CONFIG appAdaptFontOfSize:placeHolderFont];
+    field.font = [APP_CONFIG appAdaptBoldFontOfSize:placeHolderFont];
     [field setValue:APP_CONFIG.whiteGrayColor forKeyPath:@"_placeholderLabel.textColor"];
     [field setValue:field.font forKeyPath:@"_placeholderLabel.font"];
     UIButton *clearButton = [field valueForKey:@"_clearButton"];
-    [clearButton setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+    [clearButton setImage:[UIImage imageNamed:@"home_circle_close"] forState:UIControlStateNormal];
     
     if (@available(iOS 11.0, *)) {
         // 先默认居中placeholder
