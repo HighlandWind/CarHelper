@@ -9,7 +9,7 @@
 #import "GJHomeSpeechButton.h"
 
 @interface GJHomeSpeechButton ()
-@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIImageView *button;
 @end
 
 @implementation GJHomeSpeechButton
@@ -27,16 +27,17 @@
 {
     self = [super init];
     if (self) {
-        _button = [[UIButton alloc] init];
-        _button.backgroundColor = APP_CONFIG.appMainColor;
+        _button = [[UIImageView alloc] init];
         _button.clipsToBounds = YES;
-        [_button addTarget:self action:@selector(speechButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        _button.image = [UIImage imageNamed:@"home_speech_btn"];
+        _button.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:_button];
         
         self.layer.shadowColor = [UIColor blackColor].CGColor;
         self.layer.shadowOffset = CGSizeMake(0, 0);
         self.layer.shadowOpacity = 0.4;
         self.layer.shadowRadius = 6;
+        [self addTarget:self action:@selector(speechButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }

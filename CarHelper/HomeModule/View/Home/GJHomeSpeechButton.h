@@ -6,9 +6,9 @@
 //  Copyright © 2018年 CAR. All rights reserved.
 //
 
-#import "GJBaseView.h"
+#import <UIKit/UIKit.h>
 
-@interface GJHomeSpeechButton : GJBaseView
+@interface GJHomeSpeechButton : UIButton
 
 @property (nonatomic, copy) void (^speechClickBlock)(void);
 + (GJHomeSpeechButton *)install;

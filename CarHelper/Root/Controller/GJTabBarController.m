@@ -35,8 +35,8 @@
     _discovceVC = [[GJDiscoverVC alloc] init];
     _mineVC = [[GJMineVC alloc] init];
     
-    GJBaseNavigationController *firstTab = [self createTabItemVC:_homeVC norImg:@"shopB" selectImg:@"home_tab" Title:@"首页"];
-    GJBaseNavigationController *secTab = [self createTabItemVC:_discovceVC norImg:@"discover_tab_p" selectImg:@"partnerA" Title:@"发现"];
+    GJBaseNavigationController *firstTab = [self createTabItemVC:_homeVC norImg:@"home_tab_p" selectImg:@"home_tab" Title:@"首页"];
+    GJBaseNavigationController *secTab = [self createTabItemVC:_discovceVC norImg:@"discover_tab_p" selectImg:@"discover_tab" Title:@"发现"];
     GJBaseNavigationController *fourTab = [self createTabItemVC:_mineVC norImg:@"mine_tab_p" selectImg:@"mine_tab" Title:@"我的"];
     
     self.viewControllers = @[firstTab, secTab, fourTab];
