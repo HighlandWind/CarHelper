@@ -54,7 +54,7 @@
     _broadLB.textColor = [UIColor grayColor];
     _broadLB.textAlignment = NSTextAlignmentCenter;
     _broadLB.text = @"您的车辆驶入了限行路段？请及时进行标注！";
-    _broadImg.image = [UIImage imageNamed:@"setup"];
+    _broadImg.image = [UIImage imageNamed:@"home_noti_remind"];
     
     _topLeft2Btn = [self createButtonTitle:@"停车" titleColor:[UIColor whiteColor] image:@"home_park_white" tag:1];
     _topLeft1Btn = [self createButtonTitle:@"洗车" titleColor:[UIColor whiteColor] image:@"home_washcar_white" tag:2];
@@ -78,7 +78,7 @@
     [_broadImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_broadcastBG);
         make.left.equalTo(_broadcastBG).with.offset(10);
-        make.height.mas_equalTo(_broadcastBG.height-10);
+        make.height.mas_equalTo(_broadcastBG.height - AdaptatSize(17));
         make.width.mas_equalTo(_broadcastBG.height);
     }];
     [_broadLB mas_makeConstraints:^(MASConstraintMaker *make) {

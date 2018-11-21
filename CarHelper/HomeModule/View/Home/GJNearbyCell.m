@@ -78,11 +78,11 @@
     [_addressLB sizeToFit];
     
     _addrRefreshBtn = [[UIButton alloc] init];
-    [_addrRefreshBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+    [_addrRefreshBtn setImage:[UIImage imageNamed:@"home_nearby_refresh"] forState:UIControlStateNormal];
     [_addrRefreshBtn addTarget:self action:@selector(addrRefreshBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _scanMapBtn = [[UIButton alloc] init];
-    _scanMapBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _scanMapBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
     [_scanMapBtn setTitleColor:APP_CONFIG.appMainColor forState:UIControlStateNormal];
     [_scanMapBtn setTitle:@"查看地图" forState:UIControlStateNormal];
     [_scanMapBtn addTarget:self action:@selector(scanMapBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -138,7 +138,7 @@
     }];
     [_addrRefreshBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_addressLB);
-        make.left.equalTo(_addressLB.mas_right).with.offset(3);
+        make.left.equalTo(_addressLB.mas_right);
         make.width.height.mas_equalTo(AdaptatSize(30));
     }];
     [_scanMapBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -221,9 +221,9 @@
     
     _locateBtn = [[UIButton alloc] init];
     _locateBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
-    [_locateBtn setTitle:@" 300m" forState:UIControlStateNormal];
+    [_locateBtn setTitle:@"  300m" forState:UIControlStateNormal];
     [_locateBtn setTitleColor:APP_CONFIG.darkTextColor forState:UIControlStateNormal];
-    [_locateBtn setImage:[UIImage imageNamed:@"search_magnifier"] forState:UIControlStateNormal];
+    [_locateBtn setImage:[UIImage imageNamed:@"home_nearby_distance"] forState:UIControlStateNormal];
     
     [self.contentView addSubview:_titleLB];
     [self.contentView addSubview:_detailLB];
@@ -282,7 +282,7 @@
         _locateBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
         [_locateBtn setTitle:@" 300m" forState:UIControlStateNormal];
         [_locateBtn setTitleColor:APP_CONFIG.darkTextColor forState:UIControlStateNormal];
-        [_locateBtn setImage:[UIImage imageNamed:@"search_magnifier"] forState:UIControlStateNormal];
+        [_locateBtn setImage:[UIImage imageNamed:@"home_nearby_distance"] forState:UIControlStateNormal];
         
         _yuyueBtn = [[UIButton alloc] init];
         _yuyueBtn.titleLabel.font = [APP_CONFIG appAdaptBoldFontOfSize:15];

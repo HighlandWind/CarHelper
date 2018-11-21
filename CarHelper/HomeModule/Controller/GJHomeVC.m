@@ -94,7 +94,7 @@
 }
 
 - (void)initializationNetWorking {
-    [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533284438509&di=21e32c93671a719447ecb2221b106b61&imgtype=0&src=http%3A%2F%2Fpic.5442.com%3A82%2F2014%2F0929%2F04%2F03.jpg%2521960.jpg"]];
+    [_topBgImg sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533284438509&di=21e32c93671a719447ecb2221b106b61&imgtype=0&src=http%3A%2F%2Fpic.5442.com%3A82%2F2014%2F0929%2F04%2F03.jpg%2521960.jp"]];
     _nearbyCell.leftTBVDatas =@[@"花果园金融街停车场", @"亚太中心停车场", @"好卡博尔其背后去不去而", @"偶尔去日本和空气哦", @"惹不起不确认确认白求恩", @"而不去日本"];
 }
 
@@ -190,7 +190,7 @@
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView setContentInset:UIEdgeInsetsMake(0, 0, AdaptatSize(90), 0)];
+        [_tableView setContentInset:UIEdgeInsetsMake(0, 0, AdaptatSize(110), 0)];
     }
     return _tableView;
 }
