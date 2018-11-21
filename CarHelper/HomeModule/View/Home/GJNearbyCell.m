@@ -276,7 +276,7 @@
         _detailLB.font = [APP_CONFIG appAdaptFontOfSize:12];
         _detailLB.textColor = APP_CONFIG.darkTextColor;
         [_detailLB sizeToFit];
-        _detailLB.text = @"就回本看咯解不开";
+        _detailLB.text = @"南明区中山南路118号";
         
         _locateBtn = [[UIButton alloc] init];
         _locateBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];

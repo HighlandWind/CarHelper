@@ -27,7 +27,7 @@
     self.backgroundColor = [UIColor clearColor];
     _timeNow = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerFunc) userInfo:nil repeats:YES];
     
-    _backView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, SCREEN_W-20, self.height-30)];
+    _backView = [[UIView alloc] initWithFrame:CGRectMake(AdaptatSize(12), AdaptatSize(10), SCREEN_W - AdaptatSize(24), self.height - AdaptatSize(25))];
     _backView.backgroundColor = [UIColor whiteColor];
     _backView.layer.cornerRadius = 5;
     _backView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -48,7 +48,7 @@
     
     _parkLocateLB = [self createLabelFont:14 color:[UIColor grayColor]];
     _parkLocateLB.numberOfLines = 0;
-    _parkLocateLB.text = @"南明区中华中路00号\n格林豪泰酒店\n负二层1234";
+    _parkLocateLB.text = @"南明区中华中路00号\nXX大厦停车场\n负二层c1区2105";
     
     _timeLB = [self createLabelFont:17 color:[UIColor blackColor]];
     
@@ -114,7 +114,7 @@
 }
 
 - (CGFloat)height {
-    return AdaptatSize(150);
+    return AdaptatSize(153);
 }
 
 - (void)timerFunc {

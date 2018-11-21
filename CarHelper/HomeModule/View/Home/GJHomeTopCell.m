@@ -74,7 +74,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _broadcastBG.frame = CGRectMake(10, self.height-32, SCREEN_W-20, 32);
+    _broadcastBG.frame = CGRectMake(AdaptatSize(12), self.height - AdaptatSize(32), SCREEN_W - AdaptatSize(24), AdaptatSize(32));
     [_broadImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_broadcastBG);
         make.left.equalTo(_broadcastBG).with.offset(10);

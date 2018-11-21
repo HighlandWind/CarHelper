@@ -51,7 +51,7 @@
     [_topLB sizeToFit];
     
     _moreBtn = [[UIButton alloc] init];
-    _moreBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
+    _moreBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
     [_moreBtn setTitleColor:APP_CONFIG.grayTextColor forState:UIControlStateNormal];
     [_moreBtn setTitle:@"查看更多" forState:UIControlStateNormal];
     [_moreBtn addTarget:self action:@selector(moreBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -77,7 +77,7 @@
 - (void)layoutSubviews {
     [_topBackLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
-        make.height.mas_equalTo(AdaptatSize(10));
+        make.height.mas_equalTo(AdaptatSize(7));
     }];
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(10);
