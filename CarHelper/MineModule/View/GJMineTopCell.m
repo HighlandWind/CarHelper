@@ -26,7 +26,7 @@
 @implementation GJMineTopCell
 
 - (CGFloat)height {
-    return AdaptatSize(135);
+    return AdaptatSize(135) + NavBar_H;
 }
 
 - (void)scoreBtnClick {

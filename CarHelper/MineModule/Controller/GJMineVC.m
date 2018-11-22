@@ -33,7 +33,8 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(self.view).with.offset(-[UIApplication sharedApplication].statusBarFrame.size.height);
     }];
 }
 
@@ -196,7 +197,7 @@
         _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain controller:self];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = APP_CONFIG.appBackgroundColor;
-        _tableView.bounces = NO;
+//        _tableView.bounces = NO;
     }
     return _tableView;
 }
