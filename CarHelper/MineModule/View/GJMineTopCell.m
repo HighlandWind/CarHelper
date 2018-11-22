@@ -26,7 +26,7 @@
 @implementation GJMineTopCell
 
 - (CGFloat)height {
-    return AdaptatSize(140);
+    return AdaptatSize(135);
 }
 
 - (void)scoreBtnClick {
@@ -57,6 +57,7 @@
     _portraitImgV.layer.cornerRadius = AdaptatSize(46) / 2;
     _portraitImgV.clipsToBounds = YES;
     _portraitImgV.backgroundColor = APP_CONFIG.appBackgroundColor;
+    _portraitImgV.image = [UIImage imageNamed:@"mine_default_portrait"];
     
     _titleLB = [[UILabel alloc] init];
     _titleLB.font = [APP_CONFIG appAdaptFontOfSize:15];
@@ -71,7 +72,7 @@
     [_detailLB sizeToFit];
     
     _arrowImg = [[UIImageView alloc] init];
-    _arrowImg.image = [UIImage imageNamed:@"arrow_left_back"];
+    _arrowImg.image = [UIImage imageNamed:@"mine_list_right_arrow"];
     _arrowImg.contentMode = UIViewContentModeScaleAspectFit;
     
     _scoreBtn = [[UIButton alloc] init];
@@ -184,7 +185,7 @@
     [self.contentView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self);
-        make.height.mas_equalTo(AdaptatSize(8));
+        make.height.mas_equalTo(AdaptatSize(6));
     }];
     _lineMid = [[UIView alloc] init];
     _lineMid.backgroundColor = APP_CONFIG.separatorLineColor;

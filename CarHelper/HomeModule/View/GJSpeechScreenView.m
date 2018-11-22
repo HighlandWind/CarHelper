@@ -64,7 +64,16 @@
         [_tableView setY:[UIApplication sharedApplication].statusBarFrame.size.height];
     } completion:^(BOOL finished) {
         [_tableView reloadData];
+        [self scrollToBottom];
     }];
+}
+
+- (void)scrollToBottom {
+    CGFloat yOffset = 0;
+    if (self.tableView.contentSize.height > self.tableView.bounds.size.height) {
+        yOffset = self.tableView.contentSize.height - self.tableView.bounds.size.height;
+    }
+    [self.tableView setContentOffset:CGPointMake(0, yOffset) animated:NO];
 }
 
 - (void)layoutSubviews {

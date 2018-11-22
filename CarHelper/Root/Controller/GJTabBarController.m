@@ -40,7 +40,6 @@
     GJBaseNavigationController *fourTab = [self createTabItemVC:_mineVC norImg:@"mine_tab_p" selectImg:@"mine_tab" Title:@"我的"];
     
     self.viewControllers = @[firstTab, secTab, fourTab];
-    self.selectedIndex = 0;
     [self setBartitleColor];
 }
 

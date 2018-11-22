@@ -9,7 +9,7 @@
 #import "GJMineVC.h"
 #import "GJAppSettingVC.h"
 #import "GJMineTopCell.h"
-#import "GJNormalTBVCell.h"
+#import "GJMineTBVCell.h"
 #import "GJNormalCellModel.h"
 #import "GJMessageListVC.h"
 #import "GJMineHistoryVC.h"
@@ -47,17 +47,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setStatusBarLight:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 #pragma mark - Iniitalization methods
 - (void)initializationData {
     _topCell = [[GJMineTopCell alloc] init];
     
-    GJNormalCellModel *model1 = [GJNormalCellModel cellModelTitle:@"轨迹" detail:@"" imageName:@"setup" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    GJNormalCellModel *model2 = [GJNormalCellModel cellModelTitle:@"订单" detail:@"" imageName:@"setup" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    GJNormalCellModel *model3 = [GJNormalCellModel cellModelTitle:@"我的车辆" detail:@"" imageName:@"setup" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    GJNormalCellModel *model4 = [GJNormalCellModel cellModelTitle:@"支付方式" detail:@"" imageName:@"setup" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    GJNormalCellModel *model5 = [GJNormalCellModel cellModelTitle:@"帮助中心" detail:@"" imageName:@"setup" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    GJNormalCellModel *model1 = [GJNormalCellModel cellModelTitle:@"轨迹" detail:@"" imageName:@"mine_list_history" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    GJNormalCellModel *model2 = [GJNormalCellModel cellModelTitle:@"订单" detail:@"" imageName:@"mine_list_order" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    GJNormalCellModel *model3 = [GJNormalCellModel cellModelTitle:@"我的车辆" detail:@"" imageName:@"mine_list_mycar" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    GJNormalCellModel *model4 = [GJNormalCellModel cellModelTitle:@"支付方式" detail:@"" imageName:@"mine_list_payway" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    GJNormalCellModel *model5 = [GJNormalCellModel cellModelTitle:@"帮助中心" detail:@"" imageName:@"mine_list_help" acessoryType:UITableViewCellAccessoryDisclosureIndicator];
     _models = @[model1, model2, model3, model4, model5];
     
     model1.didSelectBlock = ^(NSIndexPath *indexPath) {
@@ -93,10 +94,10 @@
     
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(60), 44)];
     UIButton *setupBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(30), 44)];
-    [setupBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+    [setupBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
     [setupBtn addTarget:self action:@selector(setupAction) forControlEvents:UIControlEventTouchUpInside];
     UIButton *msgBtn = [[UIButton alloc] initWithFrame:CGRectMake(AdaptatSize(30), 0, AdaptatSize(30), 44)];
-    [msgBtn setImage:[UIImage imageNamed:@"search_magnifier"] forState:UIControlStateNormal];
+    [msgBtn setImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
     [msgBtn addTarget:self action:@selector(msgAction) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:setupBtn];
     [rightView addSubview:msgBtn];
@@ -163,9 +164,9 @@
     if (indexPath.row == 0) {
         return _topCell;
     }else {
-        GJNormalTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJNormalTBVCell reuseIndentifier]];
+        GJMineTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJMineTBVCell reuseIndentifier]];
         if (!cell) {
-            cell = [[GJNormalTBVCell alloc] initWithStyle:[GJNormalTBVCell expectingStyle] reuseIdentifier:[GJNormalTBVCell reuseIndentifier]];
+            cell = [[GJMineTBVCell alloc] initWithStyle:[GJMineTBVCell expectingStyle] reuseIdentifier:[GJMineTBVCell reuseIndentifier]];
             [cell settingShowSpeatLine:YES];
         }
         cell.textLabel.font = [APP_CONFIG appAdaptFontOfSize:15];
