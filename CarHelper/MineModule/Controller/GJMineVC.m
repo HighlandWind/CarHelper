@@ -91,20 +91,6 @@
 }
 
 - (void)initializationSubView {
-    self.title = @"我的";
-    
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(60), 44)];
-    UIButton *setupBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, AdaptatSize(30), 44)];
-    [setupBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
-    [setupBtn addTarget:self action:@selector(setupAction) forControlEvents:UIControlEventTouchUpInside];
-    UIButton *msgBtn = [[UIButton alloc] initWithFrame:CGRectMake(AdaptatSize(30), 0, AdaptatSize(30), 44)];
-    [msgBtn setImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
-    [msgBtn addTarget:self action:@selector(msgAction) forControlEvents:UIControlEventTouchUpInside];
-    [rightView addSubview:setupBtn];
-    [rightView addSubview:msgBtn];
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-    self.navigationItem.rightBarButtonItem = right;
-    
     [self.view addSubview:self.tableView];
     [self blockHanddle];
 }
@@ -135,23 +121,23 @@
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
+    _topCell.blockClickMessage = ^{
+        GJMessageListVC *vc = [[GJMessageListVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    _topCell.blockClickSetup = ^{
+        GJAppSettingVC *vc = [[GJAppSettingVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
 }
 
 #pragma mark - Public methods
 
 
 #pragma mark - Event response
-- (void)setupAction {
-    GJAppSettingVC *vc = [[GJAppSettingVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
-- (void)msgAction {
-    GJMessageListVC *vc = [[GJMessageListVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
 #pragma mark - Custom delegate
 

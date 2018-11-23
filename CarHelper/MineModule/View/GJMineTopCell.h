@@ -13,5 +13,7 @@
 @property (nonatomic, copy) void (^blockClickScore)(void);
 @property (nonatomic, copy) void (^blockClickCoupon)(void);
 @property (nonatomic, copy) void (^blockClickInfo)(void);
+@property (nonatomic, copy) void (^blockClickMessage)(void);
+@property (nonatomic, copy) void (^blockClickSetup)(void);
 
 @end

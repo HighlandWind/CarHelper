@@ -12,8 +12,8 @@
 @property (nonatomic, strong) UIImageView *portraitImgV;
 @property (nonatomic, strong) UILabel *titleLB;
 @property (nonatomic, strong) UILabel *detailLB;
-@property (nonatomic, strong) UIView *lineMid;
-@property (nonatomic, strong) UIImageView *arrowImg;
+@property (nonatomic, strong) UIButton *messageBtn;
+@property (nonatomic, strong) UIButton *setupBtn;
 @property (nonatomic, strong) UIButton *scoreBtn;
 @property (nonatomic, strong) UIButton *couponBtn;
 @property (nonatomic, strong) UIButton *infoBtn;
@@ -39,6 +39,14 @@
 
 - (void)infoBtnClick {
     BLOCK_SAFE(_blockClickInfo)();
+}
+
+- (void)messageBtnClick {
+    BLOCK_SAFE(_blockClickMessage)();
+}
+
+- (void)setupBtnClick {
+    BLOCK_SAFE(_blockClickSetup)();
 }
 
 - (instancetype)init
@@ -71,9 +79,13 @@
     _detailLB.textColor = APP_CONFIG.blackTextColor;
     [_detailLB sizeToFit];
     
-    _arrowImg = [[UIImageView alloc] init];
-    _arrowImg.image = [UIImage imageNamed:@"mine_list_right_arrow"];
-    _arrowImg.contentMode = UIViewContentModeScaleAspectFit;
+    _messageBtn = [[UIButton alloc] init];
+    [_messageBtn setImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
+    [_messageBtn addTarget:self action:@selector(messageBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    _setupBtn = [[UIButton alloc] init];
+    [_setupBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
+    [_setupBtn addTarget:self action:@selector(setupBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _scoreBtn = [[UIButton alloc] init];
     [_scoreBtn addTarget:self action:@selector(scoreBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -108,7 +120,8 @@
     [self.contentView addSubview:_portraitImgV];
     [self.contentView addSubview:_titleLB];
     [self.contentView addSubview:_detailLB];
-    [self.contentView addSubview:_arrowImg];
+    [self.contentView addSubview:_messageBtn];
+    [self.contentView addSubview:_setupBtn];
     [self.contentView addSubview:_scoreBtn];
     [self.contentView addSubview:_score];
     [self.contentView addSubview:_scoreLB];
@@ -119,63 +132,59 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_portraitImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(10);
-        make.top.equalTo(self).with.offset(AdaptatSize(12));
-        make.width.height.mas_equalTo(AdaptatSize(46));
-    }];
-    [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_portraitImgV);
-        make.left.equalTo(_portraitImgV.mas_right).with.offset(10);
-    }];
-    [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_portraitImgV);
-        make.left.equalTo(_titleLB);
-    }];
-    [_arrowImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_portraitImgV);
-        make.right.equalTo(self).with.offset(-AdaptatSize(10));
-    }];
-    [_infoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self);
-        make.bottom.equalTo(_lineMid);
-    }];
     [_scoreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self);
-        make.bottom.equalTo(self).with.offset(-10);
         make.right.equalTo(self.mas_centerX);
-        make.top.equalTo(_lineMid.mas_bottom);
+        make.bottom.equalTo(self).with.offset(-AdaptatSize(15));
     }];
     [_score mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_scoreBtn);
-        make.bottom.equalTo(_scoreBtn.mas_centerY);
+        make.centerX.equalTo(self.scoreBtn);
+        make.bottom.equalTo(self.scoreBtn.mas_centerY);
     }];
     [_scoreLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_scoreBtn);
-        make.top.equalTo(_scoreBtn.mas_centerY);
+        make.centerX.equalTo(self.scoreBtn);
+        make.top.equalTo(self.scoreBtn.mas_centerY);
     }];
     [_couponBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
         make.bottom.equalTo(self).with.offset(-10);
         make.left.equalTo(self.mas_centerX);
-        make.top.equalTo(_scoreBtn);
+        make.centerY.equalTo(self.scoreBtn);
     }];
     [_coupon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_couponBtn);
-        make.bottom.equalTo(_couponBtn.mas_centerY);
+        make.centerX.equalTo(self.couponBtn);
+        make.bottom.equalTo(self.couponBtn.mas_centerY);
     }];
     [_couponLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_couponBtn);
-        make.top.equalTo(_couponBtn.mas_centerY);
+        make.centerX.equalTo(self.couponBtn);
+        make.top.equalTo(self.couponBtn.mas_centerY);
     }];
-    UIView *line = [[UIView alloc] init];
-    line.backgroundColor = APP_CONFIG.separatorLineColor;
-    [self.contentView addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.centerY.equalTo(_scoreBtn);
-        make.height.mas_equalTo(AdaptatSize(25));
-        make.width.mas_equalTo(1);
+    [_portraitImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).with.offset(AdaptatSize(12));
+        make.bottom.equalTo(self.scoreBtn.mas_top).with.offset(-AdaptatSize(52));
+        make.width.height.mas_equalTo(AdaptatSize(46));
+    }];
+    [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.portraitImgV);
+        make.left.equalTo(self.portraitImgV.mas_right).with.offset(10);
+    }];
+    [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.portraitImgV);
+        make.left.equalTo(self.titleLB);
+    }];
+    [_messageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.portraitImgV).with.offset(-4);
+        make.right.equalTo(self).with.offset(-AdaptatSize(10));
+        make.width.height.mas_equalTo(AdaptatSize(30));
+    }];
+    [_setupBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.messageBtn);
+        make.right.equalTo(self.messageBtn.mas_left).with.offset(-5);
+        make.width.height.equalTo(self.messageBtn);
+    }];
+    [_infoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self);
+        make.bottom.equalTo(self.mas_centerY);
     }];
 }
 
@@ -184,16 +193,8 @@
     line.backgroundColor = APP_CONFIG.separatorLineColor;
     [self.contentView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self);
-        make.height.mas_equalTo(AdaptatSize(6));
-    }];
-    _lineMid = [[UIView alloc] init];
-    _lineMid.backgroundColor = APP_CONFIG.separatorLineColor;
-    [self.contentView addSubview:_lineMid];
-    [_lineMid mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self);
-        make.centerY.equalTo(self).with.offset(AdaptatSize(6));
-        make.height.mas_equalTo(1.2);
+        make.left.right.bottom.equalTo(self);
+        make.height.mas_equalTo(6);
     }];
 }
 
