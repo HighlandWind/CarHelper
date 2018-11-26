@@ -36,42 +36,44 @@
 - (void)setupSubviews {
     self.backgroundColor = APP_CONFIG.appBackgroundColor;
     
+    CGFloat textFont = 16;
+    
     _topLeftLB = [[UILabel alloc] init];
-    _topLeftLB.font = [APP_CONFIG appAdaptBoldFontOfSize:15];
+    _topLeftLB.font = [APP_CONFIG appAdaptBoldFontOfSize:textFont];
     _topLeftLB.text = @"车牌号：";
     _topLeftLB.textColor = APP_CONFIG.darkTextColor;
     [_topLeftLB sizeToFit];
     
     _topRightLB = [[UILabel alloc] init];
-    _topRightLB.font = [APP_CONFIG appAdaptBoldFontOfSize:15];
+    _topRightLB.font = [APP_CONFIG appAdaptBoldFontOfSize:textFont];
     _topRightLB.text = @"贵A-12345";
     _topRightLB.textColor = APP_CONFIG.darkTextColor;
     [_topRightLB sizeToFit];
     
     _midLB = [[UILabel alloc] init];
-    _midLB.font = [APP_CONFIG appAdaptBoldFontOfSize:15];
+    _midLB.font = [APP_CONFIG appAdaptBoldFontOfSize:textFont];
     _midLB.text = @"发动机号：";
     _midLB.textColor = APP_CONFIG.darkTextColor;
     [_midLB sizeToFit];
     
     _midTF = [[UITextField alloc] init];
-    _midTF.font = [APP_CONFIG appAdaptFontOfSize:15];
+    _midTF.font = [APP_CONFIG appAdaptFontOfSize:textFont];
     _midTF.backgroundColor = [UIColor whiteColor];
     _midTF.placeholder = @" 请输入发动机号";
     
     _btmLB = [[UILabel alloc] init];
-    _btmLB.font = [APP_CONFIG appAdaptBoldFontOfSize:15];
+    _btmLB.font = [APP_CONFIG appAdaptBoldFontOfSize:textFont];
     _btmLB.text = @"车架号：";
     _btmLB.textColor = APP_CONFIG.darkTextColor;
     [_btmLB sizeToFit];
     
     _btmTF = [[UITextField alloc] init];
-    _btmTF.font = [APP_CONFIG appAdaptFontOfSize:15];
+    _btmTF.font = [APP_CONFIG appAdaptFontOfSize:textFont];
     _btmTF.backgroundColor = [UIColor whiteColor];
     _btmTF.placeholder = @" 请输入机架号";
     
     _verifyBtn = [[UIButton alloc] init];
-    _verifyBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:15];
+    _verifyBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:textFont];
     [_verifyBtn setTitle:@"认证" forState:UIControlStateNormal];
     _verifyBtn.backgroundColor = APP_CONFIG.appMainColor;
     _verifyBtn.layer.cornerRadius = 5;
@@ -96,32 +98,32 @@
     }];
     [_topRightLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).with.offset(-AdaptatSize(40));
-        make.centerY.equalTo(_topLeftLB);
+        make.centerY.equalTo(self.topLeftLB);
     }];
     [_midLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLeftLB);
-        make.top.equalTo(_topLeftLB.mas_bottom).with.offset(AdaptatSize(30));
+        make.left.equalTo(self.topLeftLB);
+        make.top.equalTo(self.topLeftLB.mas_bottom).with.offset(AdaptatSize(30));
     }];
     [_midTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_topRightLB);
-        make.centerY.equalTo(_midLB);
+        make.right.equalTo(self.topRightLB);
+        make.centerY.equalTo(self.midLB);
         make.height.mas_equalTo(AdaptatSize(35));
         make.width.mas_equalTo(AdaptatSize(170));
     }];
     [_btmLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLeftLB);
-        make.top.equalTo(_midLB.mas_bottom).with.offset(AdaptatSize(30));
+        make.left.equalTo(self.topLeftLB);
+        make.top.equalTo(self.midLB.mas_bottom).with.offset(AdaptatSize(30));
     }];
     [_btmTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_topRightLB);
-        make.centerY.equalTo(_btmLB);
-        make.width.height.equalTo(_midTF);
+        make.right.equalTo(self.topRightLB);
+        make.centerY.equalTo(self.btmLB);
+        make.width.height.equalTo(self.midTF);
     }];
     [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(AdaptatSize(15));
         make.right.equalTo(self).with.offset(AdaptatSize(-15));
         make.bottom.equalTo(self);
-        make.height.mas_offset(AdaptatSize(35));
+        make.height.mas_offset(AdaptatSize(30));
     }];
 }
 

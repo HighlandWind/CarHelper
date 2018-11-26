@@ -60,11 +60,13 @@
     [self addSubview:_closeBtn];
     [self addSubview:_closeBtnImgV];
     
+    [self scrollToBottom];
+    CGFloat tbvY = [UIApplication sharedApplication].statusBarFrame.size.height;
+    if (IPHONE_X) tbvY -= 10;
     [UIView animateWithDuration:0.3 animations:^{
-        [_tableView setY:[UIApplication sharedApplication].statusBarFrame.size.height];
+        [self.tableView setY:tbvY];
     } completion:^(BOOL finished) {
-        [_tableView reloadData];
-        [self scrollToBottom];
+        [self.tableView reloadData];
     }];
 }
 
@@ -79,7 +81,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_closeBtnImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_closeBtn);
+        make.center.equalTo(self.closeBtn);
     }];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -92,12 +94,12 @@
     }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(_bgView).with.offset(AdaptatSize(15));
+        make.top.equalTo(self.bgView).with.offset(AdaptatSize(15));
         make.width.height.mas_equalTo(AdaptatSize(70));
     }];
     [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_speechBtn);
-        make.right.equalTo(_bgView);
+        make.centerY.equalTo(self.speechBtn);
+        make.right.equalTo(self.bgView);
         make.width.height.mas_equalTo(AdaptatSize(70));
     }];
 }
@@ -134,7 +136,8 @@
 - (GJBaseTableView *)tableView {
     if (!_tableView) {
         CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
-        CGFloat h = SCREEN_H-AdaptatSize(90)-top;
+        CGFloat h = SCREEN_H - AdaptatSize(90) - top;
+        if (IPHONE_X) h -= 20;
         CGRect rect = CGRectMake(0, top+h, self.width, h);
         _tableView = [[GJBaseTableView alloc] initWithFrame:rect style:UITableViewStylePlain view:self];
         _tableView.backgroundColor = [UIColor clearColor];

@@ -29,6 +29,9 @@
         UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"arrow_left_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
         viewController.navigationItem.leftBarButtonItem = back;
     }
+    
+    NSDictionary *dic = @{NSFontAttributeName:[APP_CONFIG appAdaptFontOfSize:18], NSForegroundColorAttributeName: APP_CONFIG.darkTextColor};
+    self.navigationBar.titleTextAttributes = dic;
 }
 
 - (void)back {

@@ -25,6 +25,8 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define NavBar_H  (44 + [UIApplication sharedApplication].statusBarFrame.size.height)
 #define GestureMinimumTranslation  10.0
 
+#define IPHONE_X                SCREEN_H >= kGJIphoneX
+
 #define AdaptatSize(width) (SCREEN_W*width/375.0f)
 #undef    BLOCK_SAFE
 #define BLOCK_SAFE(block)           if(block)block

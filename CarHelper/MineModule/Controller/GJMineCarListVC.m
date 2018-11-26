@@ -32,6 +32,15 @@
     [self initializationNetWorking];
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _hasCar = YES;
+    }
+    return self;
+}
+
 #pragma mark - Iniitalization methods
 - (void)initializationData {
     
@@ -66,31 +75,31 @@
     if (_hasCar) {
         return 1;
     }
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_hasCar) {
-        GJMineCarListTopCell *topCell = [[GJMineCarListTopCell alloc] init];
-        return topCell;
+        GJMineCarListCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJMineCarListCell reuseIndentifier]];
+        if (!cell) {
+            cell = [[GJMineCarListCell alloc] initWithStyle:[GJMineCarListCell expectingStyle] reuseIdentifier:[GJMineCarListCell reuseIndentifier]];
+        }
+        cell.blockClickEdit = ^{
+            GJMineCarListVC *vc = [[GJMineCarListVC alloc] init];
+            vc.hasCar = NO;
+            [self.navigationController pushViewController:vc animated:YES];
+        };
+        return cell;
     }
-    GJMineCarListCell *cell = [tableView dequeueReusableCellWithIdentifier:[GJMineCarListCell reuseIndentifier]];
-    if (!cell) {
-        cell = [[GJMineCarListCell alloc] initWithStyle:[GJMineCarListCell expectingStyle] reuseIdentifier:[GJMineCarListCell reuseIndentifier]];
-    }
-    cell.blockClickEdit = ^{
-        GJMineCarListVC *vc = [[GJMineCarListVC alloc] init];
-        vc.hasCar = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    };
-    return cell;
+    GJMineCarListTopCell *topCell = [[GJMineCarListTopCell alloc] init];
+    return topCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_hasCar) {
-        return self.view.height / 2;
+        return AdaptatSize(180);
     }
-    return AdaptatSize(180);
+    return self.view.height / 2;
 }
 
 #pragma mark - Getter/Setter

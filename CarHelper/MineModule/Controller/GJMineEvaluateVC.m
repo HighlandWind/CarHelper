@@ -23,8 +23,8 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     CGFloat btmOffset = 0;
-    if (SCREEN_H >= kGJIphoneX) btmOffset = AdaptatSize(40);
-    else btmOffset = AdaptatSize(20);
+    if (SCREEN_H >= kGJIphoneX) btmOffset = AdaptatSize(80);
+    else btmOffset = AdaptatSize(60);
     [_sendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(10);
         make.right.equalTo(self.view).with.offset(-10);
@@ -33,7 +33,7 @@
     }];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.bottom.equalTo(_sendBtn.mas_top);
+        make.bottom.equalTo(self.sendBtn.mas_top);
     }];
 }
 

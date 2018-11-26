@@ -10,7 +10,7 @@
 #import "GJMineCarListCell.h"
 
 @interface GJMineCarListCell ()
-@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UIImageView *backView;
 @property (nonatomic, strong) UIImageView *carMarkImgV;
 @property (nonatomic, strong) UILabel *titleLB;
 @property (nonatomic, strong) UILabel *markLB;
@@ -38,7 +38,8 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = APP_CONFIG.appBackgroundColor;
     
-    _backView = [[UIView alloc] init];
+    _backView = [[UIImageView alloc] init];
+    _backView.image = [UIImage imageNamed:@"mine_car_list_bg"];
     [self.contentView addSubview:_backView];
     
     _carMarkImgV = [[UIImageView alloc] init];
@@ -46,9 +47,10 @@
     _carMarkImgV.backgroundColor = APP_CONFIG.appBackgroundColor;
     _carMarkImgV.layer.cornerRadius = AdaptatSize(40) / 2;
     _carMarkImgV.clipsToBounds = YES;
+    _carMarkImgV.image = [UIImage imageNamed:@"mine_car_dazhong"];
     
     _titleLB = [[UILabel alloc] init];
-    _titleLB.font = [APP_CONFIG appAdaptBoldFontOfSize:16];
+    _titleLB.font = [APP_CONFIG appAdaptBoldFontOfSize:17];
     _titleLB.text = @"贵A-12345";
     _titleLB.textColor = APP_CONFIG.whiteGrayColor;
     [_titleLB sizeToFit];
@@ -78,11 +80,11 @@
     _applyBtn.clipsToBounds = YES;
     
     _closeBtn = [[UIButton alloc] init];
-    [_closeBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
+    [_closeBtn setImage:[UIImage imageNamed:@"mine_white_close"] forState:UIControlStateNormal];
     [_closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _editBtn = [[UIButton alloc] init];
-    [_editBtn setImage:[UIImage imageNamed:@"Doubt"] forState:UIControlStateNormal];
+    [_editBtn setImage:[UIImage imageNamed:@"mine_white_edit"] forState:UIControlStateNormal];
     [_editBtn addTarget:self action:@selector(editBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [self.contentView addSubview:_carMarkImgV];
@@ -97,56 +99,44 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self).with.offset(AdaptatSize(20));
-        make.right.bottom.equalTo(self).with.offset(AdaptatSize(-10));
+        make.top.equalTo(self).with.offset(AdaptatSize(15));
+        make.left.equalTo(self).with.offset(AdaptatSize(5));
+        make.right.equalTo(self).with.offset(AdaptatSize(-5));
+        make.bottom.equalTo(self).with.offset(AdaptatSize(-10));
     }];
     [_carMarkImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(AdaptatSize(20));
-        make.top.equalTo(_backView).with.offset(AdaptatSize(15));
+        make.left.equalTo(self.backView).with.offset(AdaptatSize(20));
+        make.top.equalTo(self.backView).with.offset(AdaptatSize(15));
         make.width.height.mas_equalTo(AdaptatSize(40));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_carMarkImgV);
-        make.left.equalTo(_carMarkImgV.mas_right).with.offset(AdaptatSize(15));
+        make.top.equalTo(self.carMarkImgV);
+        make.left.equalTo(self.carMarkImgV.mas_right).with.offset(AdaptatSize(15));
     }];
     [_markLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.top.equalTo(_titleLB.mas_bottom);
+        make.left.equalTo(self.titleLB);
+        make.top.equalTo(self.titleLB.mas_bottom);
     }];
     [_applyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_backView);
-        make.bottom.equalTo(_backView).with.offset(-AdaptatSize(15));
+        make.centerX.equalTo(self.backView);
+        make.bottom.equalTo(self.backView).with.offset(-AdaptatSize(22));
         make.width.mas_equalTo(AdaptatSize(110));
         make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_applyBtn);
-        make.bottom.equalTo(_applyBtn.mas_top).with.offset(-AdaptatSize(10));
+        make.centerX.equalTo(self.applyBtn);
+        make.bottom.equalTo(self.applyBtn.mas_top).with.offset(-AdaptatSize(10));
     }];
     [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_backView);
-        make.top.equalTo(_backView);
-        make.width.height.mas_equalTo(AdaptatSize(35));
+        make.right.equalTo(self.backView).with.offset(-AdaptatSize(15));
+        make.top.equalTo(self.backView).with.offset(AdaptatSize(15));
+        make.width.height.mas_equalTo(AdaptatSize(22));
     }];
     [_editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_titleLB);
-        make.left.equalTo(_titleLB.mas_right).with.offset(0);
+        make.centerY.equalTo(self.titleLB);
+        make.left.equalTo(self.titleLB.mas_right).with.offset(0);
         make.width.height.mas_equalTo(AdaptatSize(35));
     }];
-}
-
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    CGFloat w = _backView.width;
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    [_backView.layer insertSublayer:gradient atIndex:0];
-    gradient.colors = @[(__bridge id)[UIColor colorWithRGB:159 g:184 b:223].CGColor,(__bridge id)[UIColor colorWithRGB:44 g:39 b:136].CGColor];
-    gradient.locations = @[@0,@1];
-    gradient.startPoint = CGPointMake(0, 0.5);
-    gradient.endPoint = CGPointMake(1.0, 0.5);
-    gradient.frame = CGRectMake(0, 0, w, _backView.height);
-    _backView.clipsToBounds = YES;
-    _backView.layer.cornerRadius = 10;
 }
 
 @end

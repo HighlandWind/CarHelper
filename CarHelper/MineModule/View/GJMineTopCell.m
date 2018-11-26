@@ -183,8 +183,8 @@
         make.width.height.equalTo(self.messageBtn);
     }];
     [_infoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self);
-        make.bottom.equalTo(self.mas_centerY);
+        make.left.bottom.top.equalTo(self.portraitImgV);
+        make.right.equalTo(self.detailLB);
     }];
 }
 

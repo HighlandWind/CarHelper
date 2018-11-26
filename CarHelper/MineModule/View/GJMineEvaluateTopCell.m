@@ -30,18 +30,18 @@
     [self showBottomLine];
     
     _titleLB = [[UILabel alloc] initWithFrame:CGRectMake(5, 8, self.width, 30)];
-    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:16];
+    _titleLB.font = [APP_CONFIG appAdaptFontOfSize:18];
     _titleLB.text = @"爱妃洗车服务中心";
-    _titleLB.textColor = APP_CONFIG.blackTextColor;
+    _titleLB.textColor = APP_CONFIG.darkTextColor;
     _titleLB.numberOfLines = 0;
     [_titleLB sizeToFit];
     
     _midLine = [[UIView alloc] init];
     _midLine.backgroundColor = APP_CONFIG.appBackgroundColor;
     
-    CGFloat w = AdaptatSize(120);
+    CGFloat w = AdaptatSize(140);
     CGFloat x = SCREEN_W / 2 - w / 2;
-    _starView = [[XHStarRateView alloc] initWithFrame:CGRectMake(x, 0, w, AdaptatSize(30))];
+    _starView = [[XHStarRateView alloc] initWithFrame:CGRectMake(x, 0, w, AdaptatSize(20))];
     _starView.delegate = self;
     
     [self.contentView addSubview:_titleLB];
@@ -72,7 +72,7 @@
         [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_midLine).with.offset(11);
+            make.top.equalTo(self.midLine).with.offset(AdaptatSize(11));
             make.height.mas_equalTo(AdaptatSize(35));
             make.width.mas_equalTo(w);
             make.left.equalTo(self).with.offset(10 + idx * (w + 10));
@@ -89,13 +89,13 @@
     [_midLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.height.mas_equalTo(1);
-        make.top.equalTo(_titleLB.mas_bottom).with.offset(AdaptatSize(15));
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(AdaptatSize(15));
     }];
-    [_starView setY:self.height - AdaptatSize(65)];
+    [_starView setY:self.height - AdaptatSize(48)];
 }
 
 - (CGFloat)height {
-    return AdaptatSize(170);
+    return AdaptatSize(155);
 }
 
 - (void)showBottomLine {
