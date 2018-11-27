@@ -11,8 +11,8 @@
 @interface GJMineHistoryCell ()
 @property (nonatomic, strong) UIView *leftTopLine;
 @property (nonatomic, strong) UIView *leftBtmLine;
-@property (nonatomic, strong) UIView *backView;
-@property (nonatomic, strong) UILabel *arrowLB;
+@property (nonatomic, strong) UIImageView *backView;
+@property (nonatomic, strong) UIImageView *arrowImg;
 @property (nonatomic, strong) UILabel *dateLB;
 @property (nonatomic, strong) UILabel *dayLB;
 @property (nonatomic, strong) UILabel *titleLB;
@@ -27,13 +27,11 @@
 - (void)setIndexPath:(NSIndexPath *)indexPath {
     _indexPath = indexPath;
     if (indexPath.row == 0) {
-        _arrowLB.text = @"^";
+        _arrowImg.image = [UIImage imageNamed:@"mine_history_right_arrow"];
         _leftTopLine.backgroundColor = [UIColor whiteColor];
-        _arrowLB.backgroundColor = [UIColor colorWithRGB:93 g:95 b:208];
     }else {
-        _arrowLB.text = @">";
+        _arrowImg.image = [UIImage imageNamed:@"mine_history_up_arrow"];
         _leftTopLine.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
-        _arrowLB.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
     }
 }
 
@@ -45,21 +43,12 @@
     _leftBtmLine = [[UIView alloc] init];
     _leftBtmLine.backgroundColor = [UIColor colorWithRGB:186 g:206 b:243];
     
-    _backView = [[UIView alloc] init];
-    _backView.backgroundColor = [UIColor whiteColor];
-    _backView.layer.cornerRadius = 10;
-    _backView.layer.shadowColor = [UIColor grayColor].CGColor;
-    _backView.layer.shadowOpacity = 0.2;
-    _backView.layer.shadowRadius = 4.f;
-    _backView.layer.shadowOffset = CGSizeMake(0,0);
+    _backView = [[UIImageView alloc] init];
+    _backView.image = [UIImage imageNamed:@"mine_history_cell_bg"];
     [self.contentView addSubview:_backView];
     
-    _arrowLB = [[UILabel alloc] init];
-    _arrowLB.font = [APP_CONFIG appAdaptFontOfSize:16];
-    _arrowLB.textColor = [UIColor whiteColor];
-    _arrowLB.textAlignment = NSTextAlignmentCenter;
-    _arrowLB.layer.cornerRadius = AdaptatSize(22) / 2;
-    _arrowLB.clipsToBounds = YES;
+    _arrowImg = [[UIImageView alloc] init];
+    _arrowImg.contentMode = UIViewContentModeScaleAspectFit;
     
     _dateLB = [[UILabel alloc] init];
     _dateLB.font = [APP_CONFIG appAdaptFontOfSize:8];
@@ -91,7 +80,7 @@
     
     [self.contentView addSubview:_leftTopLine];
     [self.contentView addSubview:_leftBtmLine];
-    [self.contentView addSubview:_arrowLB];
+    [self.contentView addSubview:_arrowImg];
     [self.contentView addSubview:_dayLB];
     [self.contentView addSubview:_dateLB];
 }
@@ -101,56 +90,56 @@
     [_leftTopLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(AdaptatSize(70));
         make.top.equalTo(self);
-        make.bottom.equalTo(_arrowLB.mas_top);
+        make.bottom.equalTo(self.arrowImg.mas_top);
         make.width.mas_equalTo(AdaptatSize(6));
     }];
-    [_arrowLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_leftTopLine);
+    [_arrowImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.leftTopLine);
         make.centerY.equalTo(self);
-        make.width.height.mas_equalTo(AdaptatSize(22));
+        make.width.height.mas_equalTo(AdaptatSize(20));
     }];
     [_leftBtmLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_leftTopLine);
+        make.centerX.equalTo(self.leftTopLine);
         make.bottom.equalTo(self);
-        make.top.equalTo(_arrowLB.mas_bottom);
+        make.top.equalTo(self.arrowImg.mas_bottom);
         make.width.mas_equalTo(AdaptatSize(6));
     }];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_arrowLB.mas_right).with.offset(AdaptatSize(15));
-        make.right.equalTo(self).with.offset(-AdaptatSize(25));
+        make.left.equalTo(self.arrowImg.mas_right).with.offset(AdaptatSize(10));
+        make.right.equalTo(self).with.offset(-AdaptatSize(20));
         make.top.equalTo(self).with.offset(AdaptatSize(10));
-        make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
+        make.bottom.equalTo(self);
     }];
     [_dateLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_arrowLB.mas_left).with.offset(-AdaptatSize(10));
+        make.right.equalTo(self.arrowImg.mas_left).with.offset(-AdaptatSize(15));
         make.height.mas_equalTo(18);
         make.width.mas_equalTo(AdaptatSize(40));
-        make.bottom.equalTo(_arrowLB.mas_centerY).with.offset(-AdaptatSize(5));
+        make.bottom.equalTo(self.arrowImg.mas_centerY).with.offset(-AdaptatSize(5));
     }];
     [_dayLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.width.equalTo(_dateLB);
-        make.height.mas_equalTo(30);
-        make.top.equalTo(_dateLB.mas_bottom).with.offset(-3);
+        make.right.width.equalTo(self.dateLB);
+        make.height.mas_equalTo(AdaptatSize(30));
+        make.top.equalTo(self.dateLB.mas_bottom).with.offset(-3);
     }];
     [_addressLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(12);
-        make.centerY.equalTo(_backView);
+        make.left.equalTo(self.backView).with.offset(AdaptatSize(15));
+        make.centerY.equalTo(self.backView).with.offset(AdaptatSize(4));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(12);
-        make.bottom.equalTo(_addressLB.mas_top).with.offset(-5);
+        make.left.equalTo(self.addressLB);
+        make.top.equalTo(self.backView).with.offset(AdaptatSize(20));
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.top.equalTo(_addressLB.mas_bottom).with.offset(5);
+        make.left.equalTo(self.titleLB);
+        make.bottom.equalTo(self).with.offset(-AdaptatSize(15));
     }];
     [_rightTimeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_titleLB);
-        make.right.equalTo(_backView).with.offset(-12);
+        make.centerY.equalTo(self.titleLB);
+        make.right.equalTo(self.backView).with.offset(-AdaptatSize(15));
     }];
     [_rightBtmLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_detailLB);
-        make.right.equalTo(_rightTimeLB);
+        make.centerY.equalTo(self.detailLB);
+        make.right.equalTo(self.rightTimeLB);
     }];
 }
 

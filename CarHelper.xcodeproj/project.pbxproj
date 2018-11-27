@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0480E17C21AD9B69004FB1D7 /* JXMovableCellTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */; };
 		15517E504A29088DFD82E36C /* libPods-CarHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */; };
 		8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB41205CCEBA00881F85 /* GJFunctionManager.m */; };
 		8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB44205CD0E500881F85 /* MBProgressHUD+GJMBL.m */; };
@@ -154,6 +155,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMovableCellTableView.m; sourceTree = "<group>"; };
+		0480E17B21AD9B69004FB1D7 /* JXMovableCellTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMovableCellTableView.h; sourceTree = "<group>"; };
 		068D64CF52F547440B844BD5 /* Pods-CarHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		0E943139F3488125AB50D9E8 /* Pods-CarHelper.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -774,8 +777,10 @@
 				CC13C15621514E6F00B755EF /* GJMineEvaluateTopCell.h */,
 				CC13C15721514E6F00B755EF /* GJMineEvaluateTopCell.m */,
 				CC13C15921514F7A00B755EF /* GJMineEvaluateMidCell.h */,
-				CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */,
+				0480E17B21AD9B69004FB1D7 /* JXMovableCellTableView.h */,
+				0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */,
 				80FFFB782153A5C7005C915B /* GJPayWayZFBCell.h */,
+				CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */,
 				80FFFB792153A5C7005C915B /* GJPayWayZFBCell.m */,
 				80FFFB7B2153A604005C915B /* GJPayWayWeChatCell.h */,
 				80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */,
@@ -1440,6 +1445,7 @@
 				80FFFB7A2153A5C7005C915B /* GJPayWayZFBCell.m in Sources */,
 				8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */,
 				802AD33C215CB19B00E08EDE /* GJGetPinCarSelectVC.m in Sources */,
+				0480E17C21AD9B69004FB1D7 /* JXMovableCellTableView.m in Sources */,
 				8011D240209C41A900800F9E /* NJKWebViewProgressView.m in Sources */,
 				8076DB312150A6C900ED32E2 /* GJMineCarListCell.m in Sources */,
 				80C69D1D21101058000952AE /* GJHomeTopView.m in Sources */,

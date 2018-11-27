@@ -54,12 +54,12 @@
     [super layoutSubviews];
     [_moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self);
+        make.top.equalTo(self).with.offset(AdaptatSize(5));
         make.width.mas_equalTo(self.width / 2);
-        make.height.mas_equalTo(AdaptatSize(22));
+        make.height.mas_equalTo(AdaptatSize(25));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_moreBtn.mas_bottom).with.offset(AdaptatSize(10));
+        make.top.equalTo(self.moreBtn.mas_bottom).with.offset(AdaptatSize(10));
         make.left.equalTo(self).with.offset(AdaptatSize(45));
         make.right.equalTo(self).with.offset(-AdaptatSize(45));
     }];

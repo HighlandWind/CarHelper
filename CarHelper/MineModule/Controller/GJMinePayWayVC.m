@@ -11,6 +11,7 @@
 #import "GJPayWayUnionCell.h"
 #import "GJPayWayWeChatCell.h"
 #import "GJMinePayWayFooter.h"
+#import "JXMovableCellTableView.h"
 
 @interface GJMinePayWayVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
@@ -88,12 +89,28 @@
     return self.footerView.height;
 }
 
+//默认编辑模式下，每个cell左边有个红色的删除按钮，设置为None即可去掉
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
+//是否允许indexPath的cell移动
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    //更新数据源
+    
+}
+
 #pragma mark - Getter/Setter
 - (GJBaseTableView *)tableView {
     if (!_tableView) {
         _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped controller:self];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = APP_CONFIG.appBackgroundColor;
+        _tableView.editing = YES;
     }
     return _tableView;
 }
