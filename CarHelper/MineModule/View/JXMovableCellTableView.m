@@ -217,7 +217,8 @@ static NSTimeInterval kJXMovableCellAnimationTime = 0.25;
 {
     if ([self numberOfSections] == 1) {
         //only one section
-        [_tempDataSource[fromIndexPath.section] exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+//        [_tempDataSource[fromIndexPath.section] exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+        [_tempDataSource exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
         [self moveRowAtIndexPath:fromIndexPath toIndexPath:toIndexPath];
     }else {
         //multiple sections

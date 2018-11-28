@@ -13,9 +13,9 @@
 #import "GJMinePayWayFooter.h"
 #import "JXMovableCellTableView.h"
 
-@interface GJMinePayWayVC () <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) GJBaseTableView *tableView;
-@property (nonatomic, strong) NSArray <GJBaseTableViewCell *> *cells;
+@interface GJMinePayWayVC () <JXMovableCellTableViewDataSource, JXMovableCellTableViewDelegate>
+@property (nonatomic, strong) JXMovableCellTableView *tableView;
+@property (nonatomic, strong) NSMutableArray <GJBaseTableViewCell *> *cells;
 @property (nonatomic, strong) GJMinePayWayFooter *footerView;
 @end
 
@@ -41,7 +41,7 @@
     GJPayWayZFBCell *zfbCell = [[GJPayWayZFBCell alloc] init];
     GJPayWayUnionCell *unionCell = [[GJPayWayUnionCell alloc] init];
     GJPayWayWeChatCell *wxCell = [[GJPayWayWeChatCell alloc] init];
-    _cells = @[zfbCell, unionCell, wxCell];
+    _cells = @[zfbCell, unionCell, wxCell].mutableCopy;
 }
 
 - (void)initializationSubView {
@@ -68,7 +68,7 @@
 #pragma mark - Custom delegate
 
 
-#pragma mark - UITableViewDelegate, UITableViewDataSource
+#pragma mark - JXMovableCellTableViewDataSource, JXMovableCellTableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _cells.count;
 }
@@ -89,28 +89,24 @@
     return self.footerView.height;
 }
 
-//默认编辑模式下，每个cell左边有个红色的删除按钮，设置为None即可去掉
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleNone;
+- (NSMutableArray *)dataSourceArrayInTableView:(JXMovableCellTableView *)tableView {
+    return _cells;
 }
 
-//是否允许indexPath的cell移动
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    //更新数据源
+- (void)tableView:(JXMovableCellTableView *)tableView didMoveCellFromIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     
 }
 
 #pragma mark - Getter/Setter
-- (GJBaseTableView *)tableView {
+- (JXMovableCellTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[GJBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped controller:self];
+        _tableView = [[JXMovableCellTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.longPressGesture.minimumPressDuration = 0.2;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = APP_CONFIG.appBackgroundColor;
-        _tableView.editing = YES;
+        [_tableView setContentInset:UIEdgeInsetsMake(-AdaptatSize(30), 0, 0, 0)];
     }
     return _tableView;
 }
