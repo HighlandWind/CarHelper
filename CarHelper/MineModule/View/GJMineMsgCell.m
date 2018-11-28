@@ -72,16 +72,16 @@
         make.width.height.mas_equalTo(AdaptatSize(46));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_portraitImgV);
-        make.left.equalTo(_portraitImgV.mas_right).with.offset(10);
+        make.top.equalTo(self.portraitImgV);
+        make.left.equalTo(self.portraitImgV.mas_right).with.offset(10);
     }];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).with.offset(-10);
-        make.centerY.equalTo(_titleLB);
+        make.centerY.equalTo(self.titleLB);
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLB.mas_bottom).with.offset(5);
-        make.left.equalTo(_titleLB);
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(5);
+        make.left.equalTo(self.titleLB);
         make.right.equalTo(self).with.offset(-AdaptatSize(30));
     }];
     [_scanDetailBtn mas_makeConstraints:^(MASConstraintMaker *make) {

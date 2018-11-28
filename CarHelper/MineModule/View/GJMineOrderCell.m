@@ -67,28 +67,28 @@
         make.width.mas_equalTo(AdaptatSize(90));
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_logoImgV);
-        make.left.equalTo(_logoImgV.mas_right).with.offset(12);
+        make.top.equalTo(self.logoImgV);
+        make.left.equalTo(self.logoImgV.mas_right).with.offset(12);
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_logoImgV);
-        make.left.equalTo(_titleLB);
+        make.centerY.equalTo(self.logoImgV);
+        make.left.equalTo(self.titleLB);
     }];
     [_priceLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.bottom.equalTo(_logoImgV);
+        make.left.equalTo(self.titleLB);
+        make.bottom.equalTo(self.logoImgV);
     }];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_priceLB.mas_right).with.offset(10);
-        make.bottom.equalTo(_logoImgV);
+        make.left.equalTo(self.priceLB.mas_right).with.offset(10);
+        make.bottom.equalTo(self.logoImgV);
     }];
     [_statusLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_titleLB);
+        make.centerY.equalTo(self.titleLB);
         make.right.equalTo(self).with.offset(-12);
     }];
     [_statusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_logoImgV);
-        make.right.equalTo(_statusLB);
+        make.bottom.equalTo(self.logoImgV);
+        make.right.equalTo(self.statusLB);
         make.size.mas_equalTo((CGSize){AdaptatSize(50), 25});
     }];
 }

@@ -81,41 +81,41 @@
     }];
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(10);
-        make.top.equalTo(_topBackLine.mas_bottom).with.offset(AdaptatSize(10));
+        make.top.equalTo(self.topBackLine.mas_bottom).with.offset(AdaptatSize(10));
         make.height.mas_equalTo(AdaptatSize(16));
         make.width.mas_equalTo(3);
     }];
     [_topLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLine.mas_right).with.offset(7);
-        make.centerY.height.equalTo(_topLine);
+        make.left.equalTo(self.topLine.mas_right).with.offset(7);
+        make.centerY.height.equalTo(self.topLine);
     }];
     [_moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_topLB);
+        make.centerY.equalTo(self.topLB);
         make.right.equalTo(self);
         make.width.mas_equalTo(AdaptatSize(70));
         make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_midLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLine);
+        make.left.equalTo(self.topLine);
         make.right.equalTo(self);
-        make.top.equalTo(_topLB.mas_bottom).with.offset(7);
+        make.top.equalTo(self.topLB.mas_bottom).with.offset(7);
         make.height.mas_equalTo(1);
     }];
     [_topSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_midLine.mas_bottom).with.offset(AdaptatSize(8));
-        make.left.equalTo(_topLine);
+        make.top.equalTo(self.midLine.mas_bottom).with.offset(AdaptatSize(8));
+        make.left.equalTo(self.topLine);
         make.right.equalTo(self).with.offset(-10);
         make.height.mas_equalTo(AdaptatSize(40));
     }];
     [_midSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topSV.mas_bottom).with.offset(AdaptatSize(5));
-        make.left.equalTo(_topLine);
+        make.top.equalTo(self.topSV.mas_bottom).with.offset(AdaptatSize(5));
+        make.left.equalTo(self.topLine);
         make.right.equalTo(self).with.offset(-10);
         make.height.mas_equalTo(AdaptatSize(40));
     }];
     [_btmSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_midSV.mas_bottom).with.offset(AdaptatSize(5));
-        make.left.equalTo(_topLine);
+        make.top.equalTo(self.midSV.mas_bottom).with.offset(AdaptatSize(5));
+        make.left.equalTo(self.topLine);
         make.right.equalTo(self).with.offset(-10);
         make.bottom.equalTo(self);
     }];

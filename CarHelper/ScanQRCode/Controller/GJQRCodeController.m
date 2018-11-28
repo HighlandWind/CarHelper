@@ -260,7 +260,7 @@ static NSString * const lineColor = @"#FF5133";
         ShowProgressHUD(YES, self.view);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
             // To do background task
-            [_system scanImageQRCodeWithImage:image handel:^(NSString *qr, NSError *error) {
+            [self.system scanImageQRCodeWithImage:image handel:^(NSString *qr, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     ShowProgressHUD(NO, self.view);
                     if (error) {
@@ -268,8 +268,8 @@ static NSString * const lineColor = @"#FF5133";
                     }else {
                         //                        [self dismissViewControllerAnimated:YES completion:nil];
                         [self stopScaning];
-                        if (_blockQRCodeScanResultURL) {
-                            _blockQRCodeScanResultURL(qr);
+                        if (self.blockQRCodeScanResultURL) {
+                            self.blockQRCodeScanResultURL(qr);
                         }
                     }
                 });

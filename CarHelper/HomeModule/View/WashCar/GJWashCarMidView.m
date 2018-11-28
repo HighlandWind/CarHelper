@@ -65,10 +65,10 @@
         make.top.equalTo(self);
         make.left.equalTo(self).with.offset(5);
         make.right.equalTo(self).with.offset(-5);
-        make.bottom.equalTo(_btmBtn.mas_top).with.offset(-AdaptatSize(35));
+        make.bottom.equalTo(self.btmBtn.mas_top).with.offset(-AdaptatSize(35));
     }];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_backView);
+        make.edges.equalTo(self.backView);
     }];
 }
 

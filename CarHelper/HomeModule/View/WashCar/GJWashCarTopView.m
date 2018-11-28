@@ -72,12 +72,12 @@
         make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_topBtnImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_topBtn);
-        make.right.equalTo(_topBtn).with.offset(-10);
+        make.centerY.equalTo(self.topBtn);
+        make.right.equalTo(self.topBtn).with.offset(-10);
     }];
     [_btmLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(_topBtn.mas_bottom).with.offset(AdaptatSize(10));
+        make.top.equalTo(self.topBtn.mas_bottom).with.offset(AdaptatSize(10));
     }];
 }
 

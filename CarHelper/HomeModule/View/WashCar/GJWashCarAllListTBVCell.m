@@ -47,18 +47,18 @@
         make.left.equalTo(self).with.offset(AdaptatSize(12));
         make.top.equalTo(self).with.offset(AdaptatSize(10));
         make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
-        make.width.equalTo(_imageV.mas_height);
+        make.width.equalTo(self.imageV.mas_height);
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).with.offset(AdaptatSize(12));
-        make.left.equalTo(_imageV.mas_right).with.offset(AdaptatSize(10));
+        make.left.equalTo(self.imageV.mas_right).with.offset(AdaptatSize(10));
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.top.equalTo(_titleLB.mas_bottom).with.offset(5);
+        make.left.equalTo(self.titleLB);
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(5);
     }];
     [_rightLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_titleLB);
+        make.centerY.equalTo(self.titleLB);
         make.right.equalTo(self).with.offset(-AdaptatSize(12));
     }];
 }

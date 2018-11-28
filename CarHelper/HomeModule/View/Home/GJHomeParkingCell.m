@@ -80,36 +80,36 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [_monthV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(10);
-        make.top.equalTo(_backView);
+        make.left.equalTo(self.backView).with.offset(10);
+        make.top.equalTo(self.backView);
         make.width.mas_equalTo(AdaptatSize(30));
         make.height.mas_equalTo(AdaptatSize(35));
     }];
     [_monthLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(_monthV);
+        make.left.top.right.equalTo(self.monthV);
         make.height.mas_equalTo(AdaptatSize(13));
     }];
     [_dayLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_monthV);
-        make.bottom.equalTo(_monthV).with.offset(-2);
+        make.centerX.equalTo(self.monthV);
+        make.bottom.equalTo(self.monthV).with.offset(-2);
     }];
     [_parkLocateLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_backView);
-        make.right.equalTo(_backView.mas_centerX);
+        make.centerY.equalTo(self.backView);
+        make.right.equalTo(self.backView.mas_centerX);
     }];
     [_statusLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_centerX).with.offset(AdaptatSize(60));
-        make.bottom.equalTo(_backView).with.offset(-15);
+        make.bottom.equalTo(self.backView).with.offset(-15);
         make.height.mas_equalTo(AdaptatSize(22));
         make.width.mas_equalTo(AdaptatSize(60));
     }];
     [_timeDetailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_statusLB);
-        make.bottom.equalTo(_statusLB.mas_top).with.offset(-AdaptatSize(15));
+        make.centerX.equalTo(self.statusLB);
+        make.bottom.equalTo(self.statusLB.mas_top).with.offset(-AdaptatSize(15));
     }];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_statusLB);
-        make.top.equalTo(_parkLocateLB);
+        make.centerX.equalTo(self.statusLB);
+        make.top.equalTo(self.parkLocateLB);
     }];
 }
 

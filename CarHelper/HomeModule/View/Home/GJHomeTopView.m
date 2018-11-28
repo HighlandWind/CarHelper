@@ -129,37 +129,37 @@
         make.height.mas_equalTo(AdaptatSize(28));
     }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.top.bottom.equalTo(_searchBar);
+        make.right.top.bottom.equalTo(self.searchBar);
         make.width.mas_equalTo(AdaptatSize(40));
     }];
     [_addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_searchBar.mas_right);
-        make.top.bottom.equalTo(_searchBar);
+        make.left.equalTo(self.searchBar.mas_right);
+        make.top.bottom.equalTo(self.searchBar);
         make.right.equalTo(self);
     }];
     [_addressBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_searchBar);
-        make.bottom.equalTo(_searchBar.mas_top).with.offset(-AdaptatSize(8));
+        make.left.equalTo(self.searchBar);
+        make.bottom.equalTo(self.searchBar.mas_top).with.offset(-AdaptatSize(8));
         make.width.mas_equalTo(AdaptatSize(80));
         make.height.mas_equalTo(AdaptatSize(18));
     }];
     [_weatherBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_addressBtn);
-        make.left.equalTo(_addressBtn.mas_right);
+        make.centerY.equalTo(self.addressBtn);
+        make.left.equalTo(self.addressBtn.mas_right);
     }];
     [_topRightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_addressBtn);
+        make.centerY.equalTo(self.addressBtn);
         make.right.equalTo(self).with.offset(-10);
     }];
     [_dateLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_topRightLabel);
-        make.right.equalTo(_topRightLabel.mas_left).with.offset(-5);
+        make.centerY.equalTo(self.topRightLabel);
+        make.right.equalTo(self.topRightLabel.mas_left).with.offset(-5);
         make.width.mas_equalTo(1);
         make.height.mas_equalTo(AdaptatSize(12));
     }];
     [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_addressBtn);
-        make.right.equalTo(_dateLine.mas_left);
+        make.centerY.equalTo(self.addressBtn);
+        make.right.equalTo(self.dateLine.mas_left);
     }];
 }
 

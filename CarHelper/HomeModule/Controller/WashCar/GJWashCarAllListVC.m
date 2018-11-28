@@ -26,7 +26,7 @@
     }];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(_filterView.mas_bottom);
+        make.top.equalTo(self.filterView.mas_bottom);
     }];
 }
 

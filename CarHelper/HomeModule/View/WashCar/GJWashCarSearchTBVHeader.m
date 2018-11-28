@@ -56,14 +56,14 @@
         make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
     }];
     [_yuyinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_backView);
-        make.right.equalTo(_backView).with.offset(-10);
-        make.width.height.equalTo(_backView.mas_height);
+        make.centerY.equalTo(self.backView);
+        make.right.equalTo(self.backView).with.offset(-10);
+        make.width.height.equalTo(self.backView.mas_height);
     }];
     [_fieldView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(AdaptatSize(30));
-        make.right.equalTo(_yuyinBtn.mas_left);
-        make.top.bottom.equalTo(_backView);
+        make.left.equalTo(self.backView).with.offset(AdaptatSize(30));
+        make.right.equalTo(self.yuyinBtn.mas_left);
+        make.top.bottom.equalTo(self.backView);
     }];
 }
 

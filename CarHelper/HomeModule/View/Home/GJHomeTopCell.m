@@ -76,38 +76,38 @@
     [super layoutSubviews];
     _broadcastBG.frame = CGRectMake(AdaptatSize(12), self.height - AdaptatSize(32), SCREEN_W - AdaptatSize(24), AdaptatSize(32));
     [_broadImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_broadcastBG);
-        make.left.equalTo(_broadcastBG).with.offset(10);
-        make.height.mas_equalTo(_broadcastBG.height - AdaptatSize(17));
-        make.width.mas_equalTo(_broadcastBG.height);
+        make.centerY.equalTo(self.broadcastBG);
+        make.left.equalTo(self.broadcastBG).with.offset(10);
+        make.height.mas_equalTo(self.broadcastBG.height - AdaptatSize(17));
+        make.width.mas_equalTo(self.broadcastBG.height);
     }];
     [_broadLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_broadcastBG);
-        make.left.equalTo(_broadImg.mas_right);
-        make.right.equalTo(_broadcastBG).with.offset(-10);
+        make.centerY.equalTo(self.broadcastBG);
+        make.left.equalTo(self.broadImg.mas_right);
+        make.right.equalTo(self.broadcastBG).with.offset(-10);
     }];
     
     _topCenterBtn.hidden = _topLeft1Btn.hidden = _topLeft2Btn.hidden = _topRight1Btn.hidden = _topRight2Btn.hidden = NO;
     [_topCenterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.bottom.equalTo(_broadcastBG.mas_top).with.offset(-10);
+        make.bottom.equalTo(self.broadcastBG.mas_top).with.offset(-10);
         make.width.height.mas_equalTo(AdaptatSize(65));
     }];
     [_topLeft1Btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.centerY.equalTo(_topCenterBtn);
-        make.right.equalTo(_topCenterBtn.mas_left).with.offset(-10);
+        make.size.centerY.equalTo(self.topCenterBtn);
+        make.right.equalTo(self.topCenterBtn.mas_left).with.offset(-10);
     }];
     [_topLeft2Btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.centerY.equalTo(_topCenterBtn);
-        make.right.equalTo(_topLeft1Btn.mas_left).with.offset(-10);
+        make.size.centerY.equalTo(self.topCenterBtn);
+        make.right.equalTo(self.topLeft1Btn.mas_left).with.offset(-10);
     }];
     [_topRight1Btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.centerY.equalTo(_topCenterBtn);
-        make.left.equalTo(_topCenterBtn.mas_right).with.offset(10);
+        make.size.centerY.equalTo(self.topCenterBtn);
+        make.left.equalTo(self.topCenterBtn.mas_right).with.offset(10);
     }];
     [_topRight2Btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.centerY.equalTo(_topCenterBtn);
-        make.left.equalTo(_topRight1Btn.mas_right).with.offset(10);
+        make.size.centerY.equalTo(self.topCenterBtn);
+        make.left.equalTo(self.topRight1Btn.mas_right).with.offset(10);
     }];
 }
 

@@ -35,7 +35,7 @@
     [super viewDidLayoutSubviews];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(_naviView.mas_bottom);
+        make.top.equalTo(self.naviView.mas_bottom);
     }];
 }
 

@@ -129,36 +129,36 @@
         make.width.mas_equalTo(3);
     }];
     [_topLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLine.mas_right).with.offset(7);
-        make.centerY.equalTo(_topLine);
+        make.left.equalTo(self.topLine.mas_right).with.offset(7);
+        make.centerY.equalTo(self.topLine);
     }];
     [_addressLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLB);
-        make.top.equalTo(_topLB.mas_bottom).with.offset(5);
+        make.left.equalTo(self.topLB);
+        make.top.equalTo(self.topLB.mas_bottom).with.offset(5);
     }];
     [_addrRefreshBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_addressLB);
-        make.left.equalTo(_addressLB.mas_right);
+        make.centerY.equalTo(self.addressLB);
+        make.left.equalTo(self.addressLB.mas_right);
         make.width.height.mas_equalTo(AdaptatSize(30));
     }];
     [_scanMapBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_topLB);
+        make.centerY.equalTo(self.topLB);
         make.right.equalTo(self);
         make.width.mas_equalTo(AdaptatSize(70));
         make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_midLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topLine);
+        make.left.equalTo(self.topLine);
         make.right.equalTo(self);
-        make.top.equalTo(_addrRefreshBtn.mas_bottom);
+        make.top.equalTo(self.addrRefreshBtn.mas_bottom);
         make.height.mas_equalTo(1);
     }];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self);
-        make.top.equalTo(_midLine.mas_bottom);
+        make.top.equalTo(self.midLine.mas_bottom);
     }];
     [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.equalTo(_scrollView);
+        make.left.bottom.right.equalTo(self.scrollView);
         make.height.mas_equalTo(AdaptatSize(20));
     }];
     
@@ -343,12 +343,12 @@
         make.top.equalTo(self).with.offset(AdaptatSize(12));
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLB.mas_bottom).with.offset(5);
-        make.left.equalTo(_titleLB);
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(5);
+        make.left.equalTo(self.titleLB);
     }];
     [_locateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_detailLB);
-        make.left.equalTo(_detailLB.mas_right).with.offset(10);
+        make.centerY.equalTo(self.detailLB);
+        make.left.equalTo(self.detailLB.mas_right).with.offset(10);
     }];
     [_yuyueBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(AdaptatSize(30));
@@ -357,13 +357,13 @@
         make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
     }];
     [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.height.equalTo(_yuyueBtn);
-        make.bottom.equalTo(_yuyueBtn.mas_top).with.offset(-AdaptatSize(15));
+        make.left.height.equalTo(self.yuyueBtn);
+        make.bottom.equalTo(self.yuyueBtn.mas_top).with.offset(-AdaptatSize(15));
         make.right.equalTo(self.mas_centerX).with.offset(-AdaptatSize(18));
     }];
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.height.equalTo(_yuyueBtn);
-        make.centerY.equalTo(_leftBtn);
+        make.right.height.equalTo(self.yuyueBtn);
+        make.centerY.equalTo(self.leftBtn);
         make.left.equalTo(self.mas_centerX).with.offset(AdaptatSize(18));
     }];
 }

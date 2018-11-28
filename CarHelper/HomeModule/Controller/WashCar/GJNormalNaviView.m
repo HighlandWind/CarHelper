@@ -58,7 +58,7 @@
         make.width.mas_equalTo(44);
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_backBtn);
+        make.centerY.equalTo(self.backBtn);
         make.centerX.equalTo(self);
     }];
     [_btmLine mas_makeConstraints:^(MASConstraintMaker *make) {

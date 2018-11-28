@@ -52,11 +52,11 @@
     [_topBtnLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.height.mas_equalTo(2);
-        make.top.equalTo(_topBtn.mas_bottom).with.offset(AdaptatSize(11));
+        make.top.equalTo(self.topBtn.mas_bottom).with.offset(AdaptatSize(11));
     }];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self);
-        make.top.equalTo(_topBtnLine.mas_bottom);
+        make.top.equalTo(self.topBtnLine.mas_bottom);
     }];
 }
 

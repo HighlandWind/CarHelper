@@ -70,24 +70,24 @@
         make.right.equalTo(self).with.offset(-AdaptatSize(25));
     }];
     [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(_backView);
-        make.width.equalTo(_backView.mas_height);
-        make.left.equalTo(_backView).with.offset(7);
+        make.centerY.height.equalTo(self.backView);
+        make.width.equalTo(self.backView.mas_height);
+        make.left.equalTo(self.backView).with.offset(7);
     }];
     [_moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(_backView);
-        make.width.equalTo(_backView.mas_height);
-        make.right.equalTo(_backView);
+        make.centerY.height.equalTo(self.backView);
+        make.width.equalTo(self.backView.mas_height);
+        make.right.equalTo(self.backView);
     }];
     [_speechBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(_backView);
-        make.width.equalTo(_backView.mas_height);
-        make.right.equalTo(_moreBtn.mas_left);
+        make.centerY.height.equalTo(self.backView);
+        make.width.equalTo(self.backView.mas_height);
+        make.right.equalTo(self.moreBtn.mas_left);
     }];
     [_fieldView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(_backView);
-        make.left.equalTo(_backBtn.mas_right).with.offset(AdaptatSize(10));
-        make.right.equalTo(_speechBtn.mas_left);
+        make.centerY.height.equalTo(self.backView);
+        make.left.equalTo(self.backBtn.mas_right).with.offset(AdaptatSize(10));
+        make.right.equalTo(self.speechBtn.mas_left);
     }];
 }
 

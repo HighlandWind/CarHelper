@@ -37,8 +37,8 @@
     [_midView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(10);
         make.right.equalTo(self.view).with.offset(-10);
-        make.top.equalTo(_topView.mas_bottom).with.offset(AdaptatSize(15));
-        make.bottom.equalTo(_btmBtn.mas_top).with.offset(-AdaptatSize(15));
+        make.top.equalTo(self.topView.mas_bottom).with.offset(AdaptatSize(15));
+        make.bottom.equalTo(self.btmBtn.mas_top).with.offset(-AdaptatSize(15));
     }];
 }
 

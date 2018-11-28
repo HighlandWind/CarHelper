@@ -40,7 +40,7 @@
         make.centerY.equalTo(self);
         make.height.mas_equalTo(self.height-AdaptatSize(20));
         make.width.mas_equalTo(self.width / 2);
-        if (_cellType) {
+        if (self.cellType) {
             make.left.equalTo(self).with.offset(AdaptatSize(15));
         }else {
             make.right.equalTo(self).with.offset(-AdaptatSize(15));

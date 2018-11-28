@@ -79,29 +79,29 @@
     [_pointV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(5);
         make.width.height.mas_equalTo(4);
-        if (!_model) make.centerY.equalTo(self);
+        if (!self.model) make.centerY.equalTo(self);
         else make.top.equalTo(self).with.offset(AdaptatSize(12));
     }];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_pointV.mas_right).with.offset(5);
-        make.centerY.equalTo(_pointV);
+        make.left.equalTo(self.pointV.mas_right).with.offset(5);
+        make.centerY.equalTo(self.pointV);
         make.height.mas_equalTo(AdaptatSize(16));
     }];
     [_rightLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).with.offset(-10);
-        make.centerY.equalTo(_pointV);
+        make.centerY.equalTo(self.pointV);
     }];
     
     if (_model) {
         [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_timeLB);
-            make.top.equalTo(_timeLB.mas_bottom).with.offset(AdaptatSize(10));
+            make.left.equalTo(self.timeLB);
+            make.top.equalTo(self.timeLB.mas_bottom).with.offset(AdaptatSize(10));
             make.bottom.equalTo(self).with.offset(-AdaptatSize(12));
-            make.width.equalTo(_imageV.mas_height);
+            make.width.equalTo(self.imageV.mas_height);
         }];
         [_contentLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(_imageV);
-            make.left.equalTo(_imageV.mas_right).with.offset(10);
+            make.centerY.equalTo(self.imageV);
+            make.left.equalTo(self.imageV.mas_right).with.offset(10);
             make.right.equalTo(self).with.offset(-10);
         }];
     }

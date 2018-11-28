@@ -67,23 +67,23 @@
         make.top.equalTo(self).with.offset(AdaptatSize(5));
     }];
     [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.top.equalTo(_titleLB.mas_bottom);
+        make.left.equalTo(self.titleLB);
+        make.top.equalTo(self.titleLB.mas_bottom);
     }];
     [_canBookLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB);
-        make.top.equalTo(_detailLB.mas_bottom).with.offset(AdaptatSize(5));
+        make.left.equalTo(self.titleLB);
+        make.top.equalTo(self.detailLB.mas_bottom).with.offset(AdaptatSize(5));
     }];
     [_carInfoLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_canBookLB.mas_right).with.offset(10);
-        make.centerY.equalTo(_canBookLB);
+        make.left.equalTo(self.canBookLB.mas_right).with.offset(10);
+        make.centerY.equalTo(self.canBookLB);
     }];
     [_markLB1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleLB); make.top.equalTo(_canBookLB.mas_bottom).with.offset(AdaptatSize(5));
+        make.left.equalTo(self.titleLB); make.top.equalTo(self.canBookLB.mas_bottom).with.offset(AdaptatSize(5));
     }];
     [_markLB2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_markLB1.mas_right).with.offset(10);
-        make.centerY.equalTo(_markLB1);
+        make.left.equalTo(self.markLB1.mas_right).with.offset(10);
+        make.centerY.equalTo(self.markLB1);
     }];
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
@@ -92,12 +92,12 @@
         make.width.mas_equalTo(AdaptatSize(50));
     }];
     [_rightBtnImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_rightBtn);
-        make.bottom.equalTo(_rightBtn.mas_centerY).with.offset(-3);
+        make.centerX.equalTo(self.rightBtn);
+        make.bottom.equalTo(self.rightBtn.mas_centerY).with.offset(-3);
     }];
     [_rightBtnLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_rightBtn);
-        make.top.equalTo(_rightBtn.mas_centerY).with.offset(3);
+        make.centerX.equalTo(self.rightBtn);
+        make.top.equalTo(self.rightBtn.mas_centerY).with.offset(3);
     }];
 }
 

@@ -66,30 +66,30 @@
         make.top.equalTo(self).with.offset(AdaptatSize(30));
     }];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_backView.mas_top).with.offset(-5);
-        make.centerX.equalTo(_backView);
+        make.bottom.equalTo(self.backView.mas_top).with.offset(-5);
+        make.centerX.equalTo(self.backView);
     }];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_backView).with.offset(AdaptatSize(25));
-        make.top.equalTo(_backView).with.offset(AdaptatSize(10));
+        make.left.equalTo(self.backView).with.offset(AdaptatSize(25));
+        make.top.equalTo(self.backView).with.offset(AdaptatSize(10));
     }];
     if (_hasImg) {
         [_logoImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_titleLB.mas_bottom).with.offset(5);
-            make.left.equalTo(_backView).with.offset(AdaptatSize(25));
-            make.right.equalTo(_backView).with.offset(-AdaptatSize(20));
+            make.top.equalTo(self.titleLB.mas_bottom).with.offset(5);
+            make.left.equalTo(self.backView).with.offset(AdaptatSize(25));
+            make.right.equalTo(self.backView).with.offset(-AdaptatSize(20));
             make.height.mas_equalTo(AdaptatSize(50));
         }];
         [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_logoImgV.mas_bottom).with.offset(5);
-            make.left.equalTo(_titleLB);
-            make.right.equalTo(_backView).with.offset(-AdaptatSize(20));
+            make.top.equalTo(self.logoImgV.mas_bottom).with.offset(5);
+            make.left.equalTo(self.titleLB);
+            make.right.equalTo(self.backView).with.offset(-AdaptatSize(20));
         }];
     }else {
         [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_titleLB.mas_bottom).with.offset(5);
-            make.left.equalTo(_titleLB);
-            make.right.equalTo(_backView).with.offset(-AdaptatSize(20));
+            make.top.equalTo(self.titleLB.mas_bottom).with.offset(5);
+            make.left.equalTo(self.titleLB);
+            make.right.equalTo(self.backView).with.offset(-AdaptatSize(20));
         }];
     }
 }
