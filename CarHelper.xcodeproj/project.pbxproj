@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0480E17C21AD9B69004FB1D7 /* JXMovableCellTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */; };
+		0480E18321AEE4AE004FB1D7 /* GJMineInputPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E18221AEE4AE004FB1D7 /* GJMineInputPhoneVC.m */; };
+		0480E18621AEE4C1004FB1D7 /* GJMineEditBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E18521AEE4C1004FB1D7 /* GJMineEditBaseVC.m */; };
+		0480E18921AEF305004FB1D7 /* GJMineInputNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E18821AEF305004FB1D7 /* GJMineInputNameVC.m */; };
 		15517E504A29088DFD82E36C /* libPods-CarHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */; };
 		8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB41205CCEBA00881F85 /* GJFunctionManager.m */; };
 		8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB44205CD0E500881F85 /* MBProgressHUD+GJMBL.m */; };
@@ -157,6 +160,12 @@
 /* Begin PBXFileReference section */
 		0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMovableCellTableView.m; sourceTree = "<group>"; };
 		0480E17B21AD9B69004FB1D7 /* JXMovableCellTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMovableCellTableView.h; sourceTree = "<group>"; };
+		0480E18121AEE4AE004FB1D7 /* GJMineInputPhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineInputPhoneVC.h; sourceTree = "<group>"; };
+		0480E18221AEE4AE004FB1D7 /* GJMineInputPhoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineInputPhoneVC.m; sourceTree = "<group>"; };
+		0480E18421AEE4C1004FB1D7 /* GJMineEditBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineEditBaseVC.h; sourceTree = "<group>"; };
+		0480E18521AEE4C1004FB1D7 /* GJMineEditBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineEditBaseVC.m; sourceTree = "<group>"; };
+		0480E18721AEF305004FB1D7 /* GJMineInputNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineInputNameVC.h; sourceTree = "<group>"; };
+		0480E18821AEF305004FB1D7 /* GJMineInputNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineInputNameVC.m; sourceTree = "<group>"; };
 		068D64CF52F547440B844BD5 /* Pods-CarHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		0E943139F3488125AB50D9E8 /* Pods-CarHelper.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -473,6 +482,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0480E18021AEE46D004FB1D7 /* EditInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				0480E18421AEE4C1004FB1D7 /* GJMineEditBaseVC.h */,
+				0480E18521AEE4C1004FB1D7 /* GJMineEditBaseVC.m */,
+				0480E18121AEE4AE004FB1D7 /* GJMineInputPhoneVC.h */,
+				0480E18221AEE4AE004FB1D7 /* GJMineInputPhoneVC.m */,
+				0480E18721AEF305004FB1D7 /* GJMineInputNameVC.h */,
+				0480E18821AEF305004FB1D7 /* GJMineInputNameVC.m */,
+			);
+			path = EditInfoVCs;
+			sourceTree = "<group>";
+		};
 		520EF1F8E4D8F223FB45C1EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,8 +801,8 @@
 				CC13C15921514F7A00B755EF /* GJMineEvaluateMidCell.h */,
 				0480E17B21AD9B69004FB1D7 /* JXMovableCellTableView.h */,
 				0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */,
-				80FFFB782153A5C7005C915B /* GJPayWayZFBCell.h */,
 				CC13C15A21514F7A00B755EF /* GJMineEvaluateMidCell.m */,
+				80FFFB782153A5C7005C915B /* GJPayWayZFBCell.h */,
 				80FFFB792153A5C7005C915B /* GJPayWayZFBCell.m */,
 				80FFFB7B2153A604005C915B /* GJPayWayWeChatCell.h */,
 				80FFFB7C2153A604005C915B /* GJPayWayWeChatCell.m */,
@@ -1078,6 +1100,7 @@
 		80CDE9B7205D17C000B12382 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0480E18021AEE46D004FB1D7 /* EditInfoVCs */,
 				CCF57B7120D016520037AD13 /* GJMineVC.h */,
 				CCF57B7220D016520037AD13 /* GJMineVC.m */,
 				80D6625620D8A611006640E4 /* GJAppSettingVC.h */,
@@ -1369,6 +1392,7 @@
 				CCB2C032214EB0B40001B0A0 /* GJMessageListVC.m in Sources */,
 				80D8FE0221548FD200F0EA1B /* GJMinePayWayFooter.m in Sources */,
 				803CBD252099968C00837259 /* CustomImageScrollView.m in Sources */,
+				0480E18321AEE4AE004FB1D7 /* GJMineInputPhoneVC.m in Sources */,
 				803CBD272099968C00837259 /* UIImage+FixOrientation.m in Sources */,
 				802ECE17215DF089006BFAEB /* GJNormalNaviView.m in Sources */,
 				CCF57B7320D016520037AD13 /* GJMineVC.m in Sources */,
@@ -1400,6 +1424,7 @@
 				802AD34C215CD99F00E08EDE /* GJGetCarMapTopView.m in Sources */,
 				80AD8AC9205BA354004E8724 /* AppDelegate+Config.m in Sources */,
 				CCB2C035214EB5FB0001B0A0 /* GJMineMsgCell.m in Sources */,
+				0480E18921AEF305004FB1D7 /* GJMineInputNameVC.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
 				CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */,
 				80284866206CB13C00DEE778 /* GJHttpNetworkingManager.m in Sources */,
@@ -1439,6 +1464,7 @@
 				8083F955205F9390000AD5A5 /* GJBaseNaviBar.m in Sources */,
 				803CBD1820997D6D00837259 /* AlertManager.m in Sources */,
 				80EC5F0F2064AC0200276C4B /* GJBaseTableView.m in Sources */,
+				0480E18621AEE4C1004FB1D7 /* GJMineEditBaseVC.m in Sources */,
 				80DF732E20F84C6E00AD9A3E /* GJHomeParkingCell.m in Sources */,
 				802ECE11215DEE4E006BFAEB /* GJWashCarSearchVC.m in Sources */,
 				80AD8ADD205BBC18004E8724 /* GJTabBar.m in Sources */,

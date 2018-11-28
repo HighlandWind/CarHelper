@@ -10,4 +10,6 @@
 
 @interface GJMineMsgCell : GJBaseTableViewCell
 
+@property (nonatomic, strong) UIImageView *portraitImgV;
+
 @end

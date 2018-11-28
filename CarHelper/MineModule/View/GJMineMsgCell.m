@@ -9,7 +9,6 @@
 #import "GJMineMsgCell.h"
 
 @interface GJMineMsgCell ()
-@property (nonatomic, strong) UIImageView *portraitImgV;
 @property (nonatomic, strong) UILabel *titleLB;
 @property (nonatomic, strong) UILabel *timeLB;
 @property (nonatomic, strong) UILabel *detailLB;
@@ -94,7 +93,7 @@
 
 - (void)showBottomLine {
     UIView *line = [[UIView alloc] init];
-    line.backgroundColor = APP_CONFIG.separatorLineColor;
+    line.backgroundColor = APP_CONFIG.appBackgroundColor;
     [self.contentView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.bottom.equalTo(self);

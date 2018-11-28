@@ -10,7 +10,7 @@
 
 @implementation AlertManager
 
-+(void)showAlertTitle:(NSString *)title content:(NSString *)content viecontroller:(UIViewController *)vc cancel:(NSString *)cancelTitle cancelHandle:(void (^)(void))cancelBlock {
++ (void)showAlertTitle:(NSString *)title content:(NSString *)content viecontroller:(UIViewController *)vc cancel:(NSString *)cancelTitle cancelHandle:(void (^)(void))cancelBlock {
     
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleAlert];
     
@@ -29,7 +29,7 @@
     });
 }
 
-+(void)showAlertTitle:(NSString *)title content:(NSString *)content viecontroller:(UIViewController *)vc cancel:(NSString *)cancelTitle sure:(NSString *)sureTitle  cancelHandle:(void (^)(void))cancelBlock sureHandle:(void (^)(void))sureBlock {
++ (void)showAlertTitle:(NSString *)title content:(NSString *)content viecontroller:(UIViewController *)vc cancel:(NSString *)cancelTitle sure:(NSString *)sureTitle  cancelHandle:(void (^)(void))cancelBlock sureHandle:(void (^)(void))sureBlock {
     
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleAlert];
    
@@ -48,6 +48,7 @@
                 sureBlock();
             }
         }];
+        [sureAction setValue:APP_CONFIG.darkTextColor forKey:@"_titleTextColor"];
         [alertVc addAction:sureAction];
 
     }
@@ -110,6 +111,30 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
+    [sheet addAction:cancel];
+    
+    UIViewController *vc = [GJFunctionManager CurrentTopViewcontroller];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [vc presentViewController:sheet animated:YES completion:nil];
+    });
+}
+
++ (void)showActionSheetMessage:(NSString *)message titleArr:(NSArray <NSString *> *)titles chooseIndex:(void(^)(NSInteger idx))chooseBlock{
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [titles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIAlertAction *aa = [UIAlertAction actionWithTitle:titles[idx] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if (chooseBlock) {
+                chooseBlock(idx);
+            }
+        }];
+        [sheet addAction:aa];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [cancel setValue:APP_CONFIG.darkTextColor forKey:@"titleTextColor"];
     [sheet addAction:cancel];
     
     UIViewController *vc = [GJFunctionManager CurrentTopViewcontroller];

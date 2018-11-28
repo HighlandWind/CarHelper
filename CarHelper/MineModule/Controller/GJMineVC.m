@@ -17,9 +17,10 @@
 #import "GJMineCarListVC.h"
 #import "GJMinePayWayVC.h"
 #import "GJMineHelperVC.h"
-#import "GJMineInfoVC.h"
 #import "GJMineCouponVC.h"
 #import "GJMineScoreVC.h"
+#import "GJMineInfoVC.h"
+#import "GJMineInputPhoneVC.h"
 
 @interface GJMineVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJBaseTableView *tableView;
@@ -106,10 +107,9 @@
 - (void)blockHanddle {
     __weak typeof(self)weakSelf = self;
     _topCell.blockClickInfo = ^{
-        GJMineInfoVC *vc = [[GJMineInfoVC alloc] init];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [weakSelf.navigationController pushViewController:vc animated:YES];
-        [weakSelf presentViewController:vc animated:YES completion:nil];
+        GJMineInputPhoneVC *vc = [[GJMineInputPhoneVC alloc] init];
+        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
+        [weakSelf presentViewController:naviVC animated:YES completion:nil];
     };
     _topCell.blockClickScore = ^{
         GJMineScoreVC *vc = [[GJMineScoreVC alloc] init];

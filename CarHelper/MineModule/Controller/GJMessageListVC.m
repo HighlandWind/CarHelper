@@ -91,6 +91,9 @@
     if (!cell) {
         cell = [[GJMineMsgCell alloc] initWithStyle:[GJMineMsgCell expectingStyle] reuseIdentifier:[GJMineMsgCell reuseIndentifier]];
     }
+    if (indexPath.row == 0) {
+        cell.portraitImgV.image = [UIImage imageNamed:@"mine_msg_noti_portrait"];
+    }
     
     return cell;
 }
@@ -121,15 +124,15 @@
     if (_isOpenNotification) {
         return nil;
     }else {
-        CGFloat btnW = AdaptatSize(30);
+        CGFloat btnW = AdaptatSize(20);
         UIView *view = [[UIView alloc] init];
         view.backgroundColor = APP_CONFIG.appBackgroundColor;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, SCREEN_W-15-btnW, AdaptatSize(30))];
         label.font = [APP_CONFIG appAdaptFontOfSize:10];
         label.text = [NSString stringWithFormat:@"您现在无法接收到新消息通知，请到系统“设置”-“通知”-“%@”中开启", _appName];
         label.textColor = APP_CONFIG.darkTextColor;
-        UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W-btnW-5, 0, btnW, btnW)];
-        [closeBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W-btnW-10, AdaptatSize(5), btnW, btnW)];
+        [closeBtn setImage:[UIImage imageNamed:@"mine_payway_gray_close"] forState:UIControlStateNormal];
         [closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:label];
         [view addSubview:closeBtn];

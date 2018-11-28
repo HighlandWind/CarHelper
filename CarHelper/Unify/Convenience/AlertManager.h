@@ -19,13 +19,10 @@
 
 
 /**
- 弹出通用的ActionSheet
-
- @param message 内容
- @param firstTitle 第一行文字
- @param secondTitle 第二行文字
- @param chooseFirstBlock 第一行回调
- @param chooseSecondBlock 第二行回调
+ ActionSheet
  */
 + (void)showActionSheetMessage:(NSString *)message firstTitle:(NSString *)firstTitle secondTitle:(NSString *)secondTitle chooseFirst:(void(^)(void))chooseFirstBlock chooseSecond:(void(^)(void))chooseSecondBlock;
+
++ (void)showActionSheetMessage:(NSString *)message titleArr:(NSArray <NSString *> *)titles chooseIndex:(void(^)(NSInteger idx))chooseBlock;
+
 @end
