@@ -7,10 +7,10 @@
 //
 
 #import "GJMineInputPhoneVC.h"
-#import "GJMineInputNameVC.h"
+#import "GJMineInputCarTypeVC.h"
 
 @interface GJMineInputPhoneVC ()
-
+@property (nonatomic, strong) UITextField *codeTF;
 @end
 
 @implementation GJMineInputPhoneVC
@@ -18,7 +18,12 @@
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(AdaptatSize(10));
+        make.width.mas_equalTo(self.topInputTFW);
+        make.height.mas_equalTo(self.topInputTFH);
+    }];
 }
 
 - (void)viewDidLoad {
@@ -35,6 +40,8 @@
 
 - (void)initializationSubView {
     [self initUITitle:@"请输入您的手机号码" nextText:@"继续"];
+    [self addSubview:self.textField];
+    self.textField.keyboardType = UIKeyboardTypeNumberPad;
 }
 
 - (void)initializationNetWorking {
@@ -52,8 +59,8 @@
 
 #pragma mark - Event response
 - (void)nextStepBtnClick {
-    GJMineInputNameVC *vc = [[GJMineInputNameVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    GJMineInputCarTypeVC *vc = [[GJMineInputCarTypeVC alloc] init];
+    [vc pushPageWith:self];
 }
 
 #pragma mark - Custom delegate

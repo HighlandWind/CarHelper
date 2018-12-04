@@ -6,11 +6,18 @@
 //  Copyright © 2018年 CAR. All rights reserved.
 //
 
-#import "GJBaseViewController.h"
+#import "GJCustomPresentController.h"
 
-@interface GJMineEditBaseVC : GJBaseViewController
+@interface GJMineEditBaseVC : GJCustomPresentController
+
+@property (nonatomic, strong) UILabel *titleLB;
+@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, assign) CGFloat topInputTFW;
+@property (nonatomic, assign) CGFloat topInputTFH;
 
 - (void)initUITitle:(NSString *)title nextText:(NSString *)text;
+
+- (void)dismiss;
 
 - (void)nextStepBtnClick;
 

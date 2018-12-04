@@ -1,18 +1,19 @@
 //
-//  GJMineInputNameVC.m
+//  GJMineInputSexVC.m
 //  CarHelper
 //
-//  Created by liugangjian on 2018/11/29.
+//  Created by liugangjian on 2018/12/4.
 //  Copyright © 2018年 CAR. All rights reserved.
 //
 
+#import "GJMineInputSexVC.h"
 #import "GJMineInputNameVC.h"
 
-@interface GJMineInputNameVC ()
+@interface GJMineInputSexVC ()
 
 @end
 
-@implementation GJMineInputNameVC
+@implementation GJMineInputSexVC
 
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
@@ -33,7 +34,7 @@
 }
 
 - (void)initializationSubView {
-    [self initUITitle:@"请输入您的姓名" nextText:@"确定"];
+    [self initUITitle:@"请输入您的性别" nextText:@"继续"];
 }
 
 - (void)initializationNetWorking {
@@ -51,7 +52,8 @@
 
 #pragma mark - Event response
 - (void)nextStepBtnClick {
-    [self dismiss];
+    GJMineInputNameVC *vc = [[GJMineInputNameVC alloc] init];
+    [vc pushPageWith:self];
 }
 
 #pragma mark - Custom delegate

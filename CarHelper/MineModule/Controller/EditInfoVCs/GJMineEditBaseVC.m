@@ -10,7 +10,6 @@
 #import "AlertManager.h"
 
 @interface GJMineEditBaseVC ()
-@property (nonatomic, strong) UILabel *titleLB;
 @property (nonatomic, strong) UIButton *nextStepBtn;
 @property (nonatomic, strong) UIView *btmLine;
 @property (nonatomic, strong) UIButton *bottomBtn;
@@ -46,29 +45,16 @@
     }];
 }
 
+#pragma mark - Iniitalization methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializationData];
-    [self initializationSubView];
-    [self initializationNetWorking];
+    [self showNaviSingleLine];
+    self.view.backgroundColor = APP_CONFIG.appBackgroundColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-#pragma mark - Iniitalization methods
-- (void)initializationData {
-    
-}
-
-- (void)initializationSubView {
-    [self showNaviSingleLine];
-}
-
-- (void)initializationNetWorking {
-    
 }
 
 #pragma mark - Request Handle
@@ -85,6 +71,8 @@
     [self.view addSubview:self.nextStepBtn];
     [self.view addSubview:self.btmLine];
     [self.view addSubview:self.bottomBtn];
+    UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithCustomView:[UIView new]];
+    self.navigationItem.leftBarButtonItem = back;
 }
 
 #pragma mark - Event response
@@ -92,9 +80,17 @@
     
 }
 
+- (void)dismiss {
+    UIViewController *vc = self;
+    while (vc.presentingViewController) {
+        vc = vc.presentingViewController;
+    }
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)bottomBtnClick {
     [AlertManager showActionSheetMessage:_bottomBtn.titleLabel.text titleArr:@[@"登录"] chooseIndex:^(NSInteger idx) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismiss];
     }];
 }
 
@@ -142,6 +138,29 @@
         [_bottomBtn addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _bottomBtn;
+}
+
+- (UITextField *)textField {
+    if (!_textField) {
+        _textField = [[UITextField alloc] init];
+        _textField.font = [APP_CONFIG appAdaptFontOfSize:17];
+        _textField.textColor = APP_CONFIG.darkTextColor;
+        _textField.placeholder = @"请输入...";
+        [_textField setTintColor:APP_CONFIG.appMainColor];
+        _textField.backgroundColor = [UIColor whiteColor];
+        _textField.layer.cornerRadius = 2;
+        _textField.clipsToBounds = YES;
+        _textField.clearButtonMode = UITextFieldViewModeAlways;
+    }
+    return _textField;
+}
+
+- (CGFloat)topInputTFW {
+    return AdaptatSize(280);
+}
+
+- (CGFloat)topInputTFH {
+    return AdaptatSize(37);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,23 +1,29 @@
 //
-//  GJMineInputNameVC.m
+//  GJMineInputNicknameVC.m
 //  CarHelper
 //
-//  Created by liugangjian on 2018/11/29.
+//  Created by liugangjian on 2018/12/4.
 //  Copyright © 2018年 CAR. All rights reserved.
 //
 
-#import "GJMineInputNameVC.h"
+#import "GJMineInputNicknameVC.h"
+#import "GJMineInputBirthdayVC.h"
 
-@interface GJMineInputNameVC ()
+@interface GJMineInputNicknameVC ()
 
 @end
 
-@implementation GJMineInputNameVC
+@implementation GJMineInputNicknameVC
 
 #pragma mark - View controller life circle
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.titleLB.mas_bottom).with.offset(AdaptatSize(10));
+        make.width.mas_equalTo(self.topInputTFW);
+        make.height.mas_equalTo(self.topInputTFH);
+    }];
 }
 
 - (void)viewDidLoad {
@@ -33,7 +39,8 @@
 }
 
 - (void)initializationSubView {
-    [self initUITitle:@"请输入您的姓名" nextText:@"确定"];
+    [self initUITitle:@"请输入您的昵称" nextText:@"继续"];
+    [self addSubview:self.textField];
 }
 
 - (void)initializationNetWorking {
@@ -51,7 +58,8 @@
 
 #pragma mark - Event response
 - (void)nextStepBtnClick {
-    [self dismiss];
+    GJMineInputBirthdayVC *vc = [[GJMineInputBirthdayVC alloc] init];
+    [vc pushPageWith:self];
 }
 
 #pragma mark - Custom delegate
