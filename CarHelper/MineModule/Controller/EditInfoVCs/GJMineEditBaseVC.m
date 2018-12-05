@@ -155,6 +155,16 @@
     return _textField;
 }
 
+- (UILabel *)remindLB {
+    if (!_remindLB) {
+        _remindLB = [[UILabel alloc] init];
+        _remindLB.font = [APP_CONFIG appAdaptFontOfSize:13];
+        _remindLB.textColor = APP_CONFIG.darkTextColor;
+        [_remindLB sizeToFit];
+    }
+    return _remindLB;
+}
+
 - (CGFloat)topInputTFW {
     return AdaptatSize(280);
 }

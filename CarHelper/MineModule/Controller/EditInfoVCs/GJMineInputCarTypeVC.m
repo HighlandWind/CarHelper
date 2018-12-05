@@ -24,6 +24,10 @@
         make.width.mas_equalTo(self.topInputTFW);
         make.height.mas_equalTo(self.topInputTFH);
     }];
+    [self.remindLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.textField.mas_bottom).with.offset(AdaptatSize(10));
+    }];
 }
 
 - (void)viewDidLoad {
@@ -41,6 +45,8 @@
 - (void)initializationSubView {
     [self initUITitle:@"请输入您的车牌型号" nextText:@"继续"];
     [self addSubview:self.textField];
+    [self addSubview:self.remindLB];
+    self.remindLB.text = @"有助于快速、精准的为您提供相应服务";
 }
 
 - (void)initializationNetWorking {

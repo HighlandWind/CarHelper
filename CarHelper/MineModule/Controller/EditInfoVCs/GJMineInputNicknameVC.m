@@ -24,6 +24,10 @@
         make.width.mas_equalTo(self.topInputTFW);
         make.height.mas_equalTo(self.topInputTFH);
     }];
+    [self.remindLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.textField.mas_bottom).with.offset(AdaptatSize(10));
+    }];
 }
 
 - (void)viewDidLoad {
@@ -41,6 +45,8 @@
 - (void)initializationSubView {
     [self initUITitle:@"请输入您的昵称" nextText:@"继续"];
     [self addSubview:self.textField];
+    [self addSubview:self.remindLB];
+    self.remindLB.text = @"您在本系统中展示的名称";
 }
 
 - (void)initializationNetWorking {

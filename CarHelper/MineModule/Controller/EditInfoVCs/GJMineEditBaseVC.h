@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UILabel *titleLB;
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UILabel *remindLB;
+
 @property (nonatomic, assign) CGFloat topInputTFW;
 @property (nonatomic, assign) CGFloat topInputTFH;
 
