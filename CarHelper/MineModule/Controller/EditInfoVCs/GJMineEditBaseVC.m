@@ -10,7 +10,6 @@
 #import "AlertManager.h"
 
 @interface GJMineEditBaseVC ()
-@property (nonatomic, strong) UIButton *nextStepBtn;
 @property (nonatomic, strong) UIView *btmLine;
 @property (nonatomic, strong) UIButton *bottomBtn;
 @end
@@ -66,11 +65,13 @@
 #pragma mark - Public methods
 - (void)initUITitle:(NSString *)title nextText:(NSString *)text {
     self.titleLB.text = title;
-    [self.nextStepBtn setTitle:text forState:UIControlStateNormal];
     [self.view addSubview:self.titleLB];
-    [self.view addSubview:self.nextStepBtn];
     [self.view addSubview:self.btmLine];
     [self.view addSubview:self.bottomBtn];
+    if (text) {
+        [self.view addSubview:self.nextStepBtn];
+        [self.nextStepBtn setTitle:text forState:UIControlStateNormal];
+    }
     UIBarButtonItem * back = [[UIBarButtonItem alloc] initWithCustomView:[UIView new]];
     self.navigationItem.leftBarButtonItem = back;
 }

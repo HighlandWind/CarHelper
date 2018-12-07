@@ -25,7 +25,21 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define NavBar_H  (44 + [UIApplication sharedApplication].statusBarFrame.size.height)
 #define GestureMinimumTranslation  10.0
 
-#define IPHONE_X                SCREEN_H >= kGJIphoneX
+//#define IPHONE_X                SCREEN_H >= kGJIphoneX
+#define IPHONE_X \
+^(){\
+BOOL iPhoneX = NO;\
+if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {\
+return iPhoneX;\
+}\
+if (@available(iOS 11.0, *)) {\
+UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];\
+if (mainWindow.safeAreaInsets.bottom > 0.0) {\
+iPhoneX = YES;\
+}\
+}\
+return iPhoneX;\
+}()
 
 #define AdaptatSize(width) (SCREEN_W*width/375.0f)
 #undef    BLOCK_SAFE
