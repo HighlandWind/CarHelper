@@ -167,7 +167,7 @@
 }
 
 - (CGFloat)height {
-    return AdaptatSize(220);
+    return AdaptatSize(270);
 }
 
 - (void)setLeftTBVDatas:(NSArray *)leftTBVDatas {

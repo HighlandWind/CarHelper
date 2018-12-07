@@ -45,7 +45,7 @@
     
     _closeBtn = [[UIButton alloc] init];
     _closeBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    _closeBtnImgV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back1"]];
+    _closeBtnImgV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_payway_gray_close"]];
     [_closeBtn addTarget:self action:@selector(closePage) forControlEvents:UIControlEventTouchUpInside];
     
     _speechBtn = [GJHomeSpeechButton install];
@@ -80,9 +80,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_closeBtnImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.closeBtn);
-    }];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.bottom.equalTo(self).with.offset(10);
@@ -98,9 +95,12 @@
         make.width.height.mas_equalTo(AdaptatSize(70));
     }];
     [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.speechBtn);
+        make.bottom.equalTo(self.speechBtn);
         make.right.equalTo(self.bgView);
-        make.width.height.mas_equalTo(AdaptatSize(70));
+        make.width.height.mas_equalTo(AdaptatSize(50));
+    }];
+    [_closeBtnImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.closeBtn);
     }];
 }
 
