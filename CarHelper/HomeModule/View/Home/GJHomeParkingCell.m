@@ -9,7 +9,7 @@
 #import "GJHomeParkingCell.h"
 
 @interface GJHomeParkingCell ()
-@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UIImageView *backView;
 @property (nonatomic, strong) UIView *monthV;
 @property (nonatomic, strong) UILabel *monthLB;
 @property (nonatomic, strong) UILabel *dayLB;
@@ -27,13 +27,8 @@
     self.backgroundColor = [UIColor clearColor];
     _timeNow = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerFunc) userInfo:nil repeats:YES];
     
-    _backView = [[UIView alloc] initWithFrame:CGRectMake(AdaptatSize(12), AdaptatSize(10), SCREEN_W - AdaptatSize(24), self.height - AdaptatSize(25))];
-    _backView.backgroundColor = [UIColor whiteColor];
-    _backView.layer.cornerRadius = 5;
-    _backView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    _backView.layer.shadowOpacity = 0.2;
-    _backView.layer.shadowRadius = 4.f;
-    _backView.layer.shadowOffset = CGSizeMake(0,0);
+    _backView = [[UIImageView alloc] initWithFrame:CGRectMake(AdaptatSize(8), AdaptatSize(5), SCREEN_W - AdaptatSize(16), self.height - AdaptatSize(12))];
+    _backView.image = [UIImage imageNamed:@"parking_bg"];
     
     _monthV = [[UIView alloc] init];
     _monthV.layer.cornerRadius = 5;

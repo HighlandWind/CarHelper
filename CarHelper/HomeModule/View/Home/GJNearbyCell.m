@@ -70,17 +70,17 @@
     _topLB.textColor = APP_CONFIG.darkTextColor;
     _topLB.text = @"附近的停车场";
     [_topLB sizeToFit];
-    
+
     _addressLB = [[UILabel alloc] init];
     _addressLB.font = [APP_CONFIG appAdaptBoldFontOfSize:12];
     _addressLB.textColor = APP_CONFIG.grayTextColor;
     _addressLB.text = @"贵州省贵阳市南明区中山路32号";
     [_addressLB sizeToFit];
-    
+
     _addrRefreshBtn = [[UIButton alloc] init];
     [_addrRefreshBtn setImage:[UIImage imageNamed:@"home_nearby_refresh"] forState:UIControlStateNormal];
     [_addrRefreshBtn addTarget:self action:@selector(addrRefreshBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
+
     _scanMapBtn = [[UIButton alloc] init];
     _scanMapBtn.titleLabel.font = [APP_CONFIG appAdaptFontOfSize:10];
     [_scanMapBtn setTitleColor:APP_CONFIG.appMainColor forState:UIControlStateNormal];
@@ -109,22 +109,34 @@
     
     _rightView = [[GJNearbyCellRightView alloc] init];
     
-    [self.contentView addSubview:_topLine];
-    [self.contentView addSubview:_topLB];
-    [self.contentView addSubview:_addressLB];
-    [self.contentView addSubview:_addrRefreshBtn];
-    [self.contentView addSubview:_scanMapBtn];
-    [self.contentView addSubview:_midLine];
     [self.contentView addSubview:_scrollView];
     [self.contentView addSubview:_pageControl];
+    
     [_scrollView addSubview:_leftView];
     [_scrollView addSubview:_rightView];
+    [_scrollView addSubview:_topLine];
+    [_scrollView addSubview:_topLB];
+    [_scrollView addSubview:_addressLB];
+    [_scrollView addSubview:_addrRefreshBtn];
+    [_scrollView addSubview:_scanMapBtn];
+    [_scrollView addSubview:_midLine];
 }
 
 - (void)layoutSubviews {
+    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(self);
+        make.top.equalTo(self);
+    }];
+    [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.scrollView);
+        make.height.mas_equalTo(AdaptatSize(20));
+    }];
+    
+    _leftView.frame = CGRectMake(10, AdaptatSize(60), _scrollView.width-20, _scrollView.height - AdaptatSize(80));
+    _rightView.frame = CGRectMake(_scrollView.width+10, 0, _scrollView.width-20, _scrollView.height - AdaptatSize(20));
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(10);
-        make.top.equalTo(self).with.offset(10);
+        make.left.equalTo(self.scrollView).with.offset(10);
+        make.top.equalTo(self.scrollView).with.offset(10);
         make.height.mas_equalTo(AdaptatSize(16));
         make.width.mas_equalTo(3);
     }];
@@ -143,27 +155,16 @@
     }];
     [_scanMapBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.topLB);
-        make.right.equalTo(self);
+        make.right.equalTo(self.leftView);
         make.width.mas_equalTo(AdaptatSize(70));
         make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_midLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.topLine);
-        make.right.equalTo(self);
+        make.right.equalTo(self.leftView);
         make.top.equalTo(self.addrRefreshBtn.mas_bottom);
         make.height.mas_equalTo(1);
     }];
-    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self);
-        make.top.equalTo(self.midLine.mas_bottom);
-    }];
-    [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.equalTo(self.scrollView);
-        make.height.mas_equalTo(AdaptatSize(20));
-    }];
-    
-    _leftView.frame = CGRectMake(10, 0, _scrollView.width-20, _scrollView.height - AdaptatSize(20));
-    _rightView.frame = CGRectMake(_scrollView.width+10, 0, _scrollView.width-20, _scrollView.height - AdaptatSize(20));
 }
 
 - (CGFloat)height {
@@ -354,16 +355,17 @@
         make.height.mas_equalTo(AdaptatSize(30));
         make.width.mas_equalTo(SCREEN_W - AdaptatSize(80));
         make.centerX.equalTo(self);
-        make.bottom.equalTo(self).with.offset(-AdaptatSize(10));
+        make.bottom.equalTo(self).with.offset(-AdaptatSize(20));
     }];
     [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.height.equalTo(self.yuyueBtn);
-        make.bottom.equalTo(self.yuyueBtn.mas_top).with.offset(-AdaptatSize(15));
+        make.left.equalTo(self.yuyueBtn);
+        make.height.mas_equalTo(AdaptatSize(35));
+        make.bottom.equalTo(self.yuyueBtn.mas_top).with.offset(-AdaptatSize(25));
         make.right.equalTo(self.mas_centerX).with.offset(-AdaptatSize(18));
     }];
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.height.equalTo(self.yuyueBtn);
-        make.centerY.equalTo(self.leftBtn);
+        make.right.equalTo(self.yuyueBtn);
+        make.centerY.height.equalTo(self.leftBtn);
         make.left.equalTo(self.mas_centerX).with.offset(AdaptatSize(18));
     }];
 }
