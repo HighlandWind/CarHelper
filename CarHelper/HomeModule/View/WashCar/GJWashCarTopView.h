@@ -10,6 +10,8 @@
 
 @interface GJWashCarTopView : GJBaseView
 
+@property (nonatomic, strong) NSString *address;
 @property (nonatomic, copy) void (^blockClickTopBtn)(void);
+@property (nonatomic, copy) void (^blockClickYuYinBtn)(void);
 
 @end

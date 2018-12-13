@@ -32,7 +32,7 @@
         _backView.backgroundColor = APP_CONFIG.appBackgroundColor;
         
         _yuyinBtn = [[UIButton alloc] init];
-        [_yuyinBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_yuyinBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         [_yuyinBtn addTarget:self action:@selector(yuyinBtnClick) forControlEvents:UIControlEventTouchUpInside];
         
         _fieldView = [[UITextField alloc] init];

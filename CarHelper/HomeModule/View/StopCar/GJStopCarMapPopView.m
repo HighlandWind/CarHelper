@@ -27,7 +27,7 @@
         _topBtn.titleLabel.font = [APP_CONFIG appAdaptBoldFontOfSize:16];
         [_topBtn setTitle:@" 花果园附近的停车场" forState:UIControlStateNormal];
         [_topBtn setTitleColor:APP_CONFIG.darkTextColor forState:UIControlStateNormal];
-        [_topBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_topBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         [_topBtn sizeToFit];
         
         _topBtnLine = [[UIView alloc] init];

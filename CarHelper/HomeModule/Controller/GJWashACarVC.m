@@ -25,9 +25,9 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [_btmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).with.offset(10);
-        make.right.equalTo(self.view).with.offset(-10);
-        make.bottom.equalTo(self.view).with.offset(-40);
+        make.left.equalTo(self.view).with.offset(15);
+        make.right.equalTo(self.view).with.offset(-15);
+        make.bottom.equalTo(self.view).with.offset(-AdaptatSize(40));
         make.height.mas_equalTo(AdaptatSize(50));
     }];
     [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,7 +69,7 @@
 }
 
 - (void)initializationNetWorking {
-    
+    _topView.address = @"花果园";
 }
 
 #pragma mark - Request Handle
@@ -81,6 +81,9 @@
     _topView.blockClickTopBtn = ^{
         GJWashCarSearchVC *vc = [[GJWashCarSearchVC alloc] init];
         [weakself presentViewController:vc animated:YES completion:nil];
+    };
+    _topView.blockClickYuYinBtn = ^{
+        
     };
     _midView.blockClickBtmBtn = ^{
         GJWashCarAllListVC *vc = [[GJWashCarAllListVC alloc] init];

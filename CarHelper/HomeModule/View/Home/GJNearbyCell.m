@@ -96,6 +96,7 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.delegate = self;
+    
     _pageControl = [[UIPageControl alloc] init];
     _pageControl.numberOfPages = 2;
     _pageControl.currentPageIndicatorTintColor = APP_CONFIG.appMainColor;

@@ -21,7 +21,15 @@
 }
 
 - (void)topBtnImgClick {
-    BLOCK_SAFE(_blockClickTopBtn)();
+    BLOCK_SAFE(_blockClickYuYinBtn)();
+}
+
+- (void)setAddress:(NSString *)address {
+    _address = address;
+    NSString *str = [NSString stringWithFormat:@"%@附近的洗车服务", address];
+    NSMutableAttributedString *muStr = [[NSMutableAttributedString alloc] initWithString:str];
+    [muStr addAttribute:NSForegroundColorAttributeName value:APP_CONFIG.appMainRedColor range:[str rangeOfString:address]];
+    _btmLabel.attributedText = muStr;
 }
 
 - (instancetype)init
@@ -47,12 +55,11 @@
         [_topBtn addTarget:self action:@selector(topBtnClick) forControlEvents:UIControlEventTouchUpInside];
         
         _topBtnImg = [[UIButton alloc] init];
-        [_topBtnImg setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_topBtnImg setImage:[UIImage imageNamed:@"wash_car_yuyin"] forState:UIControlStateNormal];
         [_topBtnImg addTarget:self action:@selector(topBtnImgClick) forControlEvents:UIControlEventTouchUpInside];
         
         _btmLabel = [[UILabel alloc] init];
         _btmLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
-        _btmLabel.text = @"花果园附近的洗车服务";
         _btmLabel.textColor = APP_CONFIG.darkTextColor;
         [_btmLabel sizeToFit];
         
@@ -69,15 +76,17 @@
         make.top.equalTo(self).with.offset(AdaptatSize(12));
         make.left.equalTo(self).with.offset(AdaptatSize(20));
         make.right.equalTo(self).with.offset(-AdaptatSize(20));
-        make.height.mas_equalTo(AdaptatSize(30));
+        make.height.mas_equalTo(AdaptatSize(35));
     }];
     [_topBtnImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.topBtn);
-        make.right.equalTo(self.topBtn).with.offset(-10);
+        make.right.equalTo(self.topBtn);
+        make.width.mas_equalTo(AdaptatSize(50));
+        make.height.mas_equalTo(AdaptatSize(30));
     }];
     [_btmLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.topBtn.mas_bottom).with.offset(AdaptatSize(10));
+        make.top.equalTo(self.topBtn.mas_bottom).with.offset(AdaptatSize(6));
     }];
 }
 

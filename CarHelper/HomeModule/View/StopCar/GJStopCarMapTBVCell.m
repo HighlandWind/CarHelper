@@ -52,7 +52,7 @@
     _rightBtnImg = [[UIImageView alloc] init];
     _rightBtnLB = [self createLabelFont:13 color:APP_CONFIG.appMainColor];
     
-    _rightBtnImg.image = [UIImage imageNamed:@"setup"];
+    _rightBtnImg.image = [UIImage imageNamed:@"mine_setup"];
     _rightBtnLB.text = @"550m";
     
     [self.contentView addSubview:_rightBtn];

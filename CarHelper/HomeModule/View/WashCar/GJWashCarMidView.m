@@ -8,16 +8,28 @@
 
 #import "GJWashCarMidView.h"
 
-@interface GJWashCarMidView ()
+@interface GJWashCarMidView () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIButton *btmBtn;
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 @end
 
 @implementation GJWashCarMidView
 
 - (void)btmBtnClick {
     BLOCK_SAFE(_blockClickBtmBtn)();
+}
+
+- (void)pageAction:(UIPageControl *)page {
+    [_scrollView setContentOffset:CGPointMake(page.currentPage * (SCREEN_W - 20), 0) animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    _pageControl.currentPage = currentPage;
 }
 
 - (instancetype)init
@@ -47,10 +59,24 @@
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.layer.cornerRadius = 8;
         _scrollView.clipsToBounds = YES;
+        _scrollView.pagingEnabled = YES;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.delegate = self;
+        
+        _pageControl = [[UIPageControl alloc] init];
+        _pageControl.currentPageIndicatorTintColor = APP_CONFIG.appMainColor;
+        _pageControl.pageIndicatorTintColor = [UIColor colorWithRGB:188 g:188 b:188];
+        _pageControl.currentPage = 0;
+        [_pageControl addTarget:self action:@selector(pageAction:) forControlEvents:UIControlEventValueChanged];
+        
+        _pageControl.numberOfPages = 3;
+        _scrollView.contentSize = CGSizeMake((SCREEN_W - AdaptatSize(40)) * 3, _scrollView.height);
         
         [self addSubview:_btmBtn];
         [self addSubview:_backView];
         [self addSubview:_scrollView];
+        [self addSubview:_pageControl];
     }
     return self;
 }
@@ -69,6 +95,11 @@
     }];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.backView);
+    }];
+    [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.scrollView);
+        make.top.equalTo(self.scrollView.mas_bottom).with.offset(AdaptatSize(10));
+        make.height.mas_equalTo(AdaptatSize(20));
     }];
 }
 

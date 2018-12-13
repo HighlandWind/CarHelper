@@ -22,7 +22,7 @@
     self.textLabel.textColor = APP_CONFIG.darkTextColor;
     self.detailTextLabel.textColor = APP_CONFIG.grayTextColor;
     
-    self.imageView.image = [UIImage imageNamed:@"setup"];
+    self.imageView.image = [UIImage imageNamed:@"mine_setup"];
     self.textLabel.text = @"花果园购物中心";
     self.detailTextLabel.text = @"南明区 花果园大街1号";
 }

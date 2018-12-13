@@ -28,11 +28,11 @@
         self.layer.shadowOffset = CGSizeMake(0,0);
         
         _button1 = [[UIButton alloc] init];
-        [_button1 setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_button1 setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         _button2 = [[UIButton alloc] init];
-        [_button2 setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_button2 setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         _button3 = [[UIButton alloc] init];
-        [_button3 setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_button3 setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         
         [self addSubview:_button1];
         [self addSubview:_button2];

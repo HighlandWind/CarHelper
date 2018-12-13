@@ -45,12 +45,12 @@
         [_fieldView setValue:APP_CONFIG.grayTextColor forKeyPath:@"_placeholderLabel.textColor"];
         
         _speechBtn = [[UIButton alloc] init];
-        [_speechBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_speechBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         
         _moreBtn = [[UIButton alloc] init];
         _moreBtn.layer.cornerRadius = 5;
         _moreBtn.clipsToBounds = YES;
-        [_moreBtn setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
+        [_moreBtn setImage:[UIImage imageNamed:@"mine_setup"] forState:UIControlStateNormal];
         
         [self addSubview:_backView];
         [self addSubview:_backBtn];
