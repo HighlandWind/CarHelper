@@ -125,7 +125,7 @@
     UILabel *titleLB = [[UILabel alloc] init];
     titleLB.font = [APP_CONFIG appAdaptBoldFontOfSize:14];
     titleLB.text = title;
-    titleLB.textColor = [UIColor whiteColor];
+    titleLB.textColor = titleColor;
     [titleLB sizeToFit];
     [btn addSubview:titleLB];
     [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];

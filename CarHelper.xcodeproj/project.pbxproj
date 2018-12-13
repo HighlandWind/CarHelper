@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040967D821C29AD30085223A /* GJHomeCarShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 040967D721C29AD30085223A /* GJHomeCarShopVC.m */; };
 		0480E17C21AD9B69004FB1D7 /* JXMovableCellTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */; };
 		0480E18321AEE4AE004FB1D7 /* GJMineInputPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E18221AEE4AE004FB1D7 /* GJMineInputPhoneVC.m */; };
 		0480E18621AEE4C1004FB1D7 /* GJMineEditBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E18521AEE4C1004FB1D7 /* GJMineEditBaseVC.m */; };
@@ -16,6 +17,7 @@
 		0480E19221B6C211004FB1D7 /* GJMineInputCarTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E19121B6C211004FB1D7 /* GJMineInputCarTypeVC.m */; };
 		0480E19521B6C47C004FB1D7 /* GJMineInputCarNumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E19421B6C47C004FB1D7 /* GJMineInputCarNumVC.m */; };
 		0480E19821B6C65B004FB1D7 /* GJMineInputSexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480E19721B6C65B004FB1D7 /* GJMineInputSexVC.m */; };
+		04C4032021C16EC6000D9B5E /* GJHomeMoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4031F21C16EC6000D9B5E /* GJHomeMoreVC.m */; };
 		15517E504A29088DFD82E36C /* libPods-CarHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */; };
 		8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB41205CCEBA00881F85 /* GJFunctionManager.m */; };
 		8006AB45205CD0E500881F85 /* MBProgressHUD+GJMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AB44205CD0E500881F85 /* MBProgressHUD+GJMBL.m */; };
@@ -163,6 +165,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040967D621C29AD30085223A /* GJHomeCarShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeCarShopVC.h; sourceTree = "<group>"; };
+		040967D721C29AD30085223A /* GJHomeCarShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeCarShopVC.m; sourceTree = "<group>"; };
 		0480E17A21AD9B69004FB1D7 /* JXMovableCellTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMovableCellTableView.m; sourceTree = "<group>"; };
 		0480E17B21AD9B69004FB1D7 /* JXMovableCellTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMovableCellTableView.h; sourceTree = "<group>"; };
 		0480E18121AEE4AE004FB1D7 /* GJMineInputPhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineInputPhoneVC.h; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 		0480E19421B6C47C004FB1D7 /* GJMineInputCarNumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineInputCarNumVC.m; sourceTree = "<group>"; };
 		0480E19621B6C65B004FB1D7 /* GJMineInputSexVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMineInputSexVC.h; sourceTree = "<group>"; };
 		0480E19721B6C65B004FB1D7 /* GJMineInputSexVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMineInputSexVC.m; sourceTree = "<group>"; };
+		04C4031E21C16EC6000D9B5E /* GJHomeMoreVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHomeMoreVC.h; sourceTree = "<group>"; };
+		04C4031F21C16EC6000D9B5E /* GJHomeMoreVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHomeMoreVC.m; sourceTree = "<group>"; };
 		068D64CF52F547440B844BD5 /* Pods-CarHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		0E943139F3488125AB50D9E8 /* Pods-CarHelper.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarHelper.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		1A6A27695D52C38C123742C6 /* libPods-CarHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -563,6 +569,10 @@
 				CC03F667215BCFA700EF3DA3 /* GJStopACarVC.m */,
 				CC03F669215BCFB700EF3DA3 /* GJWashACarVC.h */,
 				CC03F66A215BCFB700EF3DA3 /* GJWashACarVC.m */,
+				04C4031E21C16EC6000D9B5E /* GJHomeMoreVC.h */,
+				04C4031F21C16EC6000D9B5E /* GJHomeMoreVC.m */,
+				040967D621C29AD30085223A /* GJHomeCarShopVC.h */,
+				040967D721C29AD30085223A /* GJHomeCarShopVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1478,6 +1488,7 @@
 				CCB2C041215006790001B0A0 /* GJMineEvaluateVC.m in Sources */,
 				8028484F206C952900DEE778 /* GJLoginController.m in Sources */,
 				80CB4A7A214FB30200544C89 /* GJMessageChatVC.m in Sources */,
+				040967D821C29AD30085223A /* GJHomeCarShopVC.m in Sources */,
 				8006AB42205CCEBA00881F85 /* GJFunctionManager.m in Sources */,
 				80284869206CB3E300DEE778 /* NSString+GJCategory.m in Sources */,
 				8006AB4E205CF7DD00881F85 /* GJUserAccountManager.m in Sources */,
@@ -1524,6 +1535,7 @@
 				8006AB48205CD19D00881F85 /* UIView+GJToast.m in Sources */,
 				CC03F674215BD7BC00EF3DA3 /* GJStopCarMapView.m in Sources */,
 				808540C52102E6A700FB4F2C /* GJNearbyCell.m in Sources */,
+				04C4032021C16EC6000D9B5E /* GJHomeMoreVC.m in Sources */,
 				80F43C3720A691C8004EE41B /* GJAlipayModel.m in Sources */,
 				CC13C15B21514F7A00B755EF /* GJMineEvaluateMidCell.m in Sources */,
 				800F4036205FAC1800B7A4D4 /* GJBaseTableViewCell.m in Sources */,

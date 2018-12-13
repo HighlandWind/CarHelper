@@ -82,6 +82,13 @@
     }
 }
 
+- (void)showMainColorNavigation {
+    [self allowBackWithImage:@"white_back_iocn"];
+    NSDictionary *dic = @{NSFontAttributeName:[APP_CONFIG appAdaptFontOfSize:18], NSForegroundColorAttributeName: APP_CONFIG.whiteGrayColor};
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    [self.navigationController.navigationBar setBackgroundImage:CreatImageWithColor(APP_CONFIG.appMainColor) forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

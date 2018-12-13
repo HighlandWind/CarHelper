@@ -18,6 +18,8 @@
 #import "GJCarPoolVC.h"
 #import "GJStopACarVC.h"
 #import "GJWashACarVC.h"
+#import "GJHomeMoreVC.h"
+#import "GJHomeCarShopVC.h"
 
 @interface GJHomeVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) GJHomeTopView *topView;
@@ -122,6 +124,10 @@
             vc = [[GJWashACarVC alloc] init];
         }else if (tag == 3) {
             vc = [[GJCarPoolVC alloc] init];
+        }else if (tag == 4) {
+            vc = [[GJHomeCarShopVC alloc] init];
+        }else if (tag == 5) {
+            vc = [[GJHomeMoreVC alloc] init];
         }
         if (vc) {
             vc.hidesBottomBarWhenPushed = YES;

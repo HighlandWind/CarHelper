@@ -16,5 +16,6 @@
 - (void)showNaviSingleLine;
 - (void)backAction;
 - (void)setStatusBarLight:(BOOL)is;
+- (void)showMainColorNavigation;
 
 @end
