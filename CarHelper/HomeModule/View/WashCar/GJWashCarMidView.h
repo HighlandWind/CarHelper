@@ -11,5 +11,11 @@
 @interface GJWashCarMidView : GJBaseView
 
 @property (nonatomic, copy) void (^blockClickBtmBtn)(void);
+@property (nonatomic, strong) NSArray *contents;
+
+@end
+
+
+@interface GJWashCarMidBGView : GJBaseView
 
 @end

@@ -46,9 +46,9 @@
         }];
         
         _topBtn = [[UIButton alloc] init];
-        _topBtn.titleLabel.font = [APP_CONFIG appAdaptBoldFontOfSize:13];
+        _topBtn.titleLabel.font = [APP_CONFIG appAdaptBoldFontOfSize:16];
         [_topBtn setTitle:@"请输入目的地" forState:UIControlStateNormal];
-        [_topBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_topBtn setTitleColor:APP_CONFIG.lightTextColor forState:UIControlStateNormal];
         _topBtn.layer.cornerRadius = AdaptatSize(30) / 2;
         _topBtn.clipsToBounds = YES;
         _topBtn.backgroundColor = APP_CONFIG.appBackgroundColor;
@@ -59,7 +59,7 @@
         [_topBtnImg addTarget:self action:@selector(topBtnImgClick) forControlEvents:UIControlEventTouchUpInside];
         
         _btmLabel = [[UILabel alloc] init];
-        _btmLabel.font = [APP_CONFIG appAdaptFontOfSize:12];
+        _btmLabel.font = [APP_CONFIG appAdaptFontOfSize:11];
         _btmLabel.textColor = APP_CONFIG.darkTextColor;
         [_btmLabel sizeToFit];
         

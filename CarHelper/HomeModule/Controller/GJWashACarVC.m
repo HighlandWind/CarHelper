@@ -25,9 +25,9 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [_btmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).with.offset(15);
-        make.right.equalTo(self.view).with.offset(-15);
-        make.bottom.equalTo(self.view).with.offset(-AdaptatSize(40));
+        make.left.equalTo(self.view).with.offset(AdaptatSize(15));
+        make.right.equalTo(self.view).with.offset(-AdaptatSize(15));
+        make.bottom.equalTo(self.view).with.offset(-AdaptatSize(35));
         make.height.mas_equalTo(AdaptatSize(50));
     }];
     [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -35,9 +35,8 @@
         make.height.mas_equalTo(AdaptatSize(78));
     }];
     [_midView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).with.offset(10);
-        make.right.equalTo(self.view).with.offset(-10);
-        make.top.equalTo(self.topView.mas_bottom).with.offset(AdaptatSize(15));
+        make.left.right.equalTo(self.view);
+        make.top.equalTo(self.topView.mas_bottom).with.offset(AdaptatSize(10));
         make.bottom.equalTo(self.btmBtn.mas_top).with.offset(-AdaptatSize(15));
     }];
 }
@@ -70,6 +69,7 @@
 
 - (void)initializationNetWorking {
     _topView.address = @"花果园";
+    _midView.contents = @[@"服务1", @"服务2", @"服务3"];
 }
 
 #pragma mark - Request Handle

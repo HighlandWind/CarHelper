@@ -21,15 +21,22 @@
     BLOCK_SAFE(_blockClickBtmBtn)();
 }
 
-- (void)pageAction:(UIPageControl *)page {
-    [_scrollView setContentOffset:CGPointMake(page.currentPage * (SCREEN_W - 20), 0) animated:YES];
-}
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    int currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    _pageControl.currentPage = currentPage;
+- (void)setContents:(NSArray *)contents {
+    _contents = contents;
+    
+    NSInteger count = contents.count;
+    _pageControl.numberOfPages = count;
+    _scrollView.contentSize = CGSizeMake((SCREEN_W - AdaptatSize(30)) * count, _scrollView.height);
+    
+    [contents enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        GJWashCarMidBGView *cntView = [[GJWashCarMidBGView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.height)];
+        [self.scrollView addSubview:cntView];
+        [cntView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.equalTo(self.scrollView);
+            make.left.equalTo(self.scrollView).with.offset(idx * (SCREEN_W - AdaptatSize(30)));
+            make.centerY.equalTo(self.scrollView);
+        }];
+    }];
 }
 
 - (instancetype)init
@@ -43,7 +50,7 @@
         [_btmBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         _btmBtn.layer.cornerRadius = 15;
         _btmBtn.layer.borderWidth = 1;
-        _btmBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _btmBtn.layer.borderColor = APP_CONFIG.lightTextColor.CGColor;
         _btmBtn.clipsToBounds = YES;
         [_btmBtn sizeToFit];
         [_btmBtn addTarget:self action:@selector(btmBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -70,9 +77,6 @@
         _pageControl.currentPage = 0;
         [_pageControl addTarget:self action:@selector(pageAction:) forControlEvents:UIControlEventValueChanged];
         
-        _pageControl.numberOfPages = 3;
-        _scrollView.contentSize = CGSizeMake((SCREEN_W - AdaptatSize(40)) * 3, _scrollView.height);
-        
         [self addSubview:_btmBtn];
         [self addSubview:_backView];
         [self addSubview:_scrollView];
@@ -85,21 +89,63 @@
     [super layoutSubviews];
     [_btmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.centerX.equalTo(self);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(26);
     }];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self);
-        make.left.equalTo(self).with.offset(5);
-        make.right.equalTo(self).with.offset(-5);
-        make.bottom.equalTo(self.btmBtn.mas_top).with.offset(-AdaptatSize(35));
+        make.top.centerX.equalTo(self);
+        make.width.mas_equalTo(SCREEN_W - AdaptatSize(30));
+        make.bottom.equalTo(self.btmBtn.mas_top).with.offset(-AdaptatSize(30));
     }];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.backView);
     }];
     [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.scrollView);
-        make.top.equalTo(self.scrollView.mas_bottom).with.offset(AdaptatSize(10));
+        make.top.equalTo(self.scrollView.mas_bottom).with.offset(AdaptatSize(7));
         make.height.mas_equalTo(AdaptatSize(20));
+    }];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    _pageControl.currentPage = currentPage;
+}
+
+- (void)pageAction:(UIPageControl *)page {
+    [_scrollView setContentOffset:CGPointMake(page.currentPage * (SCREEN_W - AdaptatSize(30)), 0) animated:YES];
+}
+
+@end
+
+
+@interface GJWashCarMidBGView ()
+@property (nonatomic, strong) UIButton *btmBtn;
+@end
+
+@implementation GJWashCarMidBGView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _btmBtn = [[UIButton alloc] init];
+        _btmBtn.backgroundColor = APP_CONFIG.appBackgroundColor;
+        _btmBtn.layer.cornerRadius = AdaptatSize(30) / 2;
+        _btmBtn.clipsToBounds = YES;
+        
+        [self addSubview:_btmBtn];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [_btmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).with.offset(AdaptatSize(25));
+        make.right.equalTo(self).with.offset(-AdaptatSize(25));
+        make.bottom.equalTo(self).with.offset(-AdaptatSize(25));
+        make.height.mas_equalTo(AdaptatSize(25));
     }];
 }
 
