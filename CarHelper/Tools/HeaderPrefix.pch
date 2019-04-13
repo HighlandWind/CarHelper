@@ -22,6 +22,7 @@
 #import "GJFunctionManager.h"
 #import "GJUserAccountManager.h"
 #import "GJHttpNetworkingManager.h"
+#import "GJHttpConst.h"
 #import "GJBaseNavigationController.h"
 #import "GJLoginController.h"
 #import "GJBaseTableView.h"

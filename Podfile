@@ -3,7 +3,7 @@ platform :ios, '8.0'
 
 target 'CarHelper' do
 
-pod 'AFNetworking', '~> 3.1.0', :inhibit_warnings => true
+#pod 'AFNetworking', '~> 3.1.0', :inhibit_warnings => true
 pod 'SDWebImage', '~> 4.0.0', :inhibit_warnings => true
 pod 'Masonry', '~> 1.0.2', :inhibit_warnings => true
 pod 'MJRefresh', '~> 3.1.12', :inhibit_warnings => true
@@ -18,5 +18,7 @@ pod 'AMap3DMap-NO-IDFA', '~> 5.2.0'
 pod 'UMengUShare/UI', '~> 6.4', :inhibit_warnings => true
 pod 'UMengUShare/Social/WeChat', '~> 6.4', :inhibit_warnings => true
 pod 'UMengUShare/Social/QQ', '~> 6.4', :inhibit_warnings => true
+
+pod 'GJHttpToolOC'
 
 end

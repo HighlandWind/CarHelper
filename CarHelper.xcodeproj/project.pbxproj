@@ -37,8 +37,6 @@
 		80284859206CADAB00DEE778 /* GJVerifyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284858206CADAB00DEE778 /* GJVerifyButton.m */; };
 		8028485C206CAE7400DEE778 /* GJLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 8028485B206CAE7400DEE778 /* GJLoginApi.m */; };
 		80284860206CB02900DEE778 /* GJHttpConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8028485F206CB02900DEE778 /* GJHttpConst.m */; };
-		80284863206CB07500DEE778 /* GJHttpServerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284862206CB07500DEE778 /* GJHttpServerBase.m */; };
-		80284866206CB13C00DEE778 /* GJHttpNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284865206CB13C00DEE778 /* GJHttpNetworkingManager.m */; };
 		80284869206CB3E300DEE778 /* NSString+GJCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 80284868206CB3E300DEE778 /* NSString+GJCategory.m */; };
 		8029C0B6206CEDA300C4A6F8 /* GJUserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8029C0B5206CEDA300C4A6F8 /* GJUserInfoData.m */; };
 		8029C0B9206CEFD300C4A6F8 /* GJUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8029C0B8206CEFD300C4A6F8 /* GJUserDefaults.m */; };
@@ -227,10 +225,6 @@
 		8028485B206CAE7400DEE778 /* GJLoginApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJLoginApi.m; sourceTree = "<group>"; };
 		8028485E206CB02900DEE778 /* GJHttpConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHttpConst.h; sourceTree = "<group>"; };
 		8028485F206CB02900DEE778 /* GJHttpConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHttpConst.m; sourceTree = "<group>"; };
-		80284861206CB07500DEE778 /* GJHttpServerBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHttpServerBase.h; sourceTree = "<group>"; };
-		80284862206CB07500DEE778 /* GJHttpServerBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHttpServerBase.m; sourceTree = "<group>"; };
-		80284864206CB13C00DEE778 /* GJHttpNetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJHttpNetworkingManager.h; sourceTree = "<group>"; };
-		80284865206CB13C00DEE778 /* GJHttpNetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJHttpNetworkingManager.m; sourceTree = "<group>"; };
 		80284867206CB3E300DEE778 /* NSString+GJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GJCategory.h"; sourceTree = "<group>"; };
 		80284868206CB3E300DEE778 /* NSString+GJCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GJCategory.m"; sourceTree = "<group>"; };
 		8029C0B4206CEDA300C4A6F8 /* GJUserInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJUserInfoData.h; sourceTree = "<group>"; };
@@ -727,10 +721,6 @@
 			children = (
 				8028485E206CB02900DEE778 /* GJHttpConst.h */,
 				8028485F206CB02900DEE778 /* GJHttpConst.m */,
-				80284861206CB07500DEE778 /* GJHttpServerBase.h */,
-				80284862206CB07500DEE778 /* GJHttpServerBase.m */,
-				80284864206CB13C00DEE778 /* GJHttpNetworkingManager.h */,
-				80284865206CB13C00DEE778 /* GJHttpNetworkingManager.m */,
 			);
 			path = HttpTool;
 			sourceTree = "<group>";
@@ -1356,7 +1346,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CarHelper/Pods-CarHelper-resources.sh",
 				"${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
@@ -1375,7 +1365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarHelper/Pods-CarHelper-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarHelper/Pods-CarHelper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D038C8CD61BBD371DAA2FD51 /* [CP] Check Pods Manifest.lock */ = {
@@ -1464,7 +1454,6 @@
 				0480E18921AEF305004FB1D7 /* GJMineInputNameVC.m in Sources */,
 				80A4A8902068E9B300BBD186 /* GJDismissTransitionAnimated.m in Sources */,
 				CCF57B7720D017A80037AD13 /* GJHomeVC.m in Sources */,
-				80284866206CB13C00DEE778 /* GJHttpNetworkingManager.m in Sources */,
 				CC03F671215BD58E00EF3DA3 /* GJStopCarNaviView.m in Sources */,
 				0480E19821B6C65B004FB1D7 /* GJMineInputSexVC.m in Sources */,
 				8029C0B9206CEFD300C4A6F8 /* GJUserDefaults.m in Sources */,
@@ -1493,7 +1482,6 @@
 				80284869206CB3E300DEE778 /* NSString+GJCategory.m in Sources */,
 				8006AB4E205CF7DD00881F85 /* GJUserAccountManager.m in Sources */,
 				802AD332215C8C1300E08EDE /* GJMapStatusView.m in Sources */,
-				80284863206CB07500DEE778 /* GJHttpServerBase.m in Sources */,
 				80AD8AC5205BA2A5004E8724 /* GJLaunchViewController.m in Sources */,
 				80EC5F092064A86600276C4B /* GJBaseView.m in Sources */,
 				80B6F8C4215F7E1300A5993D /* GJWashCarAllListTBVCell.m in Sources */,
