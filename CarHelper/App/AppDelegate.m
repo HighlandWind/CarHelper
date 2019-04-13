@@ -22,6 +22,7 @@
     [self setupThirdApy];
     [self setupUnify];
     [self checkNetwork];
+    [self setupLogger];
     
     [UIApplication sharedApplication].idleTimerDisabled = TRUE;
     _locationmanager = [[CLLocationManager alloc] init];

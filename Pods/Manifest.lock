@@ -21,6 +21,9 @@ PODS:
     - AMapFoundation-NO-IDFA (~> 1.4)
   - AMapSearch-NO-IDFA (5.1.0):
     - AMapFoundation-NO-IDFA (~> 1.2)
+  - CocoaLumberjack (3.5.2):
+    - CocoaLumberjack/Core (= 3.5.2)
+  - CocoaLumberjack/Core (3.5.2)
   - GJHttpToolOC (0.1.1):
     - AFNetworking (~> 3.1.0)
   - IQKeyboardManager (5.0.8)
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - AMap3DMap-NO-IDFA (~> 5.2.0)
   - AMapLocation-NO-IDFA (~> 2.4.0)
   - AMapSearch-NO-IDFA (~> 5.1.0)
+  - CocoaLumberjack (~> 3.5.2)
   - GJHttpToolOC
   - IQKeyboardManager (~> 5.0.3)
   - Masonry (~> 1.0.2)
@@ -69,6 +73,7 @@ SPEC REPOS:
     - AMapFoundation-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - CocoaLumberjack
     - GJHttpToolOC
     - IQKeyboardManager
     - Masonry
@@ -84,6 +89,7 @@ SPEC CHECKSUMS:
   AMapFoundation-NO-IDFA: 40d723b352992d0f95abe2976f0c0ecda3c3ffc3
   AMapLocation-NO-IDFA: 9493012d3241a7d551942c7c1e1069b51f295083
   AMapSearch-NO-IDFA: 06085cfcce8862531c16d5dfbe87f7152ce27dac
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   GJHttpToolOC: f7ac4be735387d77af9536376607b7b0f8737a6b
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -93,6 +99,6 @@ SPEC CHECKSUMS:
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: aab591d1deecb23de94c604717467b34d4975144
+PODFILE CHECKSUM: f9c70efe015a86f920a4e9fa5ad6354da1316fea
 
 COCOAPODS: 1.6.1

@@ -18,6 +18,7 @@ pod 'AMap3DMap-NO-IDFA', '~> 5.2.0'
 pod 'UMengUShare/UI', '~> 6.4', :inhibit_warnings => true
 pod 'UMengUShare/Social/WeChat', '~> 6.4', :inhibit_warnings => true
 pod 'UMengUShare/Social/QQ', '~> 6.4', :inhibit_warnings => true
+pod 'CocoaLumberjack', '~> 3.5.2', :inhibit_warnings => true
 
 pod 'GJHttpToolOC'
 

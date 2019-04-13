@@ -21,7 +21,6 @@
 #import "GJConfigureManager.h"
 #import "GJFunctionManager.h"
 #import "GJUserAccountManager.h"
-#import "GJHttpNetworkingManager.h"
 #import "GJHttpConst.h"
 #import "GJBaseNavigationController.h"
 #import "GJLoginController.h"
@@ -31,5 +30,13 @@
 /* third library */
 #import <Masonry.h>
 #import "UIImageView+WebCache.h"
+#import "GJHttpNetworkingManager.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+#if DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelError;
+#endif
 
 #endif /* HeaderPrefix_h */

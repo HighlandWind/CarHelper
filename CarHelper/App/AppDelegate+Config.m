@@ -107,5 +107,35 @@
     return ret;
 }
 
+- (void)setupLogger {
+#if _DEBUG
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+#endif
+    
+    /**
+     CocoaLumberjack包含几个对象分别可以把Log输出到不同的地方：
+     1.DDASLLogger -发送日志语句到苹果的日志系统，它们显示在Console.app上
+     2.DDTTYLogger -发送日志到控制台
+     3.DDFileLogger -发送日志到文件。
+     4.DDAbstractDatabaseLogger -发送到DB
+     */
+    DDFileLogger* fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 每24小时创建一个新文件
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;  // 同时最多允许创建7个文件
+    [DDLog addLogger:fileLogger];
+//    NSLog(@"%@", fileLogger.currentLogFileInfo.filePath);
+    
+    DDTTYLogger* ttyLogger = [[DDTTYLogger alloc] init];
+    [DDLog addLogger:ttyLogger];
+    
+    /**
+    DDLogVerbose(@"Verbose");
+    DDLogDebug(@"Debug");
+    DDLogInfo(@"Info");
+    DDLogWarn(@"Warn");
+    DDLogError(@"Error");
+     */
+}
+
 @end
 
